@@ -1,0 +1,40 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.AddInventory-box{
+    padding: 0rem 1.6rem;
+
+}
+.AddInventory-form{
+    box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+    border-radius: 3px;
+    &__header{
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: $instockBlack;
+    }
+    &__sub-titles{
+        font-size: 1.6rem;
+        font-weight: 600;
+        color: $instockBlack;
+    }
+    &__label-titles{
+        font-size: 1rem;
+        font-weight: 600;
+        color: $instockBlack;
+        margin-top: 0rem;
+        margin-bottom: 0rem;
+    }
+    &__item-name-input{
+        border: 1px solid #BDC5D5;
+        margin-bottom: 1rem;
+        border-radius: 20px;
+    }
+    &__description-input{
+        margin-bottom: 1rem;
+        border-radius: 20px;
+        border: 1px solid #BDC5D5;
+        width: 240px;
+        height: 120px;
+    }
+}
