@@ -7,7 +7,7 @@ function AddInventory() {
       <form className="AddInventory-form">
         <div className="AddInventory-form__top-box">
           <h1 className="AddInventory-form__header">Add New Inventory Item</h1>
-          <hr className="form-divider" />
+
           <h2 className="AddInventory-form__sub-titles">Item Details</h2>
           <label className="AddInventory-form__label-titles">Item Name</label>
           <br />
@@ -31,14 +31,11 @@ function AddInventory() {
           <br />
           <label className="AddInventory-form__label-titles">Category</label>
           <br />
-          <select
-            placeholder="Please Select"
-            className="AddInventory-form__category-dropdown"
-          >
-            <option value="category">category</option>
+          <select className="AddInventory-form__category-dropdown">
+            <option value="category">Please Select</option>
           </select>
           <br />
-          <hr />
+
           <h2 className="AddInventory-form__sub-titles">Item Availability</h2>
           <label className="AddInventory-form__label-titles">Status</label>
           <br />
@@ -60,11 +57,8 @@ function AddInventory() {
           <br />
           <label className="AddInventory-form__label-titles">Warehouse</label>
           <br />
-          <select
-            placeholder="Please Select"
-            className="AddInventory-form__warehouse-dropdown"
-          >
-            <option value="category">warehouse</option>
+          <select className="AddInventory-form__warehouse-dropdown">
+            <option value="category">Please Select</option>
           </select>
         </div>
         <div className="AddInventory-form__bottom-box">
