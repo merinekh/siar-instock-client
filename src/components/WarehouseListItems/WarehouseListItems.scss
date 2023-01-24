@@ -1,0 +1,26 @@
+@use "../../styles/partials/variables" as *;
+
+.warehouse {
+  display: flex;
+  p {
+    margin: 0;
+  }
+  h4 {
+    margin-bottom: 0.5rem;
+  }
+  &__container {
+      padding: 0 1.6rem;
+    }
+&__location{
+    color: $instock-Indigo;
+    font-weight: 600;
+}
+    
+    &__icons{
+        display: flex;
+        justify-content: space-between;
+        padding: 0 1.6rem 2rem 1.6rem;
+        margin-top: 2rem;
+        border-bottom: 0.1rem solid $cloud;
+  }
+}
