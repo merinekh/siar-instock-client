@@ -1,14 +1,14 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Warehouse from "./pages/Warehouse";
 import WareHouseDetails from "./components/WareHouseDetails/WareHouseDetails";
 import Inventory from "./pages/Inventory";
 import "./App.css";
+import Warehouse from "./pages/Warehouse/Warehouse";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/warehouse" element={<Warehouse />} />
+        <Route path="/" element={<Warehouse />} />
         <Route path="/warehouse_list" element={<WareHouseDetails />} />
         <Route path="/inventory" element={<Inventory />} />
       </Routes>
