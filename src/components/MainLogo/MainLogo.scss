@@ -1,0 +1,8 @@
+.main-logo {
+    &__image {
+       
+        @include tablet {
+         margin: 16px 0;   
+        }
+    }
+}
