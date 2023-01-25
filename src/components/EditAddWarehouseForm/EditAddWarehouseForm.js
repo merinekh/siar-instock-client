@@ -1,11 +1,18 @@
 import React from "react";
-import ".EditAddWarehouseForm.scss";
+import "./EditAddWarehouseForm.scss";
+import arrowBack from "../../assets/icons/arrow_back-24px.svg";
 function EditAddWarehouseForm() {
   return (
     <>
-      <div className="warehouseform">
+      <form className="warehouseform">
         <div className="warehouseform-header">
-          <img src="" alt="" className="warehouseform-header__icon" />
+          <a href="/" className="warehouseform-header-link">
+            <img
+              src={arrowBack}
+              alt="arrow_back"
+              className="warehouseform-header__icon"
+            />
+          </a>
           <h1 className="warehouseform-header__text">Edit Warehouse</h1>
         </div>
 
@@ -61,8 +68,15 @@ function EditAddWarehouseForm() {
             <div className="warehouseform-main-contact-inputs">
               <div className="warehouseform-main-contact-input">
                 <p className="warehouseform-main-contact__subtitle">
-                  Warehouse Name
+                  Contact Name
                 </p>
+                <input
+                  type="text"
+                  className="warehouseform-main-contact__input"
+                />
+              </div>
+              <div className="warehouseform-main-contact-input">
+                <p className="warehouseform-main-contact__subtitle">Position</p>
                 <input
                   type="text"
                   className="warehouseform-main-contact__input"
@@ -70,7 +84,7 @@ function EditAddWarehouseForm() {
               </div>
               <div className="warehouseform-main-contact-input">
                 <p className="warehouseform-main-contact__subtitle">
-                  Street Address
+                  Phone Number
                 </p>
                 <input
                   type="text"
@@ -78,14 +92,7 @@ function EditAddWarehouseForm() {
                 />
               </div>
               <div className="warehouseform-main-contact-input">
-                <p className="warehouseform-main-contact__subtitle">City</p>
-                <input
-                  type="text"
-                  className="warehouseform-main-contact__input"
-                />
-              </div>
-              <div className="warehouseform-main-contact-input">
-                <p className="warehouseform-main-contact__subtitle">Country</p>
+                <p className="warehouseform-main-contact__subtitle">Email</p>
                 <input
                   type="text"
                   className="warehouseform-main-contact__input"
@@ -94,7 +101,14 @@ function EditAddWarehouseForm() {
             </div>
           </div>
         </div>
-      </div>
+
+        <div className="warehouseform-buttons">
+          <button className="warehouseform-buttons__cancel">Cancel</button>
+          <button type="submit" className="warehouseform-buttons__save">
+            Save
+          </button>
+        </div>
+      </form>
     </>
   );
 }

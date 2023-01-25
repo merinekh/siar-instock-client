@@ -1,0 +1,24 @@
+.warehouseform {
+  display: flex;
+  flex-direction: column;
+  margin: 1.6rem;
+
+  &-header {
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    padding: 1rem 0;
+    margin-left: -1.6rem;
+    border-bottom: 0.1rem solid gray;
+
+    &-link {
+      display: flex;
+      align-items: center;
+      margin-left: 1.6rem;
+    }
+    &__text {
+      margin: 0;
+      margin-left: 0rem;
+    }
+  }
+}
