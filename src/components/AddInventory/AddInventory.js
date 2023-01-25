@@ -4,10 +4,31 @@ import "../AddInventory/AddInventory.scss";
 function AddInventory() {
   const handleSubmit = (event) => {
     event.preventDefault();
+    const form = event.target;
+    const item = form.item.value;
+    const description = form.description.value;
+    const category = form.category.value;
+    const InStock = form.InStock.value;
+    const OutOfStock = form.OutOfStock.value;
+    const quantity = form.quantity.value;
+    const warehouse = form.warehouse.value;
+
+    if (
+      !item ||
+      !description ||
+      !category ||
+      !InStock ||
+      !OutOfStock ||
+      !quantity ||
+      !warehouse
+    ) {
+      alert("Please fill out all fields");
+      return;
+    }
   };
   return (
     <div className="AddInventory-box">
-      <form className="AddInventory-form">
+      <form className="AddInventory-form" onSubmit={handleSubmit}>
         <h1 className="AddInventory-form__header">Add New Inventory Item</h1>
         <hr />
         <div className="AddInventory-form__top-box">
@@ -17,7 +38,7 @@ function AddInventory() {
           <input
             className="AddInventory-form__item-name-input"
             type="text"
-            name="item-name"
+            name="item"
             placeholder="Item Name"
             required
           ></input>
@@ -35,7 +56,9 @@ function AddInventory() {
           <label className="AddInventory-form__label-titles">Category</label>
           <br />
           <select className="AddInventory-form__category-dropdown">
-            <option value="category">Please Select</option>
+            <option value="category" name="category" required>
+              Please Select
+            </option>
           </select>
           <br />
         </div>
@@ -48,11 +71,7 @@ function AddInventory() {
             <input type="radio" name="InStock"></input>In Stock
           </label>
           <label className="AddInventory-form__instock">
-            <input
-              className="AddInventory-form__instock"
-              type="radio"
-              name="InStock"
-            ></input>
+            <input type="radio" name="OutOfStock"></input>
             Out Of Stock
           </label>
           <br />
@@ -68,7 +87,9 @@ function AddInventory() {
           <label className="AddInventory-form__label-titles">Warehouse</label>
           <br />
           <select className="AddInventory-form__warehouse-dropdown">
-            <option value="category">Please Select</option>
+            <option value="warehouse" name="warehouse" required>
+              Please Select
+            </option>
           </select>
         </div>
         <div className="AddInventory-form__button-box">
