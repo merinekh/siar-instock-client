@@ -3,6 +3,7 @@ import Warehouse from "./pages/Warehouse";
 import Warehouse_details from "./components/WareHouse_details/Warehouse_details";
 import Inventory from "./pages/Inventory/Inventory";
 import WarehouseInventoryList from "./components/WarehouseInventoryList/WarehouseInventoryList";
+import InventoryItemDetails from "./components/InventoryItemDetails/InventoryItemDetails";
 import "./App.scss";
 
 function App() {
@@ -15,6 +16,10 @@ function App() {
         <Route
           path="/warehouseinventorylist"
           element={<WarehouseInventoryList />}
+        />
+        <Route
+          path="/inventoryitemdetails"
+          element={<InventoryItemDetails />}
         />
       </Routes>
     </BrowserRouter>
