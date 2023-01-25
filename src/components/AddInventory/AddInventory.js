@@ -2,12 +2,15 @@ import React from "react";
 import "../AddInventory/AddInventory.scss";
 
 function AddInventory() {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  };
   return (
     <div className="AddInventory-box">
       <form className="AddInventory-form">
+        <h1 className="AddInventory-form__header">Add New Inventory Item</h1>
+        <hr />
         <div className="AddInventory-form__top-box">
-          <h1 className="AddInventory-form__header">Add New Inventory Item</h1>
-
           <h2 className="AddInventory-form__sub-titles">Item Details</h2>
           <label className="AddInventory-form__label-titles">Item Name</label>
           <br />
@@ -35,15 +38,22 @@ function AddInventory() {
             <option value="category">Please Select</option>
           </select>
           <br />
-
+        </div>
+        <hr />
+        <div className="AddInventory-form__bottom-box">
           <h2 className="AddInventory-form__sub-titles">Item Availability</h2>
           <label className="AddInventory-form__label-titles">Status</label>
           <br />
-          <label className="intock">
+          <label className="AddInventory-form__instock">
             <input type="radio" name="InStock"></input>In Stock
           </label>
-          <label className="intock">
-            <input type="radio" name="InStock"></input>Out Of Stock
+          <label className="AddInventory-form__instock">
+            <input
+              className="AddInventory-form__instock"
+              type="radio"
+              name="InStock"
+            ></input>
+            Out Of Stock
           </label>
           <br />
           <label className="AddInventory-form__label-titles">Quantity</label>
@@ -61,9 +71,11 @@ function AddInventory() {
             <option value="category">Please Select</option>
           </select>
         </div>
-        <div className="AddInventory-form__bottom-box">
-          <button>Cancel</button>
-          <button type="submit">Add Item</button>
+        <div className="AddInventory-form__button-box">
+          <button className="AddInventory-form__cancel-button">Cancel</button>
+          <button className="AddInventory-form__submit-button" type="submit">
+            Add Item
+          </button>
         </div>
       </form>
     </div>
