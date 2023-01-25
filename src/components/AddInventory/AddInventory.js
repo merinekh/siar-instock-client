@@ -1,6 +1,6 @@
 import React from "react";
 import "../AddInventory/AddInventory.scss";
-import BackArrow from "../../assets/Icons/arrow_back-24px.svg";
+import BackArrow from "../../assets/icons/arrow_back-24px.svg";
 
 function AddInventory() {
   const handleSubmit = (event) => {
