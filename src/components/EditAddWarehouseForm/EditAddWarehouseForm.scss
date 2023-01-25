@@ -117,6 +117,12 @@
     &__save {
       background-color: $instock-Indigo;
       color: white;
+      @include tablet {
+        margin-right: 1.6rem;
+      }
+      @include desktop {
+        margin-right: 3rem;
+      }
     }
     &__cancel {
       background-color: white;
@@ -127,6 +133,7 @@
     }
     @include tablet {
       justify-content: flex-end;
+      margin-left: -3.2rem;
     }
   }
 
@@ -144,5 +151,8 @@
 
   @include tablet {
     margin: 3.2rem;
+  }
+
+  @include desktop {
   }
 }
