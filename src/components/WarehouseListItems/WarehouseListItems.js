@@ -10,55 +10,55 @@ const WarehouseListItems = () => {
       phone_number: "+1 (629) 555-0129",
       email: "paujla@instock.com",
     },
-    // {
-    //   warehouse: "Manhattan",
-    //   address: "503 Broadway, New York, USA",
-    //   name: "Parmin Aujla",
-    //   phone_number: "+1 (629) 555-0129",
-    //   email: "paujla@instock.com",
-    // },
-    // {
-    //   warehouse: "Manhattan",
-    //   address: "503 Broadway, New York, USA",
-    //   name: "Parmin Aujla",
-    //   phone_number: "+1 (629) 555-0129",
-    //   email: "paujla@instock.com",
-    // },
-    // {
-    //   warehouse: "Manhattan",
-    //   address: "503 Broadway, New York, USA",
-    //   name: "Parmin Aujla",
-    //   phone_number: "+1 (629) 555-0129",
-    //   email: "paujla@instock.com",
-    // },
-    // {
-    //   warehouse: "Manhattan",
-    //   address: "503 Broadway, New York, USA",
-    //   name: "Parmin Aujla",
-    //   phone_number: "+1 (629) 555-0129",
-    //   email: "paujla@instock.com",
-    // },
-    // {
-    //   warehouse: "Manhattan",
-    //   address: "503 Broadway, New York, USA",
-    //   name: "Parmin Aujla",
-    //   phone_number: "+1 (629) 555-0129",
-    //   email: "paujla@instock.com",
-    // },
-    // {
-    //   warehouse: "Manhattan",
-    //   address: "503 Broadway, New York, USA",
-    //   name: "Parmin Aujla",
-    //   phone_number: "+1 (629) 555-0129",
-    //   email: "paujla@instock.com",
-    // },
+    {
+      warehouse: "Manhattan",
+      address: "503 Broadway, New York, USA",
+      name: "Parmin Aujla",
+      phone_number: "+1 (629) 555-0129",
+      email: "paujla@instock.com",
+    },
+    {
+      warehouse: "Manhattan",
+      address: "503 Broadway, New York, USA",
+      name: "Parmin Aujla",
+      phone_number: "+1 (629) 555-0129",
+      email: "paujla@instock.com",
+    },
+    {
+      warehouse: "Manhattan",
+      address: "503 Broadway, New York, USA",
+      name: "Parmin Aujla",
+      phone_number: "+1 (629) 555-0129",
+      email: "paujla@instock.com",
+    },
+    {
+      warehouse: "Manhattan",
+      address: "503 Broadway, New York, USA",
+      name: "Parmin Aujla",
+      phone_number: "+1 (629) 555-0129",
+      email: "paujla@instock.com",
+    },
+    {
+      warehouse: "Manhattan",
+      address: "503 Broadway, New York, USA",
+      name: "Parmin Aujla",
+      phone_number: "+1 (629) 555-0129",
+      email: "paujla@instock.com",
+    },
+    {
+      warehouse: "Manhattan",
+      address: "503 Broadway, New York, USA",
+      name: "Parmin Aujla",
+      phone_number: "+1 (629) 555-0129",
+      email: "paujla@instock.com",
+    },
   ];
 
   const mappedList = list.map((element) => {
     return (
       <>
         <div className="warehouse">
-          <div className="warehouse__wrapper">
+          <div className="warehouse__wrapper warehouse__wrapper--left">
             <div className="warehouse__container">
               <h4 className="warehouse__subtitle">WAREHOUSE</h4>
               <p className="warehouse__location">{`${element.warehouse} >`}</p>
@@ -70,10 +70,10 @@ const WarehouseListItems = () => {
                 </p>
             </div>
           </div>
-          <div className="warehouse__wrapper">
+          <div className="warehouse__wrapper warehouse__wrapper--right">
             <div className="warehouse__container">
               <h4 className="warehouse__subtitle">CONTACT NAME</h4>
-              <p> {element.name}</p>
+              <p className="warehouse__name"> {element.name}</p>
             </div>
             <div className="warehouse__container">
               <div className="warehouse__contact">
