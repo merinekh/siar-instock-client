@@ -30,6 +30,7 @@ function EditAddWarehouseForm() {
                 <input
                   type="text"
                   className="warehouseform-main-warehouse__input"
+                  placeholder="Warehouse Name"
                 />
               </div>
               <div className="warehouseform-main-warehouse-input">
@@ -39,6 +40,7 @@ function EditAddWarehouseForm() {
                 <input
                   type="text"
                   className="warehouseform-main-warehouse__input"
+                  placeholder="Street Address"
                 />
               </div>
               <div className="warehouseform-main-warehouse-input">
@@ -46,6 +48,7 @@ function EditAddWarehouseForm() {
                 <input
                   type="text"
                   className="warehouseform-main-warehouse__input"
+                  placeholder="City"
                 />
               </div>
               <div className="warehouseform-main-warehouse-input">
@@ -55,8 +58,10 @@ function EditAddWarehouseForm() {
                 <input
                   type="text"
                   className="warehouseform-main-warehouse__input"
+                  placeholder="Country"
                 />
               </div>
+              <hr className="warehouseform-main-warehouse__line" />
             </div>
           </div>
 
@@ -73,6 +78,7 @@ function EditAddWarehouseForm() {
                 <input
                   type="text"
                   className="warehouseform-main-contact__input"
+                  placeholder="Contact Name"
                 />
               </div>
               <div className="warehouseform-main-contact-input">
@@ -80,6 +86,7 @@ function EditAddWarehouseForm() {
                 <input
                   type="text"
                   className="warehouseform-main-contact__input"
+                  placeholder="Position"
                 />
               </div>
               <div className="warehouseform-main-contact-input">
@@ -89,6 +96,7 @@ function EditAddWarehouseForm() {
                 <input
                   type="text"
                   className="warehouseform-main-contact__input"
+                  placeholder="Phone Number"
                 />
               </div>
               <div className="warehouseform-main-contact-input">
@@ -96,6 +104,7 @@ function EditAddWarehouseForm() {
                 <input
                   type="text"
                   className="warehouseform-main-contact__input"
+                  placeholder="Email"
                 />
               </div>
             </div>
