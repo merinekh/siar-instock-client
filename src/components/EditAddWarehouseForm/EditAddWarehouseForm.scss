@@ -1,3 +1,6 @@
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/mixins.scss" as *;
+
 .warehouseform {
   display: flex;
   flex-direction: column;
@@ -19,6 +22,34 @@
     &__text {
       margin: 0;
       margin-left: 0rem;
+    }
+  }
+
+  &-main {
+    display: flex;
+    flex-direction: column;
+
+    &-warehouse,
+    &-contact {
+      display: flex;
+      flex-direction: column;
+
+      &-inputs,
+      &-input {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+
+  &-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin: 1.5rem 0;
+    button {
+      display: flex;
+      justify-content: center;
+      width: 48%;
     }
   }
 }
