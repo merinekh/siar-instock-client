@@ -1,0 +1,33 @@
+a {
+  color: $cloud;
+}
+.page-navigation {
+  display: flex;
+  &__item {
+    border-radius: 20px;
+    padding: 1rem 3rem;
+    width: 100%;
+    @include tablet {
+        align-self: flex-start;
+    }
+    &--current {
+      background-color: $instockBlack;
+      color: $white;
+    }
+  }
+  &__link {
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-weight: 600;
+    
+    &:hover {
+      text-decoration-line: underline;
+    }
+
+    @include tablet {
+        font-size: 1.4rem;
+    }
+  }
+}

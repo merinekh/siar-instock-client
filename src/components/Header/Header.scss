@@ -1,0 +1,30 @@
+.page-header {
+  background-color: $graphite;
+  margin: 0px;
+  padding: 0px 16px;
+  padding-top: 1.6rem;
+  height: 200px;
+
+  @include tablet {
+    padding: 0px 32px;
+    height: 186px;
+    display: flex;
+    @include desktop {
+      max-width: 100%;
+      padding: 0px 80px;
+    }
+  }
+  &__logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.6rem;
+    width: 100%;
+
+    @include tablet {
+      width: max-content;
+      margin: 0;
+      margin-right: auto;
+      
+    }
+  }
+}

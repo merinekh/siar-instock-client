@@ -1,0 +1,10 @@
+@import "partials/typography";
+@import "partials/mixins";
+@import "partials/resets";
+@import "partials/variables";
+@import "partials/global";
+
+@import "../components/Header/Header.scss";
+@import "../components/PageNav/PageNav.scss";
+@import "../components/MainLogo/MainLogo.scss";
+// @import "../components/EditAddWarehouseForm/EditAddWarehouseForm.scss";

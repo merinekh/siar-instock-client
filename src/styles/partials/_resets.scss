@@ -1,5 +1,3 @@
-@use "../../styles/partials/typography" as *;
-
 *,
 *::before,
 *::after {
@@ -11,6 +9,6 @@ html {
 }
 
 body {
-  margin: 0;
   font-family: "Titillium";
+  font-size: 1.6rem;
 }

@@ -13,3 +13,10 @@
   display: flex;
   flex-direction: $direction;
 }
+@mixin inputMobile {
+  width: 100%;
+  padding: 0 2rem;
+  border-radius: 2rem;
+  height: 3.6rem;
+  font-family: "Titillium";
+}
