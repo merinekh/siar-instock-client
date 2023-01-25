@@ -1,10 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Warehouse from "./pages/Warehouse";
 import Inventory from "./pages/Inventory";
 import AddInventory from "./components/AddInventory/AddInventory";
 import Layout from "./pages/Layout";
 import { AppRoute } from "./const";
 import "./styles/style.scss";
+import Warehouse from "./pages/Warehouse/Warehouse";
 
 function App() {
   return (

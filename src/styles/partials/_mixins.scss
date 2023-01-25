@@ -1,10 +1,23 @@
 @mixin tablet {
-    @media (min-width: 768px) {
-      @content;
-    }
+  @media (min-width: 768px) {
+    @content;
   }
-  @mixin desktop {
-    @media (min-width: 1280px) {
-      @content;
-    }
+}
+@mixin desktop {
+  @media (min-width: 1280px) {
+    @content;
   }
+}
+
+@mixin inputMobile {
+  width: 100%;
+  padding: 0 2rem;
+  border-radius: 2rem;
+  height: 3.6rem;
+  font-family: 'Titillium';
+
+
+}
+
+
+

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import mainLogo from '../../assets/Logo/InStock-Logo_1x.png'
+import mainLogo from '../../assets/logos/InStock-Logo_1x.png'
 import { AppRoute } from '../../const'
 
 function MainLogo() {

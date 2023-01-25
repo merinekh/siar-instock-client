@@ -1,0 +1,73 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/resets" as *;
+@use "../../styles/partials/mixins" as *;
+
+a {
+  text-decoration: none;
+  color: black;
+}
+.warehouses {
+  &__tablet {
+    @include tablet {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      padding: 0 3.2rem;
+      margin-bottom: 1rem;
+    }
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 0.1rem solid $cloud;
+    padding: 0 1.6rem;
+
+    @include tablet {
+      flex-direction: row;
+      border-bottom: 0;
+      padding: 0;
+      flex-grow: 1;
+      justify-content: center;
+    }
+}
+
+&__title {
+    font-size: $fontMobile-h1;
+    margin: 2rem 1.6rem;
+
+    @include tablet{
+        flex-grow: 1;
+        margin-left: 0;
+    }
+  }
+
+  &__input,
+  &__button {
+    @include inputMobile;
+  }
+
+  &__input {
+    background-image: url(../../assets/icons/search-24px.svg);
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: center;
+    margin-bottom: 2rem;
+    border: 0.1rem solid $cloud;
+
+ @include tablet{
+    margin-right: 2rem;
+ }
+}
+
+&__button {
+    border: none;
+    color: white;
+    background-color: $instock-Indigo;
+    margin-bottom: 2rem;
+    
+    @include tablet {
+        margin-left: 2rem;
+    }
+  }
+}
