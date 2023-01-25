@@ -3,6 +3,8 @@ export const AppRoute = {
   WAREHOUSE: "/warehouse",
   INVENTORY: "/inventory",
   ADDINVENTORY: "/inventory/addinventory",
+  ADDWAREHOUSEFORM: "/warehouse/add",
+  EDITWAREHOUSEFORM: "/warehouse/edit",
 };
 
 export const NavigationItems = [
