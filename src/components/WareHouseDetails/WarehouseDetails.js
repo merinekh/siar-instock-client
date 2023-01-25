@@ -1,9 +1,7 @@
 import React from "react";
 
-function WarehouseDetails() {
-  return <div>
-    Warehouse
-  </div>;
+function WareHouseDetails() {
+  return <div>_</div>;
 }
 
-export default WarehouseDetails;
+export default WareHouseDetails;
