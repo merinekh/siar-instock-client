@@ -6,7 +6,45 @@
   margin: 0;
 }
 
-.wil {
+.inv {
+  &__container {
+    padding: 1.6rem;
+    @include flex(column);
+    @include tablet {
+      @include flex(row);
+      justify-content: space-between;
+    }
+  }
+
+  &__container-header {
+    font-size: $fontMobile-h1;
+    @include tablet {
+      font-size: $fontTablet-h1;
+    }
+  }
+
+  &__container-form {
+    @include flex(column);
+    @include tablet {
+      @include flex(row);
+    }
+  }
+
+  &__container-search {
+    margin-top: 1.6rem;
+    @include tablet {
+      margin-top: 0;
+    }
+  }
+
+  &__container-add {
+    margin-top: 1.6rem;
+    @include tablet {
+      margin-top: 0;
+      margin-left: 1.6rem;
+    }
+  }
+
   &__header {
     display: none;
     @include tablet {

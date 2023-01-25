@@ -10,6 +10,7 @@ export default function Inventory() {
       id: 11,
       warehouse: "Washington",
       item_name: "Monitor",
+      description: "This is a generic description for the selected item.",
       category: "Electronics",
       status: "Out of Stock",
       quantity: 0,
@@ -18,6 +19,7 @@ export default function Inventory() {
       id: 12,
       warehouse: "Manhattan",
       item_name: "Backpack",
+      description: "This is a another generic description for the other item.",
       category: "Gear",
       status: "In Stock",
       quantity: 100,
@@ -38,81 +40,92 @@ export default function Inventory() {
 
   const applyTag = (status) => {
     if (status === "Out of Stock") {
-      return "wil__item-status--out";
+      return "inv__item-status--out";
     } else {
-      return "wil__item-status--in";
+      return "inv__item-status--in";
     }
   };
 
   return (
-    <section className="wil">
-      <div className="wil__header">
-        <div className="wil__header--flex">
-          <h4 className="wil__header--title">INVENTORY ITEM</h4>
-          <img className="wil__sort" src={sorticon} alt="sort" />
+    <section className="inv">
+      <div className="inv__container">
+        <h1 className="inv__container-header">Inventory</h1>
+        <form className="inv__container-form">
+          <input
+            className="inv__container-search"
+            type="text"
+            placeholder="Search..."
+          />
+          <button className="inv__container-add">+ Add New Item</button>
+        </form>
+      </div>
+      <div className="inv__header">
+        <div className="inv__header--flex">
+          <h4 className="inv__header--title">INVENTORY ITEM</h4>
+          <img className="inv__sort" src={sorticon} alt="sort" />
         </div>
-        <div className="wil__header--flex">
-          <h4 className="wil__header--title">CATEGORY</h4>
-          <img className="wil__sort" src={sorticon} alt="sort" />
+        <div className="inv__header--flex">
+          <h4 className="inv__header--title">CATEGORY</h4>
+          <img className="inv__sort" src={sorticon} alt="sort" />
         </div>
-        <div className="wil__header--flex">
-          <h4 className="wil__header--title">STATUS</h4>
-          <img className="wil__sort" src={sorticon} alt="sort" />
+        <div className="inv__header--flex">
+          <h4 className="inv__header--title">STATUS</h4>
+          <img className="inv__sort" src={sorticon} alt="sort" />
         </div>
-        <div className="wil__header--flex">
-          <h4 className="wil__header--title">QUANTITY</h4>
-          <img className="wil__sort" src={sorticon} alt="sort" />
+        <div className="inv__header--flex">
+          <h4 className="inv__header--title">QUANTITY</h4>
+          <img className="inv__sort" src={sorticon} alt="sort" />
         </div>
-        <div className="wil__header--flex">
-          <h4 className="wil__header--title">WAREHOUSE</h4>
-          <img className="wil__sort" src={sorticon} alt="sort" />
+        <div className="inv__header--flex">
+          <h4 className="inv__header--title">WAREHOUSE</h4>
+          <img className="inv__sort" src={sorticon} alt="sort" />
         </div>
-        <div className="wil__header--flex">
-          <h4 className="wil__header--title">ACTIONS</h4>
+        <div className="inv__header--flex">
+          <h4 className="inv__header--title">ACTIONS</h4>
         </div>
       </div>
 
       {dummyDetails.map((item) => (
-        <div className="wil__inventory">
-          <div className="wil__inventory--flex">
-            <div className="wil__inventory--details">
+        <div className="inv__inventory">
+          <div className="inv__inventory--flex">
+            <div className="inv__inventory--details">
               <div>
-                <h4 className="wil__subheading">INVENTORY ITEM</h4>
-                <div className="wil__item">
-                  <h3 className="wil__item-name">{item.item_name}</h3>
+                <h4 className="inv__subheading">INVENTORY ITEM</h4>
+                <div className="inv__item">
+                  <h3 className="inv__item-name">{item.item_name}</h3>
                   <img src={chevron} alt="chevron" />
                 </div>
               </div>
               <div>
-                <h4 className="wil__subheading">CATEGORY</h4>
-                <p className="wil__item-text">{item.category}</p>
+                <h4 className="inv__subheading">CATEGORY</h4>
+                <p className="inv__item-text">{item.category}</p>
               </div>
             </div>
-            <div className="wil__inventory--details">
+            <div className="inv__inventory--details">
               <div>
-                <h4 className="wil__subheading">STATUS</h4>
+                <h4 className="inv__subheading">STATUS</h4>
                 <h4 className={applyTag(item.status)}>
                   {item.status.toUpperCase()}
                 </h4>
               </div>
               <div>
-                <h4 className="wil__subheading">QTY</h4>
-                <p className="wil__item-text">{item.quantity}</p>
+                <h4 className="inv__subheading">QTY</h4>
+                <p className="inv__item-text">{item.quantity}</p>
               </div>
               <div>
-                <h4 className="wil__subheading">WAREHOUSE</h4>
-                <p className="wil__item-text">{item.warehouse}</p>
+                <h4 className="inv__subheading">WAREHOUSE</h4>
+                <p className="inv__item-text">{item.warehouse}</p>
               </div>
             </div>
           </div>
-          <div className="wil__inventory--flex">
+          <div className="inv__inventory--flex">
             <img
-              className="wil__inventory--options"
+              className="inv__inventory--options"
               src={deleteicon}
               alt="delete"
             />
             <img
-              className="wil__inventory--options"
+              className="inv__inventory--options"
               src={editicon}
               alt="edit"
             />
