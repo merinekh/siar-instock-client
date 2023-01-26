@@ -7,6 +7,7 @@ function Warehouse() {
     <>
       
       <EditAddWarehouseform />
+      <WarehouseList />
     </>
   );
 }
