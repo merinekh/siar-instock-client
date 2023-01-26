@@ -6,9 +6,6 @@ function Warehouse() {
   return (
     <>
       <WarehouseList />
-
-      <EditAddWarehouseform page="Edit" />
-      <EditAddWarehouseform page="Add" />
     </>
   );
 }
