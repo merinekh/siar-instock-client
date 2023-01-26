@@ -1,4 +1,3 @@
-import React from "react";
 import "../AddInventory/AddInventory.scss";
 import BackArrow from "../../assets/icons/arrow_back-24px.svg";
 
