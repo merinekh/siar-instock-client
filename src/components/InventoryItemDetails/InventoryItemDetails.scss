@@ -1,0 +1,163 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/resets" as *;
+
+* {
+  margin: 0;
+}
+
+.inv {
+  &__container {
+    padding: 1.6rem;
+    @include flex(column);
+    @include tablet {
+      @include flex(row);
+      justify-content: space-between;
+    }
+  }
+
+  &__container-header {
+    font-size: $fontMobile-h1;
+    @include tablet {
+      font-size: $fontTablet-h1;
+    }
+  }
+
+  &__container-form {
+    @include flex(column);
+    @include tablet {
+      @include flex(row);
+    }
+  }
+
+  &__container-search {
+    margin-top: 1.6rem;
+    @include tablet {
+      margin-top: 0;
+    }
+  }
+
+  &__container-add {
+    margin-top: 1.6rem;
+    @include tablet {
+      margin-top: 0;
+      margin-left: 1.6rem;
+    }
+  }
+
+  &__header {
+    display: none;
+    @include tablet {
+      padding: 0 3.2rem;
+      color: $slate;
+      background-color: $lightGrey;
+      @include flex(row);
+      justify-content: space-between;
+
+      &--flex {
+        @include flex(row);
+        align-items: center;
+      }
+    }
+
+    &--title {
+      font-size: $fontTablet-h4;
+    }
+
+    @include desktop {
+      width: 102rem;
+    }
+  }
+
+  &__subheading {
+    font-size: $fontMobile-h4;
+    color: $slate;
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__sort {
+    height: 1.6rem;
+  }
+
+  &__inventory {
+    @include flex(column);
+    border-top: 0.1rem solid $cloud;
+    padding: 1.6rem;
+    @include tablet {
+      @include flex(row);
+    }
+
+    &--flex {
+      @include flex(row);
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.6rem;
+      @include tablet {
+        gap: 2.4rem;
+      }
+    }
+
+    &--details {
+      @include tablet {
+        @include flex(row);
+      }
+    }
+
+    &--options {
+      height: 2.4rem;
+    }
+  }
+
+  &__item {
+    @include flex(row);
+    align-items: center;
+  }
+
+  &__item-name {
+    font-size: $fontMobile-h3;
+    color: $instock-Indigo;
+    @include tablet {
+      font-size: $fontTablet-h3;
+    }
+  }
+
+  &__item-text {
+    font-size: $fontMobile-bodyM;
+    @include tablet {
+      font-size: $fontTablet-bodyM;
+    }
+  }
+
+  &__item-status {
+    &--out {
+      @include flex(row);
+      align-items: center;
+      font-size: $fontMobile-h4;
+      height: 2.4rem;
+      padding: 0 0.8rem;
+      border-radius: 2rem;
+      background-color: rgba(201, 69, 21, 0.07);
+      color: $red;
+      @include tablet {
+        font-size: $fontTablet-h4;
+        height: 2.6rem;
+      }
+    }
+    &--in {
+      @include flex(row);
+      align-items: center;
+      font-size: $fontMobile-h4;
+      height: 2.4rem;
+      padding: 0 0.8rem;
+      border-radius: 2rem;
+      background-color: rgba(21, 132, 99, 0.07);
+      color: $green;
+      @include tablet {
+        font-size: $fontTablet-h4;
+        height: 2.6rem;
+      }
+    }
+  }
+}
