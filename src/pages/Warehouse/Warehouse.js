@@ -27,8 +27,7 @@ function Warehouse() {
   
   return (
     <>
-      <WarehouseList warehouses={warehouses}/>
-      <EditAddWarehouseform />
+      <WarehouseList />
     </>
   );
 }

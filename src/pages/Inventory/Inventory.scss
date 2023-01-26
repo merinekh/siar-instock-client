@@ -6,29 +6,28 @@
   margin: 0;
 }
 
-.invitem {
+.inv {
   &__container {
     padding: 1.6rem;
-
-    @include flex(row);
-    justify-content: space-between;
-    align-items: center;
+    @include flex(column);
+    @include tablet {
+      @include flex(row);
+      justify-content: space-between;
+    }
   }
 
   &__container-header {
     font-size: $fontMobile-h1;
-    display: inline-block;
     @include tablet {
       font-size: $fontTablet-h1;
     }
   }
 
   &__container-form {
-    @include flex(row);
-    align-items: center;
-    // @include tablet {
-    //   @include flex(row);
-    // }
+    @include flex(column);
+    @include tablet {
+      @include flex(row);
+    }
   }
 
   &__container-search {
@@ -38,20 +37,35 @@
     }
   }
 
-  &__container-back {
-    &--mobile {
-      margin-top: 1.6rem;
-      @include tablet {
-        display: none;
+  &__container-add {
+    margin-top: 1.6rem;
+    @include tablet {
+      margin-top: 0;
+      margin-left: 1.6rem;
+    }
+  }
+
+  &__header {
+    display: none;
+    @include tablet {
+      padding: 0 3.2rem;
+      color: $slate;
+      background-color: $lightGrey;
+      @include flex(row);
+      justify-content: space-between;
+
+      &--flex {
+        @include flex(row);
+        align-items: center;
       }
     }
 
-    &--tablet {
-      display: none;
-      @include tablet {
-        display: flex;
-        align-items: center;
-      }
+    &--title {
+      font-size: $fontTablet-h4;
+    }
+
+    @include desktop {
+      width: 102rem;
     }
   }
 
@@ -59,7 +73,7 @@
     font-size: $fontMobile-h4;
     color: $slate;
     @include tablet {
-      // display: none;
+      display: none;
     }
   }
 
@@ -68,38 +82,27 @@
   }
 
   &__inventory {
-    // @include flex(column);
+    @include flex(column);
     border-top: 0.1rem solid $cloud;
     padding: 1.6rem;
-    // @include tablet {
-    //   @include flex(row);
-    // }
+    @include tablet {
+      @include flex(row);
+    }
 
     &--flex {
-      @include flex(column);
-      // align-items: center;
+      @include flex(row);
+      align-items: center;
       justify-content: space-between;
       gap: 1.6rem;
       @include tablet {
         gap: 2.4rem;
-        @include flex(row);
       }
     }
 
     &--details {
-      @include flex(column);
-    }
-
-    &--details2 {
-      // @include tablet {
-      //   @include flex(row);
-      // }
-      @include flex(row);
-      flex-wrap: wrap;
-    }
-
-    &--mobile {
-      width: 50%;
+      @include tablet {
+        @include flex(row);
+      }
     }
 
     &--options {
@@ -113,10 +116,10 @@
   }
 
   &__item-name {
-    font-size: $fontMobile-bodyM;
-    color: $instockBlack;
+    font-size: $fontMobile-h3;
+    color: $instock-Indigo;
     @include tablet {
-      font-size: $fontTablet-bodyM;
+      font-size: $fontTablet-h3;
     }
   }
 
