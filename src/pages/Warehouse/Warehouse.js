@@ -5,8 +5,6 @@ import EditAddWarehouseform from "../../components/EditAddWarehouseForm/EditAddW
 function Warehouse() {
   return (
     <>
-      
-      <EditAddWarehouseform />
       <WarehouseList />
     </>
   );
