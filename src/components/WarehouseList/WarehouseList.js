@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import WarehouseListItems from "../WarehouseListItems/WarehouseListItems";
 import "./WarehouseList.scss";
-const WarehouseList = () => {
+const WarehouseList = ({warehouses}) => {
   return (
     <Link to="/">
       <section className="warehouses">
@@ -24,9 +24,7 @@ const WarehouseList = () => {
             </label>
           </form>
         </div>
-        <main>
-          <WarehouseListItems />
-        </main>
+          <WarehouseListItems warehouses={warehouses}/>
       </section>
     </Link>
   );
