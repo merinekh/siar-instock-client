@@ -27,7 +27,7 @@ function Warehouse() {
   
   return (
     <>
-      <WarehouseList />
+      <WarehouseList warehouses={warehouses}/>
     </>
   );
 }
