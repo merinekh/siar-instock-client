@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Inventory from "./pages/Inventory";
+import Inventory from "./pages/Inventory/Inventory";
 import Layout from "./pages/Layout";
 import { AppRoute } from "./const";
 import "./styles/style.scss";
