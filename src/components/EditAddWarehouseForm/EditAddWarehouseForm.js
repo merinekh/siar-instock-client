@@ -94,7 +94,8 @@ function EditAddWarehouseForm() {
                   Phone Number
                 </p>
                 <input
-                  type="text"
+                  type="tel"
+                  pattern="[0-9]{7}"
                   className="warehouseform-main-contact__input"
                   placeholder="Phone Number"
                 />
@@ -102,7 +103,7 @@ function EditAddWarehouseForm() {
               <div className="warehouseform-main-contact-input">
                 <p className="warehouseform-main-contact__subtitle">Email</p>
                 <input
-                  type="text"
+                  type="email"
                   className="warehouseform-main-contact__input"
                   placeholder="Email"
                 />
