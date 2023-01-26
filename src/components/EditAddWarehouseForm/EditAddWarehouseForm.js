@@ -1,7 +1,14 @@
 import React from "react";
 import "./EditAddWarehouseForm.scss";
 import arrowBack from "../../assets/icons/arrow_back-24px.svg";
-function EditAddWarehouseForm() {
+function EditAddWarehouseForm({ page }) {
+  let submitButton = "Save";
+  if (page === "Add") {
+    submitButton = "+ Add Warehouse";
+  }
+  const preventDef = (e) => {
+    e.preventDefault();
+  };
   return (
     <>
       <form className="warehouseform">
@@ -13,7 +20,7 @@ function EditAddWarehouseForm() {
               className="warehouseform-header__icon"
             />
           </a>
-          <h1 className="warehouseform-header__text">Edit Warehouse</h1>
+          <h1 className="warehouseform-header__text">{page} Warehouse</h1>
         </div>
 
         <div className="warehouseform-main">
@@ -31,6 +38,7 @@ function EditAddWarehouseForm() {
                   type="text"
                   className="warehouseform-main-warehouse__input"
                   placeholder="Warehouse Name"
+                  required
                 />
               </div>
               <div className="warehouseform-main-warehouse-input">
@@ -41,6 +49,7 @@ function EditAddWarehouseForm() {
                   type="text"
                   className="warehouseform-main-warehouse__input"
                   placeholder="Street Address"
+                  required
                 />
               </div>
               <div className="warehouseform-main-warehouse-input">
@@ -49,6 +58,7 @@ function EditAddWarehouseForm() {
                   type="text"
                   className="warehouseform-main-warehouse__input"
                   placeholder="City"
+                  required
                 />
               </div>
               <div className="warehouseform-main-warehouse-input">
@@ -59,6 +69,7 @@ function EditAddWarehouseForm() {
                   type="text"
                   className="warehouseform-main-warehouse__input"
                   placeholder="Country"
+                  required
                 />
               </div>
               <hr className="warehouseform-main-warehouse__line" />
@@ -79,6 +90,7 @@ function EditAddWarehouseForm() {
                   type="text"
                   className="warehouseform-main-contact__input"
                   placeholder="Contact Name"
+                  required
                 />
               </div>
               <div className="warehouseform-main-contact-input">
@@ -87,6 +99,7 @@ function EditAddWarehouseForm() {
                   type="text"
                   className="warehouseform-main-contact__input"
                   placeholder="Position"
+                  required
                 />
               </div>
               <div className="warehouseform-main-contact-input">
@@ -95,9 +108,9 @@ function EditAddWarehouseForm() {
                 </p>
                 <input
                   type="tel"
-                  pattern="[0-9]{7}"
                   className="warehouseform-main-contact__input"
                   placeholder="Phone Number"
+                  required
                 />
               </div>
               <div className="warehouseform-main-contact-input">
@@ -106,6 +119,7 @@ function EditAddWarehouseForm() {
                   type="email"
                   className="warehouseform-main-contact__input"
                   placeholder="Email"
+                  required
                 />
               </div>
             </div>
@@ -114,8 +128,12 @@ function EditAddWarehouseForm() {
 
         <div className="warehouseform-buttons">
           <button className="warehouseform-buttons__cancel">Cancel</button>
-          <button type="submit" className="warehouseform-buttons__save">
-            Save
+          <button
+            type="submit"
+            className="warehouseform-buttons__save"
+            onSubmit={preventDef}
+          >
+            {submitButton}
           </button>
         </div>
       </form>
