@@ -12,6 +12,7 @@ function App() {
       <Routes>
         <Route path={AppRoute.HOME} element={<Layout />}>
           <Route path={AppRoute.WAREHOUSE} element={<Warehouse />} />
+          <Route path={AppRoute.EDIT_WAREHOUSE} element={<EditAddWarehouseForm/>}/>
           <Route path={AppRoute.INVENTORY} element={<Inventory />} />
           <Route
             path={AppRoute.ADDWAREHOUSEFORM}
