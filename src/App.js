@@ -9,7 +9,6 @@ import Warehouse from "./pages/Warehouse/Warehouse";
 function App() {
   return (
     <BrowserRouter>
-      {<AddInventory />}
       <Routes>
         <Route path={AppRoute.HOME} element={<Layout />}>
           <Route path={AppRoute.WAREHOUSE} element={<Warehouse />} />
