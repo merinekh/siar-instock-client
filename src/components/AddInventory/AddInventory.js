@@ -29,8 +29,8 @@ function AddInventory() {
   };
   return (
     <>
-      <div className="AddInventory-box">
-        <form className="AddInventory-form" onSubmit={handleSubmit}>
+      <form className="AddInventory-form" onSubmit={handleSubmit}>
+        <div className="AddInventory-form__header-div">
           <h1 className="AddInventory-form__header">
             <img
               className="AddInventory-form__backarrow"
@@ -39,7 +39,8 @@ function AddInventory() {
             />
             Add New Inventory Item
           </h1>
-          <hr />
+        </div>
+        <div className="AddInventory-box">
           <div className="AddInventory-form__top-box">
             <h2 className="AddInventory-form__sub-titles">Item Details</h2>
             <label className="AddInventory-form__label-titles">Item Name</label>
@@ -73,16 +74,16 @@ function AddInventory() {
             </select>
             <br />
           </div>
-          <hr />
+
           <div className="AddInventory-form__bottom-box">
             <h2 className="AddInventory-form__sub-titles">Item Availability</h2>
             <label className="AddInventory-form__label-titles">Status</label>
             <br />
             <label className="AddInventory-form__instock">
-              <input type="radio" name="InStock"></input>In Stock
+              <input type="radio" name="Stock"></input>In Stock
             </label>
-            <label className="AddInventory-form__instock">
-              <input type="radio" name="OutOfStock"></input>
+            <label className="AddInventory-form__stock">
+              <input type="radio" name="Stock"></input>
               Out Of Stock
             </label>
             <br />
@@ -103,14 +104,14 @@ function AddInventory() {
               </option>
             </select>
           </div>
-          <div className="AddInventory-form__button-box">
-            <button className="AddInventory-form__cancel-button">Cancel</button>
-            <button className="AddInventory-form__submit-button" type="submit">
-              Add Item
-            </button>
-          </div>
-        </form>
-      </div>
+        </div>
+        <div className="AddInventory-form__button-box">
+          <button className="AddInventory-form__cancel-button">Cancel</button>
+          <button className="AddInventory-form__submit-button" type="submit">
+            Add Item
+          </button>
+        </div>
+      </form>
     </>
   );
 }

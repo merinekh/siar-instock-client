@@ -4,6 +4,8 @@ import Layout from "./pages/Layout";
 import { AppRoute } from "./const";
 import "./styles/style.scss";
 import Warehouse from "./pages/Warehouse/Warehouse";
+import AddInventory from "./components/AddInventory/AddInventory";
+import EditAddWarehouseForm from "./components/EditAddWarehouseForm/EditAddWarehouseForm";
 
 function App() {
   return (
@@ -12,6 +14,11 @@ function App() {
         <Route path={AppRoute.HOME} element={<Layout />}>
           <Route path={AppRoute.WAREHOUSE} element={<Warehouse />} />
           <Route path={AppRoute.INVENTORY} element={<Inventory />} />
+          <Route path={AppRoute.ADDINVENTORY} element={<AddInventory />} />
+          <Route
+            path={AppRoute.ADDWAREHOUSEFORM}
+            element={<EditAddWarehouseForm />}
+          />
         </Route>
       </Routes>
     </BrowserRouter>
