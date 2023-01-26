@@ -28,7 +28,7 @@ p {
     }
     &--right {
       @include tablet {
-        flex-grow: 1;
+        // flex-grow: 1;
       }
     }
   }
@@ -62,7 +62,7 @@ p {
     color: $instock-Indigo;
     font-weight: 600;
     @include tablet {
-        margin-right: 9rem;
+        // margin-right: 9rem;
     }
   }
 
@@ -73,7 +73,7 @@ p {
   }
 
   &__name{
-    margin-right: 10rem;
+    // margin-right: 10rem;
   }
 
   &__contact {

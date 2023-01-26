@@ -8,6 +8,10 @@ a {
   color: black;
 }
 .warehouses {
+  // margin: -60px 3.2rem;
+  // border: 1px solid $lightGrey;
+  // border-radius: .5rem;
+  // background-color: white;
   &__tablet {
     @include tablet {
       display: flex;
