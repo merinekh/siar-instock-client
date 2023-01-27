@@ -1,10 +1,9 @@
-import { Link } from "react-router-dom";
 import WarehouseListItems from "../WarehouseListItems/WarehouseListItems";
 import "./WarehouseList.scss";
-const WarehouseList = ({warehouses}) => {
+const WarehouseList = ({ warehouses }) => {
   return (
-    <Link to="/">
-      <section className="warehouses">
+    <section className="overlay">
+      <div className="warehouses">
         <div className="warehouses__tablet">
           <h1 className="warehouses__title">Warehouses</h1>
           <form className="warehouses__form">
@@ -18,15 +17,15 @@ const WarehouseList = ({warehouses}) => {
             <label>
               <input
                 type="button"
-                value="+Add A New Warehouse"
+                value="+Add New Warehouse"
                 className="warehouses__button"
-              ></input>
+              />
             </label>
           </form>
         </div>
-          <WarehouseListItems warehouses={warehouses}/>
-      </section>
-    </Link>
+        <WarehouseListItems warehouses={warehouses} />
+      </div>
+    </section>
   );
 };
 export default WarehouseList;
