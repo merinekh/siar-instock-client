@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import "./InventoryItemDetails.scss";
 import editicon from "../../assets/icons/edit-24px.svg";
@@ -38,10 +38,12 @@ export default function InventoryItemDetails() {
   }
 
   return (
-    <section className="inv">
+    <section className="invitem">
       <div className="invitem__container">
         <div>
-          <img src={arrowback} alt="back" />
+          <Link to={"/inventory"}>
+            <img src={arrowback} alt="back" />
+          </Link>
           <h1 className="invitem__container-header">
             {inventoryItem.item_name}
           </h1>
