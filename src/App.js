@@ -7,6 +7,7 @@ import Warehouse from "./pages/Warehouse/Warehouse";
 import EditAddWarehouseForm from "./components/EditAddWarehouseForm/EditAddWarehouseForm";
 import WarehouseInventoryList from "./components/WarehouseInventoryList/WarehouseInventoryList";
 import InventoryItemDetails from "./components/InventoryItemDetails/InventoryItemDetails";
+import EditInventory from "./components/EditInventory/EditInventory";
 
 function App() {
   return (
@@ -27,6 +28,8 @@ function App() {
             path={AppRoute.INVENTORYITEM}
             element={<InventoryItemDetails />}
           />
+          <Route path={AppRoute.EDITINVENTORY} element={<EditInventory />} />
+
           <Route
             path={AppRoute.ADDWAREHOUSEFORM}
             element={<EditAddWarehouseForm page="Add" />}
