@@ -3,6 +3,7 @@ export const AppRoute = {
   WAREHOUSE: "/warehouse",
   WAREHOUSEINVENTORY: "/warehouse/:id",
   INVENTORY: "/inventory",
+  INVENTORYITEM: "/inventory/:id",
   ADDINVENTORY: "/inventory/addinventory",
   ADDWAREHOUSEFORM: "/warehouse/add",
   EDIT_WAREHOUSEFORM: "/warehouse/edit",

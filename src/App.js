@@ -6,6 +6,7 @@ import "./styles/style.scss";
 import Warehouse from "./pages/Warehouse/Warehouse";
 import EditAddWarehouseForm from "./components/EditAddWarehouseForm/EditAddWarehouseForm";
 import WarehouseInventoryList from "./components/WarehouseInventoryList/WarehouseInventoryList";
+import InventoryItemDetails from "./components/InventoryItemDetails/InventoryItemDetails";
 
 function App() {
   return (
@@ -22,6 +23,10 @@ function App() {
             element={<EditAddWarehouseForm />}
           />
           <Route path={AppRoute.INVENTORY} element={<Inventory />} />
+          <Route
+            path={AppRoute.INVENTORYITEM}
+            element={<InventoryItemDetails />}
+          />
           <Route
             path={AppRoute.ADDWAREHOUSEFORM}
             element={<EditAddWarehouseForm page="Add" />}
