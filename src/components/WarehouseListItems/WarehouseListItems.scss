@@ -1,28 +1,9 @@
-
-p {
-  margin: 0;
-  font-size: 1.1rem;
-
-  @include tablet {
-    font-size: 1.2rem;
-  }
-}
-
-h4 {
-  font-size: 1.1rem;
-  color: $slate;
-  margin-top: 2rem;
-  @include tablet {
-    font-size: 1.2rem;
-    margin: 1rem 0;
-  }
-}
-
 .warehouse {
   border-bottom: 0.1rem solid $cloud;
   padding: 0 1.6rem;
 
-  &__delete, &__icons__tablet--delete {
+  &__delete,
+  &__icons__tablet--delete {
     cursor: pointer;
   }
   @include tablet {
@@ -38,6 +19,24 @@ h4 {
     border-radius: 0.5rem solid $cloud;
     @include tablet {
       // flex-grow: 1;
+    }
+    &__para {
+      margin: 0;
+      font-size: 1.1rem;
+
+      @include tablet {
+        font-size: 1.2rem;
+      }
+    }
+
+    &__title{
+      font-size: 1.1rem;
+      color: $slate;
+      margin-top: 2rem;
+      @include tablet {
+        font-size: 1.2rem;
+        margin: 1rem 0;
+      }
     }
 
     &__left {
@@ -142,5 +141,3 @@ h4 {
     }
   }
 }
-
-
