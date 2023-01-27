@@ -9,11 +9,7 @@ export const AppRoute = {
   // WAREHOUSE_SHOW: "/warehouse/show/:id",
   INVENTORY_ITEM: "/inventory/:id",
   EDIT_INVENTORY: "/inventory/editinventory/:id",
- 
 };
-
-
-
 
 export const NavigationItems = [
   { url: AppRoute.WAREHOUSE, text: "Warehouses" },

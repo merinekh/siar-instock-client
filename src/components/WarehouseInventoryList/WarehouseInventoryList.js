@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import sorticon from "../../assets/icons/sort-24px.svg";
 import deleteicon from "../../assets/icons/delete_outline-24px.svg";
@@ -66,13 +66,15 @@ export default function WarehouseInventoryList() {
         <div key={item.id} className="wil__inventory">
           <div className="wil__inventory--flex">
             <div className="wil__inventory--details">
-              <div>
-                <h4 className="wil__subheading">INVENTORY ITEM</h4>
-                <div className="wil__item">
-                  <h3 className="wil__item-name">{item.item_name}</h3>
-                  <img src={chevron} alt="chevron" />
+              <Link to={`/inventory/${item.id}`}>
+                <div>
+                  <h4 className="wil__subheading">INVENTORY ITEM</h4>
+                  <div className="wil__item">
+                    <h3 className="wil__item-name">{item.item_name}</h3>
+                    <img src={chevron} alt="chevron" />
+                  </div>
                 </div>
-              </div>
+              </Link>
               <div>
                 <h4 className="wil__subheading">CATEGORY</h4>
                 <p className="wil__item-text">{item.category}</p>
