@@ -28,26 +28,33 @@ h4 {
     padding: 1rem 3.2rem;
     display: flex;
     align-items: center;
+    flex-grow: 1;
   }
 
   &-container {
     display: flex;
     justify-content: space-between;
     border-radius: 0.5rem solid $cloud;
+    @include tablet {
+      // flex-grow: 1;
+    }
 
     &__left {
       @include tablet {
         display: flex;
+        flex-grow: 1;
       }
     }
     &__right {
       @include tablet {
         display: flex;
+        // flex-grow: 1;
       }
     }
     &__name {
       @include tablet {
-        width: 13rem;
+        // width: 13rem;
+        // flex-grow: 1;
       }
       &__chevron {
         display: flex;
@@ -65,7 +72,7 @@ h4 {
 
     &__address {
       @include tablet {
-        width: 11rem;
+        // width: 11rem;
       }
       &__title {
         margin-top: 1.2rem;
@@ -83,12 +90,14 @@ h4 {
 
     &__contact {
       @include tablet {
-        width: 14.5rem;
+        // width: 14.5rem;
       }
     }
 
     &__info {
-      width: 17rem;
+      @include tablet {
+        // width: 17rem;
+      }
     }
 
     &__name__title,
@@ -110,7 +119,7 @@ h4 {
       display: block;
     }
 
-    &__delete{
+    &__delete {
       margin-right: 2rem;
     }
   }
@@ -127,8 +136,10 @@ h4 {
         align-items: center;
       }
     }
-    img{
+    img {
       width: 2rem;
     }
   }
 }
+
+

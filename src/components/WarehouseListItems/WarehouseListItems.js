@@ -25,6 +25,8 @@ const WarehouseListItems = ({ warehouses }) => {
                 </div>
               </div>
 
+              {/* <div className="warehouse__empty-1"></div> */}
+
               {/* address */}
               <div className="warehouse-container__address">
                 <h4 className="warehouse-container__address__title">ADDRESS</h4>
@@ -35,6 +37,9 @@ const WarehouseListItems = ({ warehouses }) => {
                 </div>
               </div>
             </div>
+
+            {/* <div className="warehouse__empty-2"></div> */}
+
             {/* contact name */}
             <div className="warehouse-container__right">
               <div className="warehouse-container__contact">
@@ -45,6 +50,8 @@ const WarehouseListItems = ({ warehouses }) => {
                   {element.contact_name}
                 </p>
               </div>
+
+              {/* <div className="warehouse__empty-3"></div> */}
 
               {/* contact information */}
               <div className="warehouse-container__info">
@@ -60,6 +67,9 @@ const WarehouseListItems = ({ warehouses }) => {
               </div>
             </div>
           </div>
+
+          {/* <div className="warehouse__empty-4"></div> */}
+
           {/* icons */}
           <div className="warehouse__icons">
             <img
@@ -90,11 +100,15 @@ const WarehouseListItems = ({ warehouses }) => {
           <img src={sort} alt="sort"></img>
         </div>
         <div className="warehouse__tablet-container__indiv">
-          <h4 className="warehouse__tablet-container__subtitle">CONTACT NAME</h4>
+          <h4 className="warehouse__tablet-container__subtitle">
+            CONTACT NAME
+          </h4>
           <img src={sort} alt="sort"></img>
         </div>
         <div className="warehouse__tablet-container__indiv">
-          <h4 className="warehouse__tablet-container__subtitle">CONTACT INFORMATION</h4>
+          <h4 className="warehouse__tablet-container__subtitle">
+            CONTACT INFORMATION
+          </h4>
           <img src={sort} alt="sort"></img>
         </div>
         <div className="warehouse__tablet-container__indiv">
