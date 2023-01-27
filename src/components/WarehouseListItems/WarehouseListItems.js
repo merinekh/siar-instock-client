@@ -1,70 +1,120 @@
 import "./WarehouseListItems.scss";
 import deleteIcon from "../../assets/icons/delete_outline-24px.svg";
 import editIcon from "../../assets/icons/edit-24px.svg";
-
+import chevron from "../../assets/icons/chevron_right-24px.svg";
+import sort from "../../assets/icons/sort-24px.svg";
 const WarehouseListItems = ({ warehouses }) => {
   const mappedList = warehouses.map((element) => {
     return (
-      <main key={element.id}>
+      <>
         <div className="warehouse">
-          <div className="warehouse__wrapper warehouse__wrapper--left">
-            <div className="warehouse__container">
-              <h4 className="warehouse__subtitle">WAREHOUSE</h4>
-              <p className="warehouse__location">{`${element.warehouse_name} >`}</p>
+          <div key={element.id} className="warehouse-container">
+            {/* warehouse name */}
+            <div className="warehouse-container__left">
+              <div className="warehouse-container__name">
+                <h4 className="warehouse-container__name__title">WAREHOUSE</h4>
+                <div className="warehouse-container__name__chevron">
+                  <p className="warehouse-container__name__details">
+                    {element.warehouse_name}
+                  </p>
+                  <img
+                    src={chevron}
+                    className="warehouse-container__name__chevron__img"
+                    alt="chevron"
+                  ></img>
+                </div>
+              </div>
+
+              {/* <div className="warehouse__empty-1"></div> */}
+
+              {/* address */}
+              <div className="warehouse-container__address">
+                <h4 className="warehouse-container__address__title">ADDRESS</h4>
+                <div className="warehouse-container__address__box">
+                  <p className="warehouse-container__address__details">
+                    {element.address}, {element.city}, {element.country}
+                  </p>
+                </div>
+              </div>
             </div>
-            <div className="warehouse__container warehouse__container--address">
-              <h4 className="warehouse__subtitle">ADDRESS</h4>
-              <p className="warehouse__container__address__details">
-                {element.address}
-              </p>
-            </div>
-          </div>
-          <div className="warehouse__wrapper warehouse__wrapper--right">
-            <div className="warehouse__container">
-              <h4 className="warehouse__subtitle">CONTACT NAME</h4>
-              <p className="warehouse__name"> {element.contact_name}</p>
-            </div>
-            <div className="warehouse__container">
-              <div className="warehouse__contact">
-                <h4 className="warehouse__subtitle">CONTACT INFORMATION</h4>
-                <p>{element.contact_phone}</p>
-                <p>{element.contact_email}</p>
+
+            {/* <div className="warehouse__empty-2"></div> */}
+
+            {/* contact name */}
+            <div className="warehouse-container__right">
+              <div className="warehouse-container__contact">
+                <h4 className="warehouse-container__contact__title">
+                  CONTACT NAME
+                </h4>
+                <p className="warehouse-container__contact__details">
+                  {element.contact_name}
+                </p>
+              </div>
+
+              {/* <div className="warehouse__empty-3"></div> */}
+
+              {/* contact information */}
+              <div className="warehouse-container__info">
+                <h4 className="warehouse-container__info__title">
+                  CONTACT INFORMATION
+                </h4>
+                <p className="warehouse-container__info__number">
+                  {element.contact_phone}
+                </p>
+                <p className="warehouse-container__info__email">
+                  {element.contact_email}
+                </p>
               </div>
             </div>
           </div>
-          <div className="warehouse__icons__tablet">
+
+          {/* <div className="warehouse__empty-4"></div> */}
+
+          {/* icons */}
+          <div className="warehouse__icons">
             <img
-              className="warehouse__icons__tablet--delete"
+              className="warehouse__icons__delete"
               src={deleteIcon}
               alt="delete"
             ></img>
             <img
-              className="warehouse__icons__tablet--edit"
+              className="warehouse__icons__edit"
               src={editIcon}
               alt="edit"
             ></img>
           </div>
         </div>
-        <div className="warehouse__icons">
-          <img
-            className="warehouse__delete"
-            src={deleteIcon}
-            alt="delete"
-          ></img>
-          <img className="warehouse__edit" src={editIcon} alt="edit"></img>
-        </div>
-      </main>
+      </>
     );
   });
 
   return (
     <>
-      <div className="warehouse__tablet">
-        <h4 className="warehouse__tablet__subtitle">WAREHOUSE</h4>
-        <h4 className="warehouse__tablet__subtitle">ADDRESS</h4>
-        <h4 className="warehouse__tablet__subtitle">CONTACT NAME</h4>
-        <h4 className="warehouse__tablet__subtitle">CONTACT INFORMATION</h4>
-        <h4 className="warehouse__tablet__subtitle">ACTION</h4>
+      <div className="warehouse__tablet-container">
+        <div className="warehouse__tablet-container__indiv">
+          <h4 className="warehouse__tablet-container__subtitle">WAREHOUSE</h4>
+          <img src={sort} alt="sort"></img>
+        </div>
+        <div className="warehouse__tablet-container__indiv">
+          <h4 className="warehouse__tablet-container__subtitle">ADDRESS</h4>
+          <img src={sort} alt="sort"></img>
+        </div>
+        <div className="warehouse__tablet-container__indiv">
+          <h4 className="warehouse__tablet-container__subtitle">
+            CONTACT NAME
+          </h4>
+          <img src={sort} alt="sort"></img>
+        </div>
+        <div className="warehouse__tablet-container__indiv">
+          <h4 className="warehouse__tablet-container__subtitle">
+            CONTACT INFORMATION
+          </h4>
+          <img src={sort} alt="sort"></img>
+        </div>
+        <div className="warehouse__tablet-container__indiv">
+          <h4 className="warehouse__tablet-container__subtitle">ACTION</h4>
+          <img src={sort} alt="sort"></img>
+        </div>
       </div>
       {mappedList}
     </>
