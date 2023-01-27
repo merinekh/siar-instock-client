@@ -34,10 +34,10 @@ function Warehouse() {
     !warehouses && getWarehouses();
   }, [warehouses]);
 
-  if(!warehouses){
-    return <h4>Page is loading...</h4>
+  if (!warehouses) {
+    return <h4>Page is loading...</h4>;
   }
-  
+
   return (
     <>
       <WarehouseList warehouses={warehouses} handleDeleteButton={handleDeleteButton} />

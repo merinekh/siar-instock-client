@@ -1,3 +1,6 @@
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import axios from "axios";
 
 import sorticon from "../../assets/icons/sort-24px.svg";
 import deleteicon from "../../assets/icons/delete_outline-24px.svg";
@@ -5,38 +8,22 @@ import editicon from "../../assets/icons/edit-24px.svg";
 import chevron from "../../assets/icons/chevron_right-24px.svg";
 
 export default function Inventory() {
-  const dummyDetails = [
-    {
-      id: 11,
-      warehouse: "Washington",
-      item_name: "Monitor",
-      description: "This is a generic description for the selected item.",
-      category: "Electronics",
-      status: "Out of Stock",
-      quantity: 0,
-    },
-    {
-      id: 12,
-      warehouse: "Manhattan",
-      item_name: "Backpack",
-      description: "This is a another generic description for the other item.",
-      category: "Gear",
-      status: "In Stock",
-      quantity: 100,
-    },
-  ];
+  const [allInventory, setAllInventory] = useState([]);
 
-  //   const dummyWarehouse = {
-  //     id: 1,
-  //     warehouse_name: "Manhattan",
-  //     address: "503 Broadway",
-  //     city: "New York",
-  //     country: "USA",
-  //     contact_name: "Parmin Aujla",
-  //     contact_position: "Warehouse Manager",
-  //     contact_phone: "+1 (646) 123-1234",
-  //     contact_email: "paujla@instock.com",
-  //   };
+  useEffect(() => {
+    async function getAllInventory() {
+      try {
+        const { data } = await axios.get(
+          "http://localhost:8080/api/inventories"
+        );
+        setAllInventory(data);
+        // console.log(data);
+      } catch (e) {
+        console.log("Error:", e);
+      }
+    }
+    getAllInventory();
+  }, []);
 
   const applyTag = (status) => {
     if (status === "Out of Stock") {
@@ -45,6 +32,10 @@ export default function Inventory() {
       return "inv__item-status--in";
     }
   };
+
+  if (!allInventory) {
+    return <h4>Page is loading...</h4>;
+  }
 
   return (
     <section className="inv">
@@ -85,17 +76,19 @@ export default function Inventory() {
         </div>
       </div>
 
-      {dummyDetails.map((item) => (
-        <div className="inv__inventory">
+      {allInventory.map((item) => (
+        <div key={item.id} className="inv__inventory">
           <div className="inv__inventory--flex">
             <div className="inv__inventory--details">
-              <div>
-                <h4 className="inv__subheading">INVENTORY ITEM</h4>
-                <div className="inv__item">
-                  <h3 className="inv__item-name">{item.item_name}</h3>
-                  <img src={chevron} alt="chevron" />
+              <Link to={`/inventory/${item.id}`}>
+                <div className="inv__inventory--details-link">
+                  <h4 className="inv__subheading">INVENTORY ITEM</h4>
+                  <div className="inv__item">
+                    <h3 className="inv__item-name">{item.item_name}</h3>
+                    <img src={chevron} alt="chevron" />
+                  </div>
                 </div>
-              </div>
+              </Link>
               <div>
                 <h4 className="inv__subheading">CATEGORY</h4>
                 <p className="inv__item-text">{item.category}</p>
@@ -114,7 +107,7 @@ export default function Inventory() {
               </div>
               <div>
                 <h4 className="inv__subheading">WAREHOUSE</h4>
-                <p className="inv__item-text">{item.warehouse}</p>
+                <p className="inv__item-text">{item.warehouse_name}</p>
               </div>
             </div>
           </div>

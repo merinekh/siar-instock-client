@@ -1,40 +1,30 @@
-
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import axios from "axios";
 import sorticon from "../../assets/icons/sort-24px.svg";
 import deleteicon from "../../assets/icons/delete_outline-24px.svg";
 import editicon from "../../assets/icons/edit-24px.svg";
 import chevron from "../../assets/icons/chevron_right-24px.svg";
 
 export default function WarehouseInventoryList() {
-  const dummyDetails = [
-    {
-      id: 11,
-      warehouse: "Washington",
-      item_name: "Monitor",
-      category: "Electronics",
-      status: "Out of Stock",
-      quantity: 0,
-    },
-    {
-      id: 12,
-      warehouse: "Washington",
-      item_name: "Backpack",
-      category: "Gear",
-      status: "In Stock",
-      quantity: 0,
-    },
-  ];
+  const [warehouseInventory, setWarehouseInventory] = useState([]);
+  const params = useParams();
+  let warehouseId = params.id;
 
-  //   const dummyWarehouse = {
-  //     id: 1,
-  //     warehouse_name: "Manhattan",
-  //     address: "503 Broadway",
-  //     city: "New York",
-  //     country: "USA",
-  //     contact_name: "Parmin Aujla",
-  //     contact_position: "Warehouse Manager",
-  //     contact_phone: "+1 (646) 123-1234",
-  //     contact_email: "paujla@instock.com",
-  //   };
+  useEffect(() => {
+    async function getWarehouseInventory() {
+      try {
+        const { data } = await axios.get(
+          `http://localhost:8080/api/warehouses/${warehouseId}/inventories`
+        );
+        // console.log(data);
+        setWarehouseInventory(data);
+      } catch (e) {
+        console.log("Error:", e);
+      }
+    }
+    getWarehouseInventory();
+  }, [warehouseId]);
 
   const applyTag = (status) => {
     if (status === "Out of Stock") {
@@ -43,6 +33,10 @@ export default function WarehouseInventoryList() {
       return "wil__item-status--in";
     }
   };
+
+  if (!warehouseInventory) {
+    return <div>Loading items...</div>;
+  }
 
   return (
     <section className="wil">
@@ -68,8 +62,8 @@ export default function WarehouseInventoryList() {
         </div>
       </div>
 
-      {dummyDetails.map((item) => (
-        <div className="wil__inventory">
+      {warehouseInventory.map((item) => (
+        <div key={item.id} className="wil__inventory">
           <div className="wil__inventory--flex">
             <div className="wil__inventory--details">
               <div>
@@ -87,9 +81,7 @@ export default function WarehouseInventoryList() {
             <div className="wil__inventory--details">
               <div>
                 <h4 className="wil__subheading">STATUS</h4>
-                <h4 className={applyTag(item.status)}>
-                  {item.status.toUpperCase()}
-                </h4>
+                <h4 className={applyTag(item.status)}>{item.status}</h4>
               </div>
               <div>
                 <h4 className="wil__subheading">QTY</h4>

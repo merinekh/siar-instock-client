@@ -2,8 +2,10 @@
 import WarehouseListItems from "../WarehouseListItems/WarehouseListItems";
 
 const WarehouseList = ({warehouses, handleDeleteButton}) => {
+ 
   return (
-      <section className="warehouses">
+    <section className="overlay">
+      <div className="warehouses">
         <div className="warehouses__tablet">
           <h1 className="warehouses__title">Warehouses</h1>
 
@@ -18,15 +20,15 @@ const WarehouseList = ({warehouses, handleDeleteButton}) => {
             <label>
               <input
                 type="button"
-                value="+Add A New Warehouse"
+                value="+Add New Warehouse"
                 className="warehouses__button"
-              ></input>
+              />
             </label>
           </form>
         </div>
-
-        <WarehouseListItems warehouses={warehouses} handleDeleteButton={handleDeleteButton} />
-      </section>
+        <WarehouseListItems warehouses={warehouses} handleDeleteButton={handleDeleteButton}/>
+      </div>
+    </section>
   );
 };
 export default WarehouseList;

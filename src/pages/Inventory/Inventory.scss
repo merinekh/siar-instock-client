@@ -1,15 +1,16 @@
-
-* {
-  margin: 0;
-}
-
 .inv {
+  @include desktop {
+    width: 102rem;
+    margin: 0 auto;
+  }
+
   &__container {
     padding: 1.6rem;
     @include flex(column);
     @include tablet {
       @include flex(row);
       justify-content: space-between;
+      padding: 1.6rem 3.2rem;
     }
   }
 
@@ -29,6 +30,16 @@
 
   &__container-search {
     margin-top: 1.6rem;
+    height: 3.6rem;
+    border: 0.1rem solid $cloud;
+    border-radius: 2rem;
+    font-family: "Titillium";
+    padding: 0 1.6rem;
+    background-image: url(../../assets/icons/search-24px.svg);
+    background-repeat: no-repeat;
+    background-position-x: 95%;
+    background-position-y: center;
+
     @include tablet {
       margin-top: 0;
     }
@@ -36,6 +47,13 @@
 
   &__container-add {
     margin-top: 1.6rem;
+    border: none;
+    color: white;
+    background-color: $instock-Indigo;
+    border-radius: 2rem;
+    font-family: "Titillium";
+    padding: 0 1.6rem;
+    height: 3.6rem;
     @include tablet {
       margin-top: 0;
       margin-left: 1.6rem;
@@ -62,7 +80,7 @@
     }
 
     @include desktop {
-      width: 102rem;
+      // width: 102rem;
     }
   }
 
@@ -83,7 +101,12 @@
     border-top: 0.1rem solid $cloud;
     padding: 1.6rem;
     @include tablet {
+      padding: 1.6rem 3.2rem;
       @include flex(row);
+    }
+
+    &:hover {
+      background-color: rgba(46, 102, 230, 0.07);
     }
 
     &--flex {
@@ -100,6 +123,10 @@
       @include tablet {
         @include flex(row);
       }
+    }
+
+    &--details-link {
+      cursor: pointer;
     }
 
     &--options {

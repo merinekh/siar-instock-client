@@ -10,6 +10,7 @@
     background-color: transparent;
     padding: 0;
     display: flex;
+    z-index: 1;
 
     @include tablet {
         justify-content: center;
