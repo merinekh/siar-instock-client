@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import "./Inventory.scss";
 import sorticon from "../../assets/icons/sort-24px.svg";
@@ -79,13 +80,15 @@ export default function Inventory() {
         <div key={item.id} className="inv__inventory">
           <div className="inv__inventory--flex">
             <div className="inv__inventory--details">
-              <div>
-                <h4 className="inv__subheading">INVENTORY ITEM</h4>
-                <div className="inv__item">
-                  <h3 className="inv__item-name">{item.item_name}</h3>
-                  <img src={chevron} alt="chevron" />
+              <Link to={`/inventory/${item.id}`}>
+                <div className="inv__inventory--details-link">
+                  <h4 className="inv__subheading">INVENTORY ITEM</h4>
+                  <div className="inv__item">
+                    <h3 className="inv__item-name">{item.item_name}</h3>
+                    <img src={chevron} alt="chevron" />
+                  </div>
                 </div>
-              </div>
+              </Link>
               <div>
                 <h4 className="inv__subheading">CATEGORY</h4>
                 <p className="inv__item-text">{item.category}</p>
