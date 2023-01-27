@@ -2,6 +2,13 @@ img {
   max-width: 100%;
 }
 
+p {
+  margin: 0;
+  @include tablet {
+    font-size: 1.2rem;
+  }
+}
+
 a {
   text-decoration: none;
 }

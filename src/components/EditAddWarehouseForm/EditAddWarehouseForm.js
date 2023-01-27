@@ -1,5 +1,4 @@
-import React from "react";
-import "./EditAddWarehouseForm.scss";
+
 import arrowBack from "../../assets/icons/arrow_back-24px.svg";
 function EditAddWarehouseForm({ page }) {
   let submitButton = "Save";

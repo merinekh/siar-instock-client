@@ -9,7 +9,8 @@ a {
     width: 100%;
     @include tablet {
         align-self: flex-start;
-    }
+        margin: 10px 0;  
+      }
     &--current {
       background-color: $instockBlack;
       color: $white;

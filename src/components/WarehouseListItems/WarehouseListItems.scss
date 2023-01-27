@@ -1,16 +1,10 @@
-@use "../../styles/partials/variables" as *;
-@use "../../styles/partials/mixins" as *;
-
-p {
-  margin: 0;
-  @include tablet {
-    font-size: 1.2rem;
-  }
-}
 .warehouse {
   display: flex;
   justify-content: space-between;
 
+  &__delete, &__icons__tablet--delete {
+    cursor: pointer;
+  }
   @include tablet {
     padding: 2rem 3.2rem;
     border-bottom: 0.1rem solid $cloud;
@@ -72,8 +66,8 @@ p {
     }
   }
 
-  &__name{
-    // margin-right: 10rem;
+  &__name {
+    margin-right: 0rem;
   }
 
   &__contact {

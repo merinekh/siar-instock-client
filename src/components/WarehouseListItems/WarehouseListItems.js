@@ -1,8 +1,8 @@
-import "./WarehouseListItems.scss";
+
 import deleteIcon from "../../assets/icons/delete_outline-24px.svg";
 import editIcon from "../../assets/icons/edit-24px.svg";
 
-const WarehouseListItems = ({ warehouses }) => {
+const WarehouseListItems = ({ warehouses, handleDeleteButton }) => {
   const mappedList = warehouses.map((element) => {
     return (
       <main key={element.id}>
@@ -37,6 +37,7 @@ const WarehouseListItems = ({ warehouses }) => {
               className="warehouse__icons__tablet--delete"
               src={deleteIcon}
               alt="delete"
+              onClick={handleDeleteButton(element)}
             ></img>
             <img
               className="warehouse__icons__tablet--edit"
@@ -50,6 +51,7 @@ const WarehouseListItems = ({ warehouses }) => {
             className="warehouse__delete"
             src={deleteIcon}
             alt="delete"
+            onClick={handleDeleteButton(element)}
           ></img>
           <img className="warehouse__edit" src={editIcon} alt="edit"></img>
         </div>

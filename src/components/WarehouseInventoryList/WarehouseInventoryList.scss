@@ -1,11 +1,3 @@
-@use "../../styles/partials/mixins" as *;
-@use "../../styles/partials/variables" as *;
-@use "../../styles/partials/resets" as *;
-
-* {
-  margin: 0;
-}
-
 .wil {
   &__header {
     display: none;

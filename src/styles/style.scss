@@ -1,10 +1,18 @@
-@import "partials/typography";
-@import "partials/mixins";
-@import "partials/resets";
-@import "partials/variables";
-@import "partials/global";
+@import "./partials/typography";
+@import "./partials/variables";
+@import "./partials/mixins";
+@import "./partials/global";
+@import "./partials/resets";
 
 @import "../components/Header/Header.scss";
 @import "../components/PageNav/PageNav.scss";
 @import "../components/MainLogo/MainLogo.scss";
-// @import "../components/EditAddWarehouseForm/EditAddWarehouseForm.scss";
+@import '../components/WarehouseList/WarehouseList.scss';
+@import '../components/WareHouseDetails/WarehouseDetails.scss';
+@import '../components/WarehouseInventoryList/WarehouseInventoryList.scss';
+@import '../components/WarehouseListItems/WarehouseListItems.scss';
+@import '../components/AddInventory/AddInventory.scss';
+@import '../components/EditAddWarehouseForm/EditAddWarehouseForm.scss';
+@import '../components/InventoryItemDetails/InventoryItemDetails.scss';
+@import '../components/DeleteModal/DeleteModal.scss';
+

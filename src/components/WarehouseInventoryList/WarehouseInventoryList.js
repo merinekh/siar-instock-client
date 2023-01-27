@@ -1,4 +1,4 @@
-import "./WarehouseInventoryList.scss";
+
 import sorticon from "../../assets/icons/sort-24px.svg";
 import deleteicon from "../../assets/icons/delete_outline-24px.svg";
 import editicon from "../../assets/icons/edit-24px.svg";
