@@ -10,9 +10,8 @@
   &-header {
     display: flex;
     align-items: center;
-    width: 100vw;
     padding: 1rem 0;
-    margin-left: -1.6rem;
+    margin: 0 -1.6rem;
     border-bottom: 0.1rem solid gray;
 
     &-link {
@@ -98,8 +97,8 @@
   &-buttons {
     display: flex;
     justify-content: space-between;
-    margin: 0 -1.6rem;
-    padding: 1.6rem;
+    margin: 0 -1.6rem -1.6rem;
+    padding: 1.6rem 0;
     background-color: $lightGrey;
     button {
       display: flex;
@@ -109,7 +108,7 @@
       height: 1.6rem;
       border-radius: 2rem;
       border: 0.1rem solid $cloud;
-      padding: 0.9rem 0;
+      padding: 1.6rem 0;
       @include tablet {
         display: flex;
         width: fit-content;
@@ -157,4 +156,10 @@
 
   @include desktop {
   }
+}
+
+.squarecontent {
+  margin: 1.6rem;
+  border: 0.1rem $cloud solid;
+  border-radius: 0.2rem;
 }

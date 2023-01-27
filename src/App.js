@@ -4,10 +4,12 @@ import Layout from "./pages/Layout";
 import { AppRoute } from "./const";
 import "./styles/style.scss";
 import Warehouse from "./pages/Warehouse/Warehouse";
-import EditAddWarehouseForm from "./components/EditAddWarehouseForm/EditAddWarehouseForm";
 import WarehouseInventoryList from "./components/WarehouseInventoryList/WarehouseInventoryList";
 import InventoryItemDetails from "./components/InventoryItemDetails/InventoryItemDetails";
 import EditInventory from "./components/EditInventory/EditInventory";
+import AddInventory from "./components/AddInventory/AddInventory";
+import AddWarehouseForm from "./components/AddWarehouseForm/AddWarehouseForm";
+import EditWarehouseForm from "./components/EditWarehouseForm/EditWarehouseForm";
 
 function App() {
   return (
@@ -19,10 +21,8 @@ function App() {
             path={AppRoute.WAREHOUSEINVENTORY}
             element={<WarehouseInventoryList />}
           />
-          <Route
-            path={AppRoute.EDIT_WAREHOUSE}
-            element={<EditAddWarehouseForm />}
-          />
+          <Route path={AppRoute.ADDINVENTORY} element={<AddInventory />} />
+
           <Route path={AppRoute.INVENTORY} element={<Inventory />} />
           <Route
             path={AppRoute.INVENTORYITEM}
@@ -31,12 +31,12 @@ function App() {
           <Route path={AppRoute.EDITINVENTORY} element={<EditInventory />} />
 
           <Route
-            path={AppRoute.ADDWAREHOUSEFORM}
-            element={<EditAddWarehouseForm page="Add" />}
+            path={AppRoute.ADD_WAREHOUSEFORM}
+            element={<AddWarehouseForm />}
           />
           <Route
-            path={AppRoute.EDITWAREHOUSEFORM}
-            element={<EditAddWarehouseForm page="Edit" />}
+            path={AppRoute.EDIT_WAREHOUSEFORM}
+            element={<EditWarehouseForm />}
           />
         </Route>
       </Routes>
