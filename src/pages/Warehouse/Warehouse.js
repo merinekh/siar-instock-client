@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import WarehouseList from "../../components/WarehouseList/WarehouseList";
-// import { AppRoute } from "../../const";
-import EditAddWarehouseform from "../../components/AddWarehouseForm/AddWarehouseForm";
 import axios from "axios";
 
 function Warehouse() {

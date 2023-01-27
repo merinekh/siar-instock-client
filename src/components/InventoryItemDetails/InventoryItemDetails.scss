@@ -7,12 +7,20 @@
 }
 
 .invitem {
+  @include desktop {
+    width: 102rem;
+    margin: 0 auto;
+  }
+
   &__container {
     padding: 1.6rem;
 
     @include flex(row);
     justify-content: space-between;
     align-items: center;
+    @include tablet {
+      padding: 1.6rem 3.2rem;
+    }
   }
 
   &__container-header {
@@ -71,9 +79,9 @@
     // @include flex(column);
     border-top: 0.1rem solid $cloud;
     padding: 1.6rem;
-    // @include tablet {
-    //   @include flex(row);
-    // }
+    @include tablet {
+      padding: 1.6rem 3.2rem;
+    }
 
     &--flex {
       @include flex(column);
@@ -131,6 +139,7 @@
     &--out {
       @include flex(row);
       align-items: center;
+      text-transform: uppercase;
       font-size: $fontMobile-h4;
       height: 2.4rem;
       padding: 0 0.8rem;
@@ -145,6 +154,7 @@
     &--in {
       @include flex(row);
       align-items: center;
+      text-transform: uppercase;
       font-size: $fontMobile-h4;
       height: 2.4rem;
       padding: 0 0.8rem;

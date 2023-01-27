@@ -1,32 +1,29 @@
+import { useEffect, useState } from "react";
+import { useParams, Link } from "react-router-dom";
+import axios from "axios";
 import "./InventoryItemDetails.scss";
-// import sorticon from "../../assets/icons/sort-24px.svg";
-// import deleteicon from "../../assets/icons/delete_outline-24px.svg";
 import editicon from "../../assets/icons/edit-24px.svg";
-// import chevron from "../../assets/icons/chevron_right-24px.svg";
 import arrowback from "../../assets/icons/arrow_back-24px.svg";
 
 export default function InventoryItemDetails() {
-  //   const dummyDetails = [
-  //     {
-  //       id: 11,
-  //       warehouse: "Washington",
-  //       item_name: "Monitor",
-  //       description: "This is a generic description for the selected item.",
-  //       category: "Electronics",
-  //       status: "Out of Stock",
-  //       quantity: 0,
-  //     },
-  //   ];
+  const [inventoryItem, setInventoryItem] = useState({});
+  const params = useParams();
+  let inventoryId = params.id;
 
-  const dummyItem = {
-    id: 11,
-    warehouse: "Washington",
-    item_name: "Monitor",
-    description: "This is a generic description for the selected item.",
-    category: "Electronics",
-    status: "Out of Stock",
-    quantity: 0,
-  };
+  useEffect(() => {
+    async function getInventoryItem() {
+      try {
+        const { data } = await axios.get(
+          `http://localhost:8080/api/inventories/${inventoryId}`
+        );
+        // console.log(data);
+        setInventoryItem(data);
+      } catch (e) {
+        console.log("Error:", e);
+      }
+    }
+    getInventoryItem();
+  }, [inventoryId]);
 
   const applyTag = (status) => {
     if (status === "Out of Stock") {
@@ -36,12 +33,20 @@ export default function InventoryItemDetails() {
     }
   };
 
+  if (!inventoryItem) {
+    return <div>Loading item...</div>;
+  }
+
   return (
-    <section className="inv">
+    <section className="invitem">
       <div className="invitem__container">
         <div>
-          <img src={arrowback} alt="back" />
-          <h1 className="invitem__container-header">{dummyItem.item_name}</h1>
+          <Link to={"/inventory"}>
+            <img src={arrowback} alt="back" />
+          </Link>
+          <h1 className="invitem__container-header">
+            {inventoryItem.item_name}
+          </h1>
         </div>
         <form className="invitem__container-form">
           <button className="invitem__container-back--mobile">
@@ -59,28 +64,32 @@ export default function InventoryItemDetails() {
             <div>
               <h4 className="invitem__subheading">ITEM DESCRIPTION</h4>
               <div className="invitem__item">
-                <p className="invitem__item-name">{dummyItem.description}</p>
+                <p className="invitem__item-name">
+                  {inventoryItem.description}
+                </p>
               </div>
             </div>
             <div>
               <h4 className="invitem__subheading">CATEGORY</h4>
-              <p className="invitem__item-text">{dummyItem.category}</p>
+              <p className="invitem__item-text">{inventoryItem.category}</p>
             </div>
           </div>
           <div className="invitem__inventory--details2">
             <div className="invitem__inventory--mobile">
               <h4 className="invitem__subheading">STATUS</h4>
-              <h4 className={applyTag(dummyItem.status)}>
-                {dummyItem.status.toUpperCase()}
+              <h4 className={applyTag(inventoryItem.status)}>
+                {inventoryItem.status}
               </h4>
             </div>
             <div className="invitem__inventory--mobile">
               <h4 className="invitem__subheading">QTY</h4>
-              <p className="invitem__item-text">{dummyItem.quantity}</p>
+              <p className="invitem__item-text">{inventoryItem.quantity}</p>
             </div>
             <div>
               <h4 className="invitem__subheading">WAREHOUSE</h4>
-              <p className="invitem__item-text">{dummyItem.warehouse}</p>
+              <p className="invitem__item-text">
+                {inventoryItem.warehouse_name}
+              </p>
             </div>
           </div>
         </div>
