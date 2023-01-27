@@ -6,6 +6,9 @@
         display: flex;
         justify-content: space-evenly;
     }
+    @include desktop{
+        padding: 3.4rem;
+    }
     // padding: 0rem 1.6rem;
     // position: absolute;
     // top: 20.3%;
@@ -34,14 +37,20 @@
     left: 4.27%;
     background-color: #FFFFFF;
     @include tablet {
-
+        height: fit-content;
         top: 11%;
         bottom: 31.84%;
         right: 4.17%;
         left: 4.17%;
     }
+    @include desktop{
+        margin: 0rem 3.4rem
+    }
     &__header-div{
         border-bottom: 1px solid $cloud;
+        @include desktop{
+            padding: 1.4rem 3.4rem;
+        }
     }
     &__top-box{
         padding-bottom: 1rem;
@@ -55,6 +64,9 @@
         padding: 0rem 1.6rem;
         @include tablet {
             width: 50%;
+        }
+        @include desktop{
+            padding: 0rem 4rem;
         }
     }
     &__button-box{
@@ -106,8 +118,14 @@
         padding-right: 1rem;
         margin-bottom: 1rem;
         font-size: 1rem;
-        &:checked {
-            color: $cloud;
+        @include tablet{
+            right: 25%;
+        }
+    }
+    &__instock-button{
+        @include tablet{
+
+            margin-right: .5rem;
         }
     }
     &__stock{
@@ -116,8 +134,19 @@
         margin-top: 1rem;
         margin-bottom: 1rem;
         font-size: 1rem;
+        @include tablet{
+            left: 52%;
+        }
+        @include desktop{
+            left: 54%
+        }
     }
-   
+    &__stock-button{
+        @include tablet{
+            margin-right: .5rem;
+
+        }
+    }
     &__item-name-input{
         height: 36px;
         border: 1px solid #BDC5D5;
@@ -143,6 +172,9 @@
         border-radius: 20px;
         border: 1px solid #BDC5D5;
         margin-bottom: 1rem;
+        @include desktop{
+            width: 30%;
+        }
     }
     &__category-dropdown{
         height: 36px;
@@ -181,6 +213,9 @@
         border-radius: 20px;
         background-color: $instock-Indigo;
         color: #FFFFFF;
+        @include tablet{
+            margin-left: 4rem;
+        }
     }
 }
 // input:required{

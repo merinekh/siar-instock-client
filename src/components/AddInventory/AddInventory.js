@@ -1,8 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../AddInventory/AddInventory.scss";
 import BackArrow from "../../assets/icons/arrow_back-24px.svg";
 
 function AddInventory() {
+  const [stockStatus, setStockStatus] = useState("inStock");
+  const [quantity, setQuantity] = useState("");
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1280);
+
+  useEffect(() => {
+    function handleResize() {
+      setIsDesktop(window.innerWidth >= 1280);
+    }
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -80,21 +94,44 @@ function AddInventory() {
             <label className="AddInventory-form__label-titles">Status</label>
             <br />
             <label className="AddInventory-form__instock">
-              <input type="radio" name="Stock"></input>In Stock
+              <input
+                className="AddInventory-form__instock-button"
+                type="radio"
+                name="Stock"
+                value="in stock"
+                checked={stockStatus === "in stock"}
+                onChange={(e) => setStockStatus(e.target.value)}
+              ></input>
+              In Stock
             </label>
             <label className="AddInventory-form__stock">
-              <input type="radio" name="Stock"></input>
+              <input
+                className="AddInventory__stock-button"
+                type="radio"
+                name="Stock"
+                value="out of stock"
+                checked={stockStatus === "out of stock"}
+                onChange={(e) => setStockStatus(e.target.value)}
+              ></input>
               Out Of Stock
             </label>
             <br />
-            <label className="AddInventory-form__label-titles">Quantity</label>
-            <br />
-            <input
-              className="AddInventory-form__quantity-input"
-              type="text"
-              name="quantity"
-              required
-            ></input>
+            {((stockStatus === "in stock" && isDesktop) ||
+              (stockStatus === "out of stock" && !isDesktop)) && (
+              <>
+                <label className="AddInventory-form__label-titles">
+                  Quantity
+                </label>
+                <br />
+                <input
+                  className="AddInventory-form__quantity-input"
+                  type="number"
+                  value={quantity}
+                  onChange={(e) => setQuantity(e.target.value)}
+                  required
+                ></input>
+              </>
+            )}
             <br />
             <label className="AddInventory-form__label-titles">Warehouse</label>
             <br />
