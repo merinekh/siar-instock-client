@@ -21,11 +21,11 @@ function App() {
           <Route path={AppRoute.INVENTORY} element={<Inventory />} />
           <Route
             path={AppRoute.ADDWAREHOUSEFORM}
-            element={<EditAddWarehouseForm page="Add" />}
+            element={<AddWarehouseForm />}
           />
           <Route
             path={AppRoute.EDITWAREHOUSEFORM}
-            element={<EditAddWarehouseForm page="Edit" />}
+            element={<EditWarehouseForm />}
           />
         </Route>
       </Routes>
