@@ -1,6 +1,7 @@
 export const AppRoute = {
   HOME: "/",
   WAREHOUSE: "/warehouse",
+  WAREHOUSEINVENTORY: "/warehouse/:id",
   INVENTORY: "/inventory",
   ADDINVENTORY: "/inventory/addinventory",
   ADDWAREHOUSEFORM: "/warehouse/add",
