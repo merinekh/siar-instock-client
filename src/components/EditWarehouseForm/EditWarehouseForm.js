@@ -1,5 +1,3 @@
-import React from "react";
-import "./EditWarehouseForm.scss";
 import arrowBack from "../../assets/icons/arrow_back-24px.svg";
 function EditAddWarehouseForm({ page }) {
   const preventDef = (e) => {

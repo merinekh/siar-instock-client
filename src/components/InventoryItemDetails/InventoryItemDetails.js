@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
-import "./InventoryItemDetails.scss";
 import editicon from "../../assets/icons/edit-24px.svg";
 import arrowback from "../../assets/icons/arrow_back-24px.svg";
 

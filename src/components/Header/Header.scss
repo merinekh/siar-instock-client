@@ -7,6 +7,7 @@
 
   @include tablet {
     padding: 0px 32px;
+    padding-top: 1.6rem;
     height: 186px;
     display: flex;
     @include desktop {

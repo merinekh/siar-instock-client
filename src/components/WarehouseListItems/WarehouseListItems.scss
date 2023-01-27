@@ -1,5 +1,3 @@
-@use "../../styles/partials/variables" as *;
-@use "../../styles/partials/mixins" as *;
 
 p {
   margin: 0;
@@ -24,6 +22,9 @@ h4 {
   border-bottom: 0.1rem solid $cloud;
   padding: 0 1.6rem;
 
+  &__delete, &__icons__tablet--delete {
+    cursor: pointer;
+  }
   @include tablet {
     padding: 1rem 3.2rem;
     display: flex;

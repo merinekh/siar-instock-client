@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
-import "../AddInventory/AddInventory.scss";
+import { useEffect, useState } from "react";
 import BackArrow from "../../assets/icons/arrow_back-24px.svg";
+
 
 function AddInventory() {
   const [stockStatus, setStockStatus] = useState("inStock");

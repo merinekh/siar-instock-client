@@ -1,4 +1,4 @@
-import "./EditInventory.scss";
+
 
 export default function EditInventory() {
   return (
