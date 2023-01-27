@@ -35,6 +35,10 @@ export default function WarehouseInventoryList() {
     }
   };
 
+  if (!warehouseInventory) {
+    return <div>Loading items...</div>;
+  }
+
   return (
     <section className="wil">
       <div className="wil__header">
@@ -78,9 +82,7 @@ export default function WarehouseInventoryList() {
             <div className="wil__inventory--details">
               <div>
                 <h4 className="wil__subheading">STATUS</h4>
-                <h4 className={applyTag(item.status)}>
-                  {item.status.toUpperCase()}
-                </h4>
+                <h4 className={applyTag(item.status)}>{item.status}</h4>
               </div>
               <div>
                 <h4 className="wil__subheading">QTY</h4>

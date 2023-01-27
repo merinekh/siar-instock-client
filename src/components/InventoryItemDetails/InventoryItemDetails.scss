@@ -131,6 +131,7 @@
     &--out {
       @include flex(row);
       align-items: center;
+      text-transform: uppercase;
       font-size: $fontMobile-h4;
       height: 2.4rem;
       padding: 0 0.8rem;
@@ -145,6 +146,7 @@
     &--in {
       @include flex(row);
       align-items: center;
+      text-transform: uppercase;
       font-size: $fontMobile-h4;
       height: 2.4rem;
       padding: 0 0.8rem;
