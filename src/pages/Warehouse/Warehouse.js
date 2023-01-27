@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import WarehouseList from "../../components/WarehouseList/WarehouseList";
 // import { AppRoute } from "../../const";
-import EditAddWarehouseform from "../../components/EditAddWarehouseForm/EditAddWarehouseForm";
+import EditAddWarehouseform from "../../components/AddWarehouseForm/AddWarehouseForm";
 import axios from "axios";
 
 function Warehouse() {
@@ -21,13 +21,13 @@ function Warehouse() {
     getWarehouses();
   }, []);
 
-  if(!warehouses){
-    return <h4>Page is loading...</h4>
+  if (!warehouses) {
+    return <h4>Page is loading...</h4>;
   }
-  
+
   return (
     <>
-      <WarehouseList warehouses={warehouses}/>
+      <WarehouseList warehouses={warehouses} />
     </>
   );
 }
