@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import WareHouseDetails from "../WareHouseDetails/WarehouseDetails";
+import WarehouseDetails from "../WarehouseDetails/WarehouseDetails";
 import WarehouseListItems from "../WarehouseListItems/WarehouseListItems";
 import "./WarehouseList.scss";
 const WarehouseList = ({ warehouses }) => {
@@ -25,7 +25,7 @@ const WarehouseList = ({ warehouses }) => {
             </label>
           </form>
         </div>
-        <WareHouseDetails />
+        <WarehouseDetails />
         <WarehouseListItems warehouses={warehouses} />
       </section>
     </Link>

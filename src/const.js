@@ -5,6 +5,7 @@ export const AppRoute = {
   ADDINVENTORY: "/inventory/addinventory",
   ADDWAREHOUSEFORM: "/warehouse/add",
   EDIT_WAREHOUSEFORM: "/warehouse/edit",
+  WAREHOUSEDETAILS: "warehouse/:id/warehouseDetails",
 };
 
 export const NavigationItems = [
