@@ -37,18 +37,24 @@ export default function Inventory() {
     return <h4>Page is loading...</h4>;
   }
 
+  const formAction = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <section className="inv-overlay">
       <section className="inv">
         <div className="inv__container">
           <h1 className="inv__container-header">Inventory</h1>
-          <form className="inv__container-form">
+          <form onClick={formAction} className="inv__container-form">
             <input
               className="inv__container-search"
               type="text"
               placeholder="Search..."
             />
-            <button className="inv__container-add">+ Add New Item</button>
+            <Link to="/inventory/addinventory">
+              <button className="inv__container-add">+ Add New Item</button>
+            </Link>
           </form>
         </div>
         <div className="inv__header">
@@ -113,16 +119,20 @@ export default function Inventory() {
               </div>
             </div>
             <div className="inv__inventory--flex">
-              <img
-                className="inv__inventory--options"
-                src={deleteicon}
-                alt="delete"
-              />
-              <img
-                className="inv__inventory--options"
-                src={editicon}
-                alt="edit"
-              />
+              <Link to="">
+                <img
+                  className="inv__inventory--options"
+                  src={deleteicon}
+                  alt="delete"
+                />
+              </Link>
+              <Link to={`/inventory/editinventory/${item.id}`}>
+                <img
+                  className="inv__inventory--options"
+                  src={editicon}
+                  alt="edit"
+                />
+              </Link>
             </div>
           </div>
         ))}

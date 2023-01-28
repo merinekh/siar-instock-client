@@ -71,6 +71,10 @@
       @include flex(row);
     }
 
+    &:hover {
+      background-color: rgba(46, 102, 230, 0.07);
+    }
+
     &--flex {
       @include flex(row);
       align-items: center;
@@ -89,6 +93,7 @@
 
     &--options {
       height: 2.4rem;
+      cursor: pointer;
     }
   }
 

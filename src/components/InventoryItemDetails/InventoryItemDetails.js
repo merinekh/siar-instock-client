@@ -48,7 +48,7 @@ export default function InventoryItemDetails() {
               {inventoryItem.item_name}
             </h1>
           </div>
-          <Link to={"/inventory"}>
+          <Link to={`/inventory/editinventory/${inventoryItem.id}`}>
             <div className="invitem__container-form">
               <div className="invitem__container-back--mobile">
                 <img

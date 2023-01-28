@@ -54,9 +54,6 @@
   &__container-form {
     @include flex(row);
     align-items: center;
-    // @include tablet {
-    //   @include flex(row);
-    // }
   }
 
   &__container-search {
@@ -78,6 +75,9 @@
       @include tablet {
         display: none;
       }
+      &:hover {
+        background-color: $graphite;
+      }
     }
 
     &--mobilepic {
@@ -95,6 +95,9 @@
         color: white;
         font-size: 1.4rem;
         height: 3.8rem;
+        &:hover {
+          background-color: $graphite;
+        }
       }
     }
 

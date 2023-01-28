@@ -93,16 +93,20 @@ export default function WarehouseInventoryList() {
               </div>
             </div>
             <div className="wil__inventory--flex">
-              <img
-                className="wil__inventory--options"
-                src={deleteicon}
-                alt="delete"
-              />
-              <img
-                className="wil__inventory--options"
-                src={editicon}
-                alt="edit"
-              />
+              <Link to="">
+                <img
+                  className="wil__inventory--options"
+                  src={deleteicon}
+                  alt="delete"
+                />
+              </Link>
+              <Link to={`/inventory/editinventory/${item.id}`}>
+                <img
+                  className="wil__inventory--options"
+                  src={editicon}
+                  alt="edit"
+                />
+              </Link>
             </div>
           </div>
         ))}
