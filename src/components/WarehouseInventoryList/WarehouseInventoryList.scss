@@ -69,6 +69,7 @@
     padding: 1.6rem;
     @include tablet {
       @include flex(row);
+      justify-content: space-between;
     }
 
     &:hover {
@@ -82,18 +83,26 @@
       gap: 1.6rem;
       @include tablet {
         gap: 2.4rem;
+        // width: 100%;
       }
     }
 
     &--details {
+      width: 50%;
       @include tablet {
         @include flex(row);
+        // width: 50%;
+        // justify-content: space-between;
       }
     }
 
     &--options {
       height: 2.4rem;
       cursor: pointer;
+      margin-top: 1.6rem;
+      @include tablet {
+        margin: 0;
+      }
     }
   }
 
@@ -128,9 +137,13 @@
       border-radius: 2rem;
       background-color: rgba(201, 69, 21, 0.07);
       color: $red;
+      margin-top: 0.4rem;
+      width: fit-content;
+
       @include tablet {
         font-size: $fontTablet-h4;
         height: 2.6rem;
+        margin-top: 0;
       }
     }
     &--in {
@@ -143,10 +156,32 @@
       border-radius: 2rem;
       background-color: rgba(21, 132, 99, 0.07);
       color: $green;
+      margin-top: 0.4rem;
+      width: fit-content;
       @include tablet {
         font-size: $fontTablet-h4;
         height: 2.6rem;
+        margin-top: 0;
       }
     }
+  }
+}
+
+.wiltab1 {
+  @include tablet {
+    width: 100%;
+  }
+}
+
+.wiltab2 {
+  @include tablet {
+    width: 50%;
+    justify-content: space-between;
+  }
+}
+.wiltab3 {
+  @include tablet {
+    width: 50%;
+    justify-content: space-around;
   }
 }

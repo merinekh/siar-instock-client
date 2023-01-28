@@ -32,7 +32,7 @@
   }
 
   &__container {
-    padding: 1.6rem;
+    padding: 1.6rem 2.4rem 1.6rem;
     @include flex(column);
     @include tablet {
       @include flex(row);
@@ -137,6 +137,7 @@
     @include tablet {
       padding: 1.6rem 3.2rem;
       @include flex(row);
+      justify-content: space-between;
     }
 
     &:hover {
@@ -149,7 +150,7 @@
       justify-content: space-between;
       gap: 1.6rem;
       @include tablet {
-        gap: 2.4rem;
+        // gap: 2.4rem;
         align-items: center;
       }
     }
@@ -159,12 +160,15 @@
       @include flex(column);
       @include tablet {
         @include flex(row);
-        width: fit-content;
+        // width: fit-content;
       }
     }
 
     &--details-link {
       cursor: pointer;
+      @include tablet {
+        width: 15rem;
+      }
     }
 
     &--options {
@@ -191,6 +195,7 @@
     margin-top: 0.4rem;
     @include tablet {
       font-size: $fontTablet-bodyM;
+      margin-top: 0;
     }
   }
 
@@ -228,5 +233,23 @@
         height: 2.6rem;
       }
     }
+  }
+}
+
+.invtab1 {
+  @include tablet {
+    width: 85%;
+  }
+}
+.invtab2 {
+  @include tablet {
+    width: 35%;
+    justify-content: space-between;
+  }
+}
+.invtab2 {
+  @include tablet {
+    width: 50%;
+    justify-content: space-between;
   }
 }

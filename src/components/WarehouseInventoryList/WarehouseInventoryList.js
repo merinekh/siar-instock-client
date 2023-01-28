@@ -65,8 +65,8 @@ export default function WarehouseInventoryList() {
 
         {warehouseInventory.map((item) => (
           <div key={item.id} className="wil__inventory">
-            <div className="wil__inventory--flex">
-              <div className="wil__inventory--details">
+            <div className="wil__inventory--flex wiltab1">
+              <div className="wil__inventory--details wiltab2">
                 <Link to={`/inventory/${item.id}`}>
                   <div>
                     <h4 className="wil__subheading">INVENTORY ITEM</h4>
@@ -81,7 +81,7 @@ export default function WarehouseInventoryList() {
                   <p className="wil__item-text">{item.category}</p>
                 </div>
               </div>
-              <div className="wil__inventory--details">
+              <div className="wil__inventory--details wiltab3">
                 <div>
                   <h4 className="wil__subheading">STATUS</h4>
                   <h4 className={applyTag(item.status)}>{item.status}</h4>

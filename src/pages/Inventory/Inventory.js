@@ -85,8 +85,8 @@ export default function Inventory() {
 
         {allInventory.map((item) => (
           <div key={item.id} className="inv__inventory">
-            <div className="inv__inventory--flex">
-              <div className="inv__inventory--details">
+            <div className="inv__inventory--flex invtab1">
+              <div className="inv__inventory--details invtab2">
                 <Link to={`/inventory/${item.id}`}>
                   <div className="inv__inventory--details-link">
                     <h4 className="inv__subheading">INVENTORY ITEM</h4>
@@ -101,7 +101,7 @@ export default function Inventory() {
                   <p className="inv__item-text">{item.category}</p>
                 </div>
               </div>
-              <div className="inv__inventory--details">
+              <div className="inv__inventory--details invtab2">
                 <div>
                   <h4 className="inv__subheading">STATUS</h4>
                   <h4 className={applyTag(item.status)}>
@@ -118,7 +118,7 @@ export default function Inventory() {
                 </div>
               </div>
             </div>
-            <div className="inv__inventory--flex">
+            <div className="inv__inventory--flex ">
               <Link to="">
                 <img
                   className="inv__inventory--options"
