@@ -21,13 +21,13 @@ function Warehouse() {
     getWarehouses();
   }, []);
 
-  if(!warehouses){
-    return <h4>Page is loading...</h4>
+  if (!warehouses) {
+    return <h4>Page is loading...</h4>;
   }
-  
+
   return (
     <>
-      <WarehouseList warehouses={warehouses}/>
+      <WarehouseList warehouses={warehouses} />
     </>
   );
 }
