@@ -1,4 +1,35 @@
+.wil-overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 0 1.6rem;
+
+  @include tablet {
+    padding: 0 3.2rem;
+  }
+}
+
 .wil {
+  position: relative;
+  bottom: 5.5rem;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  border: 0.1rem solid $lightGrey;
+  border-radius: 5px;
+  background-color: white;
+
+  @include tablet {
+    bottom: 9.5rem;
+  }
+
+  @include desktop {
+    width: 102rem;
+    margin: 0 auto;
+  }
+
   &__header {
     display: none;
     @include tablet {
@@ -16,10 +47,6 @@
 
     &--title {
       font-size: $fontTablet-h4;
-    }
-
-    @include desktop {
-      width: 102rem;
     }
   }
 

@@ -39,72 +39,74 @@ export default function WarehouseInventoryList() {
   }
 
   return (
-    <section className="wil">
-      <div className="wil__header">
-        <div className="wil__header--flex">
-          <h4 className="wil__header--title">INVENTORY ITEM</h4>
-          <img className="wil__sort" src={sorticon} alt="sort" />
+    <section className="wil-overlay">
+      <section className="wil">
+        <div className="wil__header">
+          <div className="wil__header--flex">
+            <h4 className="wil__header--title">INVENTORY ITEM</h4>
+            <img className="wil__sort" src={sorticon} alt="sort" />
+          </div>
+          <div className="wil__header--flex">
+            <h4 className="wil__header--title">CATEGORY</h4>
+            <img className="wil__sort" src={sorticon} alt="sort" />
+          </div>
+          <div className="wil__header--flex">
+            <h4 className="wil__header--title">STATUS</h4>
+            <img className="wil__sort" src={sorticon} alt="sort" />
+          </div>
+          <div className="wil__header--flex">
+            <h4 className="wil__header--title">QUANTITY</h4>
+            <img className="wil__sort" src={sorticon} alt="sort" />
+          </div>
+          <div className="wil__header--flex">
+            <h4 className="wil__header--title">ACTIONS</h4>
+          </div>
         </div>
-        <div className="wil__header--flex">
-          <h4 className="wil__header--title">CATEGORY</h4>
-          <img className="wil__sort" src={sorticon} alt="sort" />
-        </div>
-        <div className="wil__header--flex">
-          <h4 className="wil__header--title">STATUS</h4>
-          <img className="wil__sort" src={sorticon} alt="sort" />
-        </div>
-        <div className="wil__header--flex">
-          <h4 className="wil__header--title">QUANTITY</h4>
-          <img className="wil__sort" src={sorticon} alt="sort" />
-        </div>
-        <div className="wil__header--flex">
-          <h4 className="wil__header--title">ACTIONS</h4>
-        </div>
-      </div>
 
-      {warehouseInventory.map((item) => (
-        <div key={item.id} className="wil__inventory">
-          <div className="wil__inventory--flex">
-            <div className="wil__inventory--details">
-              <Link to={`/inventory/${item.id}`}>
-                <div>
-                  <h4 className="wil__subheading">INVENTORY ITEM</h4>
-                  <div className="wil__item">
-                    <h3 className="wil__item-name">{item.item_name}</h3>
-                    <img src={chevron} alt="chevron" />
+        {warehouseInventory.map((item) => (
+          <div key={item.id} className="wil__inventory">
+            <div className="wil__inventory--flex">
+              <div className="wil__inventory--details">
+                <Link to={`/inventory/${item.id}`}>
+                  <div>
+                    <h4 className="wil__subheading">INVENTORY ITEM</h4>
+                    <div className="wil__item">
+                      <h3 className="wil__item-name">{item.item_name}</h3>
+                      <img src={chevron} alt="chevron" />
+                    </div>
                   </div>
+                </Link>
+                <div>
+                  <h4 className="wil__subheading">CATEGORY</h4>
+                  <p className="wil__item-text">{item.category}</p>
                 </div>
-              </Link>
-              <div>
-                <h4 className="wil__subheading">CATEGORY</h4>
-                <p className="wil__item-text">{item.category}</p>
+              </div>
+              <div className="wil__inventory--details">
+                <div>
+                  <h4 className="wil__subheading">STATUS</h4>
+                  <h4 className={applyTag(item.status)}>{item.status}</h4>
+                </div>
+                <div>
+                  <h4 className="wil__subheading">QTY</h4>
+                  <p className="wil__item-text">{item.quantity}</p>
+                </div>
               </div>
             </div>
-            <div className="wil__inventory--details">
-              <div>
-                <h4 className="wil__subheading">STATUS</h4>
-                <h4 className={applyTag(item.status)}>{item.status}</h4>
-              </div>
-              <div>
-                <h4 className="wil__subheading">QTY</h4>
-                <p className="wil__item-text">{item.quantity}</p>
-              </div>
+            <div className="wil__inventory--flex">
+              <img
+                className="wil__inventory--options"
+                src={deleteicon}
+                alt="delete"
+              />
+              <img
+                className="wil__inventory--options"
+                src={editicon}
+                alt="edit"
+              />
             </div>
           </div>
-          <div className="wil__inventory--flex">
-            <img
-              className="wil__inventory--options"
-              src={deleteicon}
-              alt="delete"
-            />
-            <img
-              className="wil__inventory--options"
-              src={editicon}
-              alt="edit"
-            />
-          </div>
-        </div>
-      ))}
+        ))}
+      </section>
     </section>
   );
 }
