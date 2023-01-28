@@ -38,7 +38,7 @@ export default function Inventory() {
           (item) => item.id !== selectedItem.id
         );
         setSelectedItem({});
-        setAllInventory(itemId);
+        setAllInventory(itemId);  
       })
       .catch((error) => {
         console.log(error);
