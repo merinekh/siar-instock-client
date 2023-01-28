@@ -48,14 +48,23 @@ export default function InventoryItemDetails() {
               {inventoryItem.item_name}
             </h1>
           </div>
-          <form className="invitem__container-form">
-            <button className="invitem__container-back--mobile">
-              <img src={editicon} alt="back" />
-            </button>
-            <button className="invitem__container-back--tablet">
-              <img src={editicon} alt="back" /> Edit
-            </button>
-          </form>
+          <div className="invitem__container-form">
+            <div className="invitem__container-back--mobile">
+              <img
+                className="invitem__container-back--mobilepic"
+                src={editicon}
+                alt="back"
+              />
+            </div>
+            <div className="invitem__container-back--tablet">
+              <img
+                className="invitem__container-back--tabletpic"
+                src={editicon}
+                alt="back"
+              />{" "}
+              Edit
+            </div>
+          </div>
         </div>
 
         <div className="invitem__inventory">

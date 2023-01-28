@@ -66,10 +66,21 @@
 
   &__container-back {
     &--mobile {
-      margin-top: 1.6rem;
+      width: 3.6rem;
+      height: 3.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 2rem;
+      background-color: $instock-Indigo;
+      // margin-top: 1.6rem;
       @include tablet {
         display: none;
       }
+    }
+
+    &--mobilepic {
+      filter: invert(1) brightness(10);
     }
 
     &--tablet {
@@ -77,7 +88,20 @@
       @include tablet {
         display: flex;
         align-items: center;
+        border-radius: 2rem;
+        background-color: $instock-Indigo;
+        padding: 0.4rem 1.6rem;
+        color: white;
+        font-size: 1.4rem;
+        height: 3.8rem;
       }
+    }
+
+    &--tabletpic {
+      filter: invert(1) brightness(10);
+      width: 1.8rem;
+      height: 1.8rem;
+      margin-right: 0.8rem;
     }
   }
 
