@@ -38,93 +38,95 @@ export default function Inventory() {
   }
 
   return (
-    <section className="inv">
-      <div className="inv__container">
-        <h1 className="inv__container-header">Inventory</h1>
-        <form className="inv__container-form">
-          <input
-            className="inv__container-search"
-            type="text"
-            placeholder="Search..."
-          />
-          <button className="inv__container-add">+ Add New Item</button>
-        </form>
-      </div>
-      <div className="inv__header">
-        <div className="inv__header--flex">
-          <h4 className="inv__header--title">INVENTORY ITEM</h4>
-          <img className="inv__sort" src={sorticon} alt="sort" />
+    <section className="inv-overlay">
+      <section className="inv">
+        <div className="inv__container">
+          <h1 className="inv__container-header">Inventory</h1>
+          <form className="inv__container-form">
+            <input
+              className="inv__container-search"
+              type="text"
+              placeholder="Search..."
+            />
+            <button className="inv__container-add">+ Add New Item</button>
+          </form>
         </div>
-        <div className="inv__header--flex">
-          <h4 className="inv__header--title">CATEGORY</h4>
-          <img className="inv__sort" src={sorticon} alt="sort" />
+        <div className="inv__header">
+          <div className="inv__header--flex">
+            <h4 className="inv__header--title">INVENTORY ITEM</h4>
+            <img className="inv__sort" src={sorticon} alt="sort" />
+          </div>
+          <div className="inv__header--flex">
+            <h4 className="inv__header--title">CATEGORY</h4>
+            <img className="inv__sort" src={sorticon} alt="sort" />
+          </div>
+          <div className="inv__header--flex">
+            <h4 className="inv__header--title">STATUS</h4>
+            <img className="inv__sort" src={sorticon} alt="sort" />
+          </div>
+          <div className="inv__header--flex">
+            <h4 className="inv__header--title">QUANTITY</h4>
+            <img className="inv__sort" src={sorticon} alt="sort" />
+          </div>
+          <div className="inv__header--flex">
+            <h4 className="inv__header--title">WAREHOUSE</h4>
+            <img className="inv__sort" src={sorticon} alt="sort" />
+          </div>
+          <div className="inv__header--flex">
+            <h4 className="inv__header--title">ACTIONS</h4>
+          </div>
         </div>
-        <div className="inv__header--flex">
-          <h4 className="inv__header--title">STATUS</h4>
-          <img className="inv__sort" src={sorticon} alt="sort" />
-        </div>
-        <div className="inv__header--flex">
-          <h4 className="inv__header--title">QUANTITY</h4>
-          <img className="inv__sort" src={sorticon} alt="sort" />
-        </div>
-        <div className="inv__header--flex">
-          <h4 className="inv__header--title">WAREHOUSE</h4>
-          <img className="inv__sort" src={sorticon} alt="sort" />
-        </div>
-        <div className="inv__header--flex">
-          <h4 className="inv__header--title">ACTIONS</h4>
-        </div>
-      </div>
 
-      {allInventory.map((item) => (
-        <div key={item.id} className="inv__inventory">
-          <div className="inv__inventory--flex">
-            <div className="inv__inventory--details">
-              <Link to={`/inventory/${item.id}`}>
-                <div className="inv__inventory--details-link">
-                  <h4 className="inv__subheading">INVENTORY ITEM</h4>
-                  <div className="inv__item">
-                    <h3 className="inv__item-name">{item.item_name}</h3>
-                    <img src={chevron} alt="chevron" />
+        {allInventory.map((item) => (
+          <div key={item.id} className="inv__inventory">
+            <div className="inv__inventory--flex">
+              <div className="inv__inventory--details">
+                <Link to={`/inventory/${item.id}`}>
+                  <div className="inv__inventory--details-link">
+                    <h4 className="inv__subheading">INVENTORY ITEM</h4>
+                    <div className="inv__item">
+                      <h3 className="inv__item-name">{item.item_name}</h3>
+                      <img src={chevron} alt="chevron" />
+                    </div>
                   </div>
+                </Link>
+                <div>
+                  <h4 className="inv__subheading">CATEGORY</h4>
+                  <p className="inv__item-text">{item.category}</p>
                 </div>
-              </Link>
-              <div>
-                <h4 className="inv__subheading">CATEGORY</h4>
-                <p className="inv__item-text">{item.category}</p>
+              </div>
+              <div className="inv__inventory--details">
+                <div>
+                  <h4 className="inv__subheading">STATUS</h4>
+                  <h4 className={applyTag(item.status)}>
+                    {item.status.toUpperCase()}
+                  </h4>
+                </div>
+                <div>
+                  <h4 className="inv__subheading">QTY</h4>
+                  <p className="inv__item-text">{item.quantity}</p>
+                </div>
+                <div>
+                  <h4 className="inv__subheading">WAREHOUSE</h4>
+                  <p className="inv__item-text">{item.warehouse_name}</p>
+                </div>
               </div>
             </div>
-            <div className="inv__inventory--details">
-              <div>
-                <h4 className="inv__subheading">STATUS</h4>
-                <h4 className={applyTag(item.status)}>
-                  {item.status.toUpperCase()}
-                </h4>
-              </div>
-              <div>
-                <h4 className="inv__subheading">QTY</h4>
-                <p className="inv__item-text">{item.quantity}</p>
-              </div>
-              <div>
-                <h4 className="inv__subheading">WAREHOUSE</h4>
-                <p className="inv__item-text">{item.warehouse_name}</p>
-              </div>
+            <div className="inv__inventory--flex">
+              <img
+                className="inv__inventory--options"
+                src={deleteicon}
+                alt="delete"
+              />
+              <img
+                className="inv__inventory--options"
+                src={editicon}
+                alt="edit"
+              />
             </div>
           </div>
-          <div className="inv__inventory--flex">
-            <img
-              className="inv__inventory--options"
-              src={deleteicon}
-              alt="delete"
-            />
-            <img
-              className="inv__inventory--options"
-              src={editicon}
-              alt="edit"
-            />
-          </div>
-        </div>
-      ))}
+        ))}
+      </section>
     </section>
   );
 }
