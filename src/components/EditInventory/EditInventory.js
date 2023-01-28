@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import BackArrow from "../../assets/icons/arrow_back-24px.svg";
 import axios from "axios";
 
@@ -6,7 +7,8 @@ export default function EditInventory() {
   const [stockStatus, setStockStatus] = useState("in stock");
   const [quantity, setQuantity] = useState("");
   const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1280);
-  const BASE_URL = "localhost:8080/";
+  const params = useParams();
+  const baseURL = "localhost:8080/";
   useEffect(() => {
     function handleResize() {
       setIsDesktop(window.innerWidth >= 1280);
@@ -15,6 +17,14 @@ export default function EditInventory() {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
+
+    //==========================Get Request For PlaceHolder=================================
+    const [placeholder, setPlaceholder] = useState(null);
+
+    axios.get(baseURL + `${params.id}`).then((response) => {
+      setPlaceholder(response.data);
+      console.log(response.data);
+    });
   }, []);
 
   const handleSubmit = (event) => {
@@ -40,31 +50,30 @@ export default function EditInventory() {
       alert("Please fill out all fields");
       return;
     }
-
-    //==================Update Inventory PUT request========================
-    const [post, setPost] = React.useState(null);
-
-    useEffect(() => {
-      axios.get(`${baseURL}/1`).then((response) => {
-        setPost(response.data);
-      });
-    }, []);
-
-    axios
-      .put(`${baseURL}/1`, {
-        form,
-        item,
-        description,
-        category,
-        InStock,
-        OutOfStock,
-        quantity,
-        warhouse,
-      })
-      .then((response) => {
-        setPost(response.data);
-      });
   };
+  //==================Update Inventory PUT request========================
+  const [post, setPost] = useState(null);
+
+  useEffect(() => {
+    axios.get(`${baseURL}/1`).then((response) => {
+      setPost(response.data);
+    });
+  }, []);
+
+  axios
+    .put(`${baseURL}/1`, {
+      form,
+      item,
+      description,
+      category,
+      InStock,
+      OutOfStock,
+      quantity,
+      warhouse,
+    })
+    .then((response) => {
+      setPost(response.data);
+    });
 
   return (
     <>
