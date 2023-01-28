@@ -66,10 +66,11 @@
   &__inventory {
     @include flex(column);
     border-top: 0.1rem solid $cloud;
-    padding: 1.6rem;
+    padding: 1.6rem 2.4rem;
     @include tablet {
       @include flex(row);
       justify-content: space-between;
+      padding: 1.6rem 3.2rem;
     }
 
     &:hover {
