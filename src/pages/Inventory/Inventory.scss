@@ -20,6 +20,7 @@
   border: 0.1rem solid $lightGrey;
   border-radius: 5px;
   background-color: white;
+  box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
 
   @include tablet {
     bottom: 9.5rem;

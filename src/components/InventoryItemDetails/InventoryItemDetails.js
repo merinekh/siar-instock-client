@@ -48,30 +48,32 @@ export default function InventoryItemDetails() {
               {inventoryItem.item_name}
             </h1>
           </div>
-          <div className="invitem__container-form">
-            <div className="invitem__container-back--mobile">
-              <img
-                className="invitem__container-back--mobilepic"
-                src={editicon}
-                alt="back"
-              />
+          <Link to={"/inventory"}>
+            <div className="invitem__container-form">
+              <div className="invitem__container-back--mobile">
+                <img
+                  className="invitem__container-back--mobilepic"
+                  src={editicon}
+                  alt="back"
+                />
+              </div>
+              <div className="invitem__container-back--tablet">
+                <img
+                  className="invitem__container-back--tabletpic"
+                  src={editicon}
+                  alt="back"
+                />{" "}
+                Edit
+              </div>
             </div>
-            <div className="invitem__container-back--tablet">
-              <img
-                className="invitem__container-back--tabletpic"
-                src={editicon}
-                alt="back"
-              />{" "}
-              Edit
-            </div>
-          </div>
+          </Link>
         </div>
 
         <div className="invitem__inventory">
           <div className="invitem__inventory--flex">
             <div className="invitem__inventory--details">
               <div>
-                <h4 className="invitem__subheading">ITEM DESCRIPTION</h4>
+                <h4 className="invitem__subheading">ITEM DESCRIPTION:</h4>
                 <div className="invitem__item">
                   <p className="invitem__item-name">
                     {inventoryItem.description}
@@ -79,23 +81,23 @@ export default function InventoryItemDetails() {
                 </div>
               </div>
               <div>
-                <h4 className="invitem__subheading">CATEGORY</h4>
+                <h4 className="invitem__subheading">CATEGORY:</h4>
                 <p className="invitem__item-text">{inventoryItem.category}</p>
               </div>
             </div>
             <div className="invitem__inventory--details2">
               <div className="invitem__inventory--mobile">
-                <h4 className="invitem__subheading">STATUS</h4>
+                <h4 className="invitem__subheading">STATUS:</h4>
                 <h4 className={applyTag(inventoryItem.status)}>
                   {inventoryItem.status}
                 </h4>
               </div>
               <div className="invitem__inventory--mobile">
-                <h4 className="invitem__subheading">QTY</h4>
+                <h4 className="invitem__subheading">QTY:</h4>
                 <p className="invitem__item-text">{inventoryItem.quantity}</p>
               </div>
               <div>
-                <h4 className="invitem__subheading">WAREHOUSE</h4>
+                <h4 className="invitem__subheading">WAREHOUSE:</h4>
                 <p className="invitem__item-text">
                   {inventoryItem.warehouse_name}
                 </p>
