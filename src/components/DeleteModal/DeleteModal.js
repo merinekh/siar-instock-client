@@ -1,3 +1,5 @@
+import Button from "../Button/Button";
+
 function DeleteModal({ 
     warehouse,
     handleModalCloseClick,
@@ -26,20 +28,8 @@ function DeleteModal({
         </p>
 
         <div className="delete-modal__buttons">
-          <button 
-            className="delete-modal__button"
-            type="button"
-            onClick={handleModalCancelClick}
-          >
-            Cancel
-          </button>
-          <button 
-            className="delete-modal__button delete-modal__button--error" 
-            type="button"
-            onClick={handleModalDeleteClick}
-          >
-            Delete
-          </button>
+          <Button onClick={handleModalCancelClick} secondary>Cancel</Button>
+          <Button onClick={handleModalDeleteClick} red>Delete</Button>
         </div>
       </div>
     </dialog>

@@ -1,156 +1,47 @@
-// .warehouseform {
-//   display: flex;
-//   flex-direction: column;
-//   margin: 1.6rem;
+.warehouse-show {
+  margin: 0 16px;
+  margin-top: -64px;
+  background-color: #fff;
+  box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+  border-radius: 3px;
 
-//   &-header {
-//     display: flex;
-//     align-items: center;
-//     width: 100vw;
-//     padding: 1rem 0;
-//     margin-left: -1.6rem;
-//     border-bottom: 0.1rem solid gray;
+  @include tablet {
+    margin: 0 32px;
+    margin-top: -94px;
+  }
 
-//     &-link {
-//       display: flex;
-//       align-items: center;
-//       margin-left: 1.6rem;
-//     }
-//     &__text {
-//       margin: 0;
-//       margin-left: 0.3rem;
-//     }
+  @include desktop {
+    margin: 0 auto;
+    margin-top: -94px;
+    max-width: 1020px;
+  }
+}
 
-//     @include tablet {
-//       margin-left: -3.2rem;
+.warehouse-show__title {
+  display: flex;
+  align-content: center;
+  padding: 24px;
+  padding-top: 24px;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 36px;
+  color: #13182C;
 
-//       &-link {
-//         margin-left: 3.2rem;
-//       }
-//     }
-//   }
+  @include tablet {
+    padding: 32px;
+    padding-bottom: 21px;
+    font-size: 32px;
+    line-height: 40px;
+  }
 
-//   &-main {
-//     display: flex;
-//     flex-direction: column;
+  @include desktop {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
 
-//     &-warehouse,
-//     &-contact {
-//       display: flex;
-//       flex-direction: column;
-
-//       &-inputs,
-//       &-input {
-//         display: flex;
-//         flex-direction: column;
-//       }
-
-//       &-input {
-//         margin-bottom: 1rem;
-//       }
-
-//       &__line {
-//         margin: 0 -1.6rem;
-//       }
-//       @include tablet {
-//         width: 48%;
-//       }
-//     }
-
-//     @include tablet {
-//       flex-direction: row;
-//       justify-content: space-between;
-
-//       &-warehouse {
-//         padding-right: 1rem;
-//         margin: 1.6rem 0;
-//         border-right: 0.1rem solid $cloud;
-
-//         &__title {
-//           margin: 0 0 1.6rem;
-//         }
-
-//         &__line {
-//           display: none;
-//         }
-//       }
-//       &-contact {
-//         padding-right: 1rem;
-//         margin: 1.6rem 0 0 1.6rem;
-//         &__title {
-//           margin: 0 0 1.6rem;
-//         }
-//       }
-//     }
-
-//     @include desktop {
-//       &-warehouse,
-//       &-contact {
-//         padding-right: 2.6rem;
-//       }
-//     }
-//   }
-
-//   &-buttons {
-//     display: flex;
-//     justify-content: space-between;
-//     margin: 0 -1.6rem;
-//     padding: 1.6rem;
-//     background-color: $lightGrey;
-//     button {
-//       display: flex;
-//       justify-content: center;
-//       align-items: center;
-//       width: 48%;
-//       height: 1.6rem;
-//       border-radius: 2rem;
-//       border: 0.1rem solid $cloud;
-//       padding: 0.9rem 0;
-//       @include tablet {
-//         display: flex;
-//         width: fit-content;
-//         padding: 1.6rem;
-//       }
-//     }
-//     &__save {
-//       background-color: $instock-Indigo;
-//       color: white;
-//       @include tablet {
-//         margin-right: 1.6rem;
-//       }
-//       @include desktop {
-//         margin-right: 3rem;
-//       }
-//     }
-//     &__cancel {
-//       background-color: white;
-//       font-weight: 600;
-//       @include tablet {
-//         margin-right: 1rem;
-//       }
-//     }
-//     @include tablet {
-//       justify-content: flex-end;
-//       margin-left: -3.2rem;
-//     }
-//   }
-
-//   * input {
-//     height: 1.6rem;
-//     padding: 1.6rem;
-//     border-radius: 2rem;
-//     border: 0.1rem solid $cloud;
-//   }
-//   *p {
-//     margin: 0;
-//     font-weight: 600;
-//     margin-bottom: 0.2rem;
-//   }
-
-//   @include tablet {
-//     margin: 3.2rem;
-//   }
-
-//   @include desktop {
-//   }
-// }
+.warehouse-show__link {
+  display: flex;
+  align-items: center;
+  margin-right: 8px;
+}

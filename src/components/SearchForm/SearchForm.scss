@@ -1,0 +1,58 @@
+.search-form {
+  position: relative;
+  display: flex;
+
+  &__label {
+    display: flex;
+    flex-grow: 1;
+  }
+
+  &__field {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    min-height: 3.6rem;
+    background: $white;
+    border: 1px solid $cloud;
+    border-radius: 20px;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 20px;
+    color: $instockBlack;
+    padding: 0 1.6rem;
+    padding-right: 4.4rem;
+    transition-property: border;
+    transition-duration: .3s;
+    
+    &:focus {
+      outline: none;
+      border: 1px solid $instock-Indigo;
+    }
+
+    &::placeholder {
+      color: $slate;
+    }
+  }
+
+  &__button {
+    position: absolute;
+    right: 1.6rem;
+    top: 50%;
+    display: flex;
+    transform: translateY(-50%);
+    border: none;
+    padding: 0;
+    background-color: transparent;
+  }
+
+  @include tablet {
+    flex-grow: 1;
+    max-width: 274px;
+
+    &__field {
+      min-height: 3.8rem;
+      font-size: 14px;
+      line-height: 22px;
+    }
+  }
+}
