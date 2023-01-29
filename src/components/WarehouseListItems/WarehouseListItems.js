@@ -2,13 +2,15 @@ import deleteIcon from "../../assets/icons/delete_outline-24px.svg";
 import editIcon from "../../assets/icons/edit-24px.svg";
 import chevron from "../../assets/icons/chevron_right-24px.svg";
 import sort from "../../assets/icons/sort-24px.svg";
+import { generatePath, Link } from "react-router-dom";
+import { AppRoute } from "../../const";
 
 const WarehouseListItems = ({ warehouses, handleDeleteButton }) => {
-  const mappedList = warehouses.map((element) => {
+  const mappedList = warehouses.map((element, index) => {
     return (
-      <>
+      <div key={index}>
         <div className="warehouse">
-          <div key={element.id} className="warehouse-container">
+          <div className="warehouse-container">
             {/* warehouse name */}
             <div className="warehouse-container__left">
               <div className="warehouse-container__name">
@@ -77,15 +79,17 @@ const WarehouseListItems = ({ warehouses, handleDeleteButton }) => {
               src={deleteIcon}
               alt="delete"
               onClick={handleDeleteButton(element)}
-            ></img>
-            <img
-              className="warehouse__icons__edit"
-              src={editIcon}
-              alt="edit"
-            ></img>
+            />
+            <Link to={generatePath(AppRoute.WAREHOUSE_EDIT, {id: element.id})}>
+              <img
+                className="warehouse__icons__edit"
+                src={editIcon}
+                alt="edit"
+                />
+            </Link>
           </div>
         </div>
-      </>
+      </div>
     );
   });
 
@@ -121,4 +125,5 @@ const WarehouseListItems = ({ warehouses, handleDeleteButton }) => {
     </>
   );
 };
+
 export default WarehouseListItems;
