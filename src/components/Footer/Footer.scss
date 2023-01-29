@@ -1,0 +1,16 @@
+.page-footer {
+  padding: 4rem;
+  margin-top: auto;
+
+  @include tablet {
+    padding: 4.8rem;
+  }
+
+  &__copyright {
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.6rem;
+    color: $slate;
+    text-align: center;
+  }
+}

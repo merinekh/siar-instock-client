@@ -1,10 +1,16 @@
+const BASE_URL = process.env.REACT_APP_BASE_URL;
+export const ENDPOINT_WAREHOUSES = `${BASE_URL}/api/warehouses`;
+
 export const AppRoute = {
   HOME: "/",
   WAREHOUSE: "/warehouse",
+  WAREHOUSE_INVENTORY: "/warehouse/:id",
   INVENTORY: "/inventory",
-  ADDINVENTORY: "/inventory/addinventory",
-  ADDWAREHOUSEFORM: "/warehouse/add",
-  EDIT_WAREHOUSEFORM: "/warehouse/edit",
+  ADD_INVENTORY: "/inventory/addinventory",
+  WAREHOUSE_ADD: "/warehouse/add",
+  WAREHOUSE_EDIT: "/warehouse/edit/:id",
+  INVENTORY_ITEM: "/inventory/:id",
+  EDIT_INVENTORY: "/inventory/editinventory/:id",
 };
 
 export const NavigationItems = [

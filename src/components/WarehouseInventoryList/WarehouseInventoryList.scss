@@ -1,12 +1,36 @@
-@use "../../styles/partials/mixins" as *;
-@use "../../styles/partials/variables" as *;
-@use "../../styles/partials/resets" as *;
+.wil-overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 0 1.6rem;
 
-* {
-  margin: 0;
+  @include tablet {
+    padding: 0 3.2rem;
+  }
 }
 
 .wil {
+  position: relative;
+  bottom: 5.5rem;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  border: 0.1rem solid $lightGrey;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+
+  @include tablet {
+    bottom: 9.5rem;
+  }
+
+  @include desktop {
+    width: 102rem;
+    margin: 0 auto;
+  }
+
   &__header {
     display: none;
     @include tablet {
@@ -25,10 +49,6 @@
     &--title {
       font-size: $fontTablet-h4;
     }
-
-    @include desktop {
-      width: 102rem;
-    }
   }
 
   &__subheading {
@@ -46,9 +66,15 @@
   &__inventory {
     @include flex(column);
     border-top: 0.1rem solid $cloud;
-    padding: 1.6rem;
+    padding: 1.6rem 2.4rem;
     @include tablet {
       @include flex(row);
+      justify-content: space-between;
+      padding: 1.6rem 3.2rem;
+    }
+
+    &:hover {
+      background-color: rgba(46, 102, 230, 0.07);
     }
 
     &--flex {
@@ -58,17 +84,26 @@
       gap: 1.6rem;
       @include tablet {
         gap: 2.4rem;
+        // width: 100%;
       }
     }
 
     &--details {
+      width: 50%;
       @include tablet {
         @include flex(row);
+        // width: 50%;
+        // justify-content: space-between;
       }
     }
 
     &--options {
       height: 2.4rem;
+      cursor: pointer;
+      margin-top: 1.6rem;
+      @include tablet {
+        margin: 0;
+      }
     }
   }
 
@@ -96,30 +131,58 @@
     &--out {
       @include flex(row);
       align-items: center;
+      text-transform: uppercase;
       font-size: $fontMobile-h4;
       height: 2.4rem;
       padding: 0 0.8rem;
       border-radius: 2rem;
       background-color: rgba(201, 69, 21, 0.07);
       color: $red;
+      margin-top: 0.4rem;
+      width: fit-content;
+
       @include tablet {
         font-size: $fontTablet-h4;
         height: 2.6rem;
+        margin-top: 0;
       }
     }
     &--in {
       @include flex(row);
       align-items: center;
+      text-transform: uppercase;
       font-size: $fontMobile-h4;
       height: 2.4rem;
       padding: 0 0.8rem;
       border-radius: 2rem;
       background-color: rgba(21, 132, 99, 0.07);
       color: $green;
+      margin-top: 0.4rem;
+      width: fit-content;
       @include tablet {
         font-size: $fontTablet-h4;
         height: 2.6rem;
+        margin-top: 0;
       }
     }
+  }
+}
+
+.wiltab1 {
+  @include tablet {
+    width: 100%;
+  }
+}
+
+.wiltab2 {
+  @include tablet {
+    width: 50%;
+    justify-content: space-between;
+  }
+}
+.wiltab3 {
+  @include tablet {
+    width: 50%;
+    justify-content: space-around;
   }
 }
