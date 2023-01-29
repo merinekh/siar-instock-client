@@ -39,18 +39,16 @@ function DeleteModalInventoryItem({
           action.
         </p>
 
-        <div className="delete-modal__buttons">
+        <div className="delete-modal__buttons ">
           <Button
-            className="delete-modal__button"
-            type="button"
             onClick={handleModalCancelClick}
+            secondary
           >
             Cancel
           </Button>
           <Button
-            className="delete-modal__button delete-modal__button--error"
-            type="button"
             onClick={handleModalDeleteClick}
+            red
           >
             Delete
           </Button>
