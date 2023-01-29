@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import sorticon from "../../assets/icons/sort-24px.svg";
 import deleteicon from "../../assets/icons/delete_outline-24px.svg";
@@ -11,6 +11,8 @@ export default function WarehouseInventoryList() {
   const params = useParams();
   let warehouseId = params.id;
 
+  const navigate = useNavigate();
+
   useEffect(() => {
     async function getWarehouseInventory() {
       try {
@@ -18,13 +20,21 @@ export default function WarehouseInventoryList() {
           `http://localhost:8080/api/warehouses/${warehouseId}/inventories`
         );
         // console.log(data);
+
+        if (!data.length) {
+          alert(
+            "This warehouse does not have any inventory items. Returning to homepage"
+          );
+          navigate("/warehouse");
+        }
+
         setWarehouseInventory(data);
       } catch (e) {
         console.log("Error:", e);
       }
     }
     getWarehouseInventory();
-  }, [warehouseId]);
+  }, [warehouseId, navigate]);
 
   const applyTag = (status) => {
     if (status === "Out of Stock") {

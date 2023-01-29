@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import WarehouseList from "../../components/WarehouseList/WarehouseList";
+import WarehousesTable from "../../components/WarehousesTable/WarehousesTable";
 import axios from "axios";
 import { ENDPOINT_WAREHOUSES } from "../../const";
 import DeleteModal from "../../components/DeleteModal/DeleteModal";
 
-function Warehouse() {
-  const [warehouses, setWarehouses] = useState(null);
+function Warehouses() {
+const [warehouses, setWarehouses] = useState(null);
   const [selectedWarehouse, setSelectedWarehouse] = useState({});
 
   const getWarehouses = async () => {
@@ -23,7 +23,7 @@ function Warehouse() {
   const handleModalCancelClick = () => setSelectedWarehouse({});
   const handleModalDeleteClick = () => {
     axios.delete(`${ENDPOINT_WAREHOUSES}/${selectedWarehouse.id}`)
-      .then((response) => {
+      .then(() => {
         const newWarehouses = warehouses.filter((item) => item.id !== selectedWarehouse.id);
         setSelectedWarehouse({});
         setWarehouses(newWarehouses);
@@ -39,8 +39,8 @@ function Warehouse() {
   }
 
   return (
-    <>
-      <WarehouseList warehouses={warehouses} handleDeleteButton={handleDeleteButton} />
+    <main className="warehouses container">
+      <WarehousesTable warehouses={warehouses} handleDeleteButton={handleDeleteButton} />
 
       {selectedWarehouse.id && 
         <DeleteModal 
@@ -49,8 +49,8 @@ function Warehouse() {
           handleModalCancelClick={handleModalCancelClick}
           handleModalDeleteClick={handleModalDeleteClick}
         />}
-    </>
-  );
+    </main>
+  )
 }
 
-export default Warehouse;
+export default Warehouses
