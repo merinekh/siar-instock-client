@@ -8,7 +8,6 @@ import BackArrow from "../../assets/icons/arrow_back-24px.svg";
 function AddInventory() {
   const navigate = useNavigate();
   const [stockStatus, setStockStatus] = useState("inStock");
-  const [quantity, setQuantity] = useState("");
   const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1280);
   const [warehouses, setWarehouses] = useState([]);
   const [inventories, setInventories] = useState([]);
@@ -41,23 +40,14 @@ function AddInventory() {
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-    // const form = event.target;
-    // const item = form.item.value;
-    // const description = form.description.value;
-    // const category = form.category.value;
-    // const InStock = form.InStock.value;
-    // const OutOfStock = form.OutOfStock.value;
-    // const quantity = form.quantity.value;
-    // const warehouse = form.warehouse.value;
-
     axios
       .post(ENDPOINT_INVENTORY, {
+        item_name: event.target.item_name.value,
         description: event.target.description.value,
         category: event.target.category.value,
-        InStock: event.target.InStock.value,
-        OutOfStock: event.target.OutOfStock.value,
+        status: event.target.status.value,
         quantity: event.target.quantity.value,
-        warehouse: event.target.warehouse.value,
+        warehouse: event.target.warehouse_name.value,
       })
       .then(() => {
         navigate(AppRoute.INVENTORY);
@@ -65,13 +55,12 @@ function AddInventory() {
       .catch((error) => console.log(error));
 
     if (
-      !event.target.item.value ||
+      !event.target.item_name.value ||
       !event.target.description.value ||
       !event.target.category.value ||
-      !event.target.InStock.value ||
-      !event.target.OutOfStock.value ||
+      !event.target.status.value ||
       !event.target.quantity.value ||
-      !event.target.warehouse.value
+      !event.target.warehouse_name.value
     ) {
       alert("Please fill out all fields");
       return;
@@ -98,7 +87,7 @@ function AddInventory() {
             <input
               className="AddInventory-form__item-name-input"
               type="text"
-              name="item"
+              name="item_name"
               placeholder="Item Name"
               required
             ></input>
@@ -117,8 +106,15 @@ function AddInventory() {
             <br />
             <label className="AddInventory-form__label-titles">Category</label>
             <br />
-            <select className="AddInventory-form__category-dropdown">
-              <option value="warehouse" name="warehouse" required>
+            <select
+              className="AddInventory-form__category-dropdown"
+              name="category"
+            >
+              <option
+                value="category-inventory"
+                name="category-inventory"
+                required
+              >
                 Please Select
               </option>
               {inventories.map((inventory) => (
@@ -138,7 +134,7 @@ function AddInventory() {
               <input
                 className="AddInventory-form__instock-button"
                 type="radio"
-                name="Stock"
+                name="status"
                 value="in stock"
                 checked={stockStatus === "in stock"}
                 onChange={(e) => setStockStatus(e.target.value)}
@@ -149,7 +145,7 @@ function AddInventory() {
               <input
                 className="AddInventory__stock-button"
                 type="radio"
-                name="Stock"
+                name="status"
                 value="out of stock"
                 checked={stockStatus === "out of stock"}
                 onChange={(e) => setStockStatus(e.target.value)}
@@ -157,7 +153,7 @@ function AddInventory() {
               Out Of Stock
             </label>
             <br />
-            {((stockStatus === "in stock" && isDesktop) ||
+            {((stockStatus === "in stock" && !isDesktop) ||
               (stockStatus === "out of stock" && !isDesktop)) && (
               <>
                 <label className="AddInventory-form__label-titles">
@@ -166,9 +162,8 @@ function AddInventory() {
                 <br />
                 <input
                   className="AddInventory-form__quantity-input"
-                  type="number"
-                  value={quantity}
-                  onChange={(e) => setQuantity(e.target.value)}
+                  name="quantity"
+                  type="text"
                   required
                 ></input>
               </>
@@ -176,8 +171,11 @@ function AddInventory() {
             <br />
             <label className="AddInventory-form__label-titles">Warehouse</label>
             <br />
-            <select className="AddInventory-form__warehouse-dropdown">
-              <option value="warehouse" name="warehouse" required>
+            <select
+              className="AddInventory-form__warehouse-dropdown"
+              name="warehouse_name"
+            >
+              <option value="warehouse-name" name="warehouse-name" required>
                 Please Select
               </option>
               {warehouses.map((warehouse) => (

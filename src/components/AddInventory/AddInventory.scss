@@ -3,6 +3,7 @@
     @include tablet {
         display: flex;
         justify-content: space-evenly;
+        flex-wrap: wrap;
     }
 
     @include desktop {
@@ -90,6 +91,7 @@
             padding: 0rem 2.4rem;
             margin-top: 2rem;
             justify-content: right;
+            width: 100%;
         }
     }
 
