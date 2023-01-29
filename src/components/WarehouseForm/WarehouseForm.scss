@@ -1,0 +1,145 @@
+.warehouse-form {
+  border-top: 1px solid #BDC5D5;
+  display: flex;
+  flex-direction: column;
+
+  @include tablet {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.warehouse-form__fieldset {
+  padding: 16px 24px 24px 24px;
+  border: none;
+  display: block;
+
+  &:first-of-type {
+    border-bottom: 1px solid #BDC5D5;
+  }
+
+  @include tablet {
+    padding: 0 32px 16px 32px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    width: 50%;
+
+    &:first-of-type {
+      border-bottom: none;
+      border-right: 1px solid #BDC5D5;
+    }
+  }
+
+  @include desktop {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+
+.warehouse-form__legend {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+  color: #13182C;
+  margin-bottom: 24px;
+
+  @include tablet {
+    margin-bottom: 32px;
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+
+.warehouse-form__element {
+  &:not(:last-child) {
+    margin-bottom: 16px;
+  }
+
+  @include tablet {
+    &:not(:last-child) {
+      margin-bottom: 24px;
+    }
+  }
+}
+
+.warehouse-form__label {
+  display: block;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 22px;
+  color: #13182C;
+  margin-bottom: 4px;
+}
+
+.warehouse-form__field {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  display: block;
+  width: 100%;
+  min-height: 38px;
+  background: #FFFFFF;
+  border: 1px solid #BDC5D5;
+  border-radius: 20px;
+  padding: 8px 16px;
+
+  &:focus {
+    outline: none;
+    border: 1px solid #2E66E5;
+  }
+
+  @include tablet {
+    min-height: 38px;
+  }
+}
+
+.warehouse-form__buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 24px;
+  background: rgba(247, 248, 249, 0.7);
+  width: 100%;
+
+  @include tablet {
+    padding: 16px 32px;
+    justify-content: flex-end;
+  }
+
+  @include tablet {
+    padding: 16px 40px;
+  }
+}
+
+.warehouse-form__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 36px;
+  border-radius: 40px;
+  padding: 0 16px;
+  min-width: 140px;
+  border: 1px solid #BDC5D5;
+  color: #5C667E;
+  background-color: #fff;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 20px;
+
+  &:first-child {
+    margin-right: 16px;
+  }
+
+  &[type="submit"] {
+    border: none;
+    color: #fff;
+    background-color: #2E66E6;
+  }
+
+  @include tablet {
+    min-width: 0;
+    min-height: 38px;
+    font-size: 14px;
+    line-height: 22px;
+  }
+}

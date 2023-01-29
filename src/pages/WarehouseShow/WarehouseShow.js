@@ -1,152 +1,47 @@
-// import axios from "axios";
-// import { useEffect } from "react";
-// import { useParams } from "react-router";
-// import arrowBack from "../../assets/icons/arrow_back-24px.svg";
-// import { ENDPOINT_WAREHOUSES } from "../../const";
+import { generatePath, useParams } from "react-router";
+import { Link } from "react-router-dom";
+import WarehouseForm from "../../components/WarehouseForm/WarehouseForm";
+import arrowBack from "../../assets/icons/arrow_back-24px.svg"
+import { AppRoute } from "../../const";
 
-// function WarehouseShow() {
-//   const params = useParams();
-//   const warehouseID = params.id;
-//   // const [warehouse, setWarehouse] = useState({});
+function WarehouseShow() {
+  const params = useParams();
+  const warehouseID = params.id;
 
-//   useEffect(() => {
-//     if (warehouseID) {
-//       axios.get(`${ENDPOINT_WAREHOUSES}/${warehouseID}`)
-//         .then(({ data }) => console.log(data))
-//         .catch((error) => console.log(error));
-//     }
-//   }, [warehouseID]);
+  return (
+    <div className="warehouse-show">
+      {warehouseID
+        ? 
+        <h1 className="warehouse-show__title">
+          <Link className="warehouse-show__link" 
+            to={generatePath(AppRoute.WAREHOUSE_INVENTORY, { id: warehouseID })}
+          >
+            <img className="warehouse-show__icon"
+              src={arrowBack}
+              width={24}
+              height={24}
+              alt="To warehouse inventory"
+            />
+          </Link>
+          Edit Warehouse
+        </h1>
+        : 
+        <h1 className="warehouse-show__title">
+          <Link className="warehouse-show__link" to={AppRoute.WAREHOUSE}>
+            <img className="warehouse-show__icon"
+              src={arrowBack}
+              width={24}
+              height={24}
+              alt="Back to warehouses"
+            />
+          </Link>
+          Add New Warehouse
+        </h1>
+      }
 
-//   return (
-//     <>
-//       <form className="warehouseform">
-//         <div className="warehouseform-header">
-//           <a href="/" className="warehouseform-header-link">
-//             <img
-//               src={arrowBack}
-//               alt="arrow_back"
-//               className="warehouseform-header__icon"
-//             />
-//           </a>
-//           <h1 className="warehouseform-header__text">Warehouse</h1>
-//         </div>
+      <WarehouseForm warehouseID={warehouseID} />
+    </div>
+  );
+}
 
-//         <div className="warehouseform-main">
-//           <div className="warehouseform-main-warehouse">
-//             <h2 className="warehouseform-main-warehouse__title">
-//               Warehouse Details
-//             </h2>
-
-//             <div className="warehouseform-main-warehouse-inputs">
-//               <div className="warehouseform-main-warehouse-input">
-//                 <p className="warehouseform-main-warehouse__subtitle">
-//                   Warehouse Name
-//                 </p>
-//                 <input
-//                   type="text"
-//                   className="warehouseform-main-warehouse__input"
-//                   placeholder="Warehouse Name"
-//                   required
-//                 />
-//               </div>
-//               <div className="warehouseform-main-warehouse-input">
-//                 <p className="warehouseform-main-warehouse__subtitle">
-//                   Street Address
-//                 </p>
-//                 <input
-//                   type="text"
-//                   className="warehouseform-main-warehouse__input"
-//                   placeholder="Street Address"
-//                   required
-//                 />
-//               </div>
-//               <div className="warehouseform-main-warehouse-input">
-//                 <p className="warehouseform-main-warehouse__subtitle">City</p>
-//                 <input
-//                   type="text"
-//                   className="warehouseform-main-warehouse__input"
-//                   placeholder="City"
-//                   required
-//                 />
-//               </div>
-//               <div className="warehouseform-main-warehouse-input">
-//                 <p className="warehouseform-main-warehouse__subtitle">
-//                   Country
-//                 </p>
-//                 <input
-//                   type="text"
-//                   className="warehouseform-main-warehouse__input"
-//                   placeholder="Country"
-//                   required
-//                 />
-//               </div>
-//               <hr className="warehouseform-main-warehouse__line" />
-//             </div>
-//           </div>
-
-//           <div className="warehouseform-main-contact">
-//             <h2 className="warehouseform-main-contact__title">
-//               Contact Details
-//             </h2>
-
-//             <div className="warehouseform-main-contact-inputs">
-//               <div className="warehouseform-main-contact-input">
-//                 <p className="warehouseform-main-contact__subtitle">
-//                   Contact Name
-//                 </p>
-//                 <input
-//                   type="text"
-//                   className="warehouseform-main-contact__input"
-//                   placeholder="Contact Name"
-//                   required
-//                 />
-//               </div>
-//               <div className="warehouseform-main-contact-input">
-//                 <p className="warehouseform-main-contact__subtitle">Position</p>
-//                 <input
-//                   type="text"
-//                   className="warehouseform-main-contact__input"
-//                   placeholder="Position"
-//                   required
-//                 />
-//               </div>
-//               <div className="warehouseform-main-contact-input">
-//                 <p className="warehouseform-main-contact__subtitle">
-//                   Phone Number
-//                 </p>
-//                 <input
-//                   type="tel"
-//                   className="warehouseform-main-contact__input"
-//                   placeholder="Phone Number"
-//                   required
-//                 />
-//               </div>
-//               <div className="warehouseform-main-contact-input">
-//                 <p className="warehouseform-main-contact__subtitle">Email</p>
-//                 <input
-//                   type="email"
-//                   className="warehouseform-main-contact__input"
-//                   placeholder="Email"
-//                   required
-//                 />
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-
-//         <div className="warehouseform-buttons">
-//           <button className="warehouseform-buttons__cancel">Cancel</button>
-//           <button
-//             type="submit"
-//             className="warehouseform-buttons__save"
-//             // onSubmit={preventDef}
-//           >
-//             {/* {submitButton} */}
-//           </button>
-//         </div>
-//       </form>
-//     </>
-//   );
-// }
-
-// export default WarehouseShow;
+export default WarehouseShow;

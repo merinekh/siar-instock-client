@@ -8,6 +8,8 @@ function PageNav(){
       ? 'page-navigation__item page-navigation__item--current'
       : 'page-navigation__item';
 
+   
+
 
   return (
     <ul className="page-navigation">
@@ -20,7 +22,7 @@ function PageNav(){
                 {text}
               </span>
               :
-              <Link className="page-navigation__link" to={url}>
+              <Link className="page-navigation__link page-navigation__link--current" to={url}>
                 {text}
               </Link>}
           </li>)

@@ -1,4 +1,5 @@
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { AppRoute } from "../../const";
 import WarehouseListItems from "../WarehouseListItems/WarehouseListItems";
 
 const WarehouseList = ({warehouses, handleDeleteButton}) => {
@@ -17,13 +18,9 @@ const WarehouseList = ({warehouses, handleDeleteButton}) => {
                 className="warehouses__input"
               ></input>
             </label>
-            <label>
-              <input
-                type="button"
-                value="+Add New Warehouse"
-                className="warehouses__button"
-              />
-            </label>
+            <Link className="warehouses__button" to={AppRoute.WAREHOUSE_ADD}>
+              +Add New Warehouse
+            </Link>
           </form>
         </div>
         <WarehouseListItems warehouses={warehouses} handleDeleteButton={handleDeleteButton}/>

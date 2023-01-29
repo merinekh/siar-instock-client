@@ -23,7 +23,7 @@ function Warehouse() {
   const handleModalCancelClick = () => setSelectedWarehouse({});
   const handleModalDeleteClick = () => {
     axios.delete(`${ENDPOINT_WAREHOUSES}/${selectedWarehouse.id}`)
-      .then((response) => {
+      .then(() => {
         const newWarehouses = warehouses.filter((item) => item.id !== selectedWarehouse.id);
         setSelectedWarehouse({});
         setWarehouses(newWarehouses);

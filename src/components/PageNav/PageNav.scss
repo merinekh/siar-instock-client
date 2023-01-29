@@ -1,6 +1,4 @@
-a {
-  color: $cloud;
-}
+
 .page-navigation {
   display: flex;
   &__item {
@@ -22,7 +20,11 @@ a {
     justify-content: center;
     text-align: center;
     font-weight: 600;
-    color: $cloud;
+    color: $white;
+    
+    &--current {
+      color: $cloud;
+    }
     
     &:hover {
       text-decoration-line: underline;
