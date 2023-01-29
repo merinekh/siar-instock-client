@@ -169,13 +169,17 @@
 
 .wiltab2 {
   @include tablet {
-    width: 50%;
+    width: 36%;
     justify-content: space-between;
   }
 }
 .wiltab3 {
   @include tablet {
-    width: 50%;
-    justify-content: space-around;
+    width: 30%;
+    justify-content: space-between;
+    margin-right: 15%;
+  }
+  @include desktop {
+    margin-right: 14rem;
   }
 }
