@@ -2,6 +2,7 @@
   border-bottom: 0.1rem solid $cloud;
   padding: 0 1.6rem;
   max-width: 100%;
+
   &:hover {
     background-color: rgba(46, 102, 230, 0.07);
   }
@@ -14,18 +15,17 @@
     padding: 1rem 3.2rem;
     display: flex;
     align-items: center;
-    justify-content: space-between;
   }
-  // @include desktop{
-  //   width: 102rem;
-  // }
 
   &-container {
     display: flex;
     justify-content: space-between;
     border-radius: 0.5rem solid $cloud;
     @include tablet {
-      // flex-grow: 1;
+    }
+
+    @include desktop {
+      overflow: hidden;
     }
     &__para {
       margin: 0;
@@ -50,29 +50,26 @@
       @include tablet {
         display: flex;
         justify-content: space-between;
-        width: 26.9rem;
       }
     }
     &__right {
       @include tablet {
         display: flex;
-        justify-content: space-between;
-        width: 25.8rem;
-      }
-      @include desktop {
-        // justify-content: flex-end;
       }
     }
 
     &__name {
       @include tablet {
-        // width: 12.9rem;
+        width: 12.9vw;
+      }
+
+      @include desktop {
+        width: 10vw;
+        max-width: 100%;
       }
       &__chevron a {
         display: -webkit-inline-box;
         align-items: center;
-        // width: 17vw;
-        // width: 13rem;
       }
       &__chevron__img {
         width: 2rem;
@@ -102,11 +99,11 @@
       }
       &__box {
         @include tablet {
-          width: 14rem;
+          width: 22vw;
         }
-
         @include desktop {
-          // min-width: 24.5vw;
+          width: 20vw;
+          max-width: 100%;
         }
       }
       &__details {
@@ -123,12 +120,8 @@
 
     &__contact {
       @include tablet {
-        // width: 15.5rem;
-      }
-
-      @include desktop {
-        // width: 20.5vw;
-        // min-width: 14.5vw;
+        width: 15.5vw;
+        max-width: 100%;
       }
 
       &__details {
@@ -136,14 +129,18 @@
 
         @include tablet {
           margin-left: 0;
-          width: 8.3rem;
         }
       }
     }
 
     &__info {
       @include tablet {
-        // min-width: 20vw;
+        width: 21vw;
+      }
+
+      @include desktop {
+        width: 16vw;
+        max-width: 100%;
       }
     }
 
@@ -168,36 +165,50 @@
     }
   }
 
-  &__tabletView {
-    // display: flex;
-    // justify-content: space-between;
+  &-tablet {
+    max-width: 100%;
+    display: flex;
+    padding: 0 3.2rem;
+    margin: 0;
+    background-color: $lightGrey;
+    @include desktop {
+      overflow: hidden;
+    }
 
-    &-container {
-      max-width: 100%;
-      display: flex;
-      padding-left: 3.2rem;
-      margin: 0;
-      background-color: $lightGrey;
-      // justify-content: space-between;
+    &__img {
+      width: 2rem;
+    }
 
-      &__indiv {
-        display: none;
-        @include tablet {
-          display: flex;
-          align-items: center;
-        }
-        &--left {
-          width: 26.9rem;
-          justify-content: space-between;
-        }
-
-        &--right {
-          // width: 19.9rem;
-        }
-      }
-      &__wrapper {
+    &__block {
+      display: none;
+      @include tablet {
         display: flex;
-        width: 15.9rem;
+        align-items: center;
+        &--warehouse {
+          width: 13vw;
+          @include desktop {
+            width: 10.5vw;
+          }
+        }
+        &--address {
+          width: 21.5vw;
+          @include desktop {
+            width: 19.5vw;
+          }
+        }
+
+        &--contact {
+          width: 16vw;
+          @include desktop {
+            width: 15.5vw;
+          }
+        }
+        &--info {
+          width: 22vw;
+          @include desktop {
+            width: 17vw;
+          }
+        }
       }
     }
   }

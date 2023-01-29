@@ -10,8 +10,6 @@ const WarehouseListItems = ({ warehouses, handleDeleteButton }) => {
       <div className="warehouse" key={element.id}>
         <div className="warehouse-container">
           <div className="warehouse-container__left">
-            {/* warehouse name */}
-
             <div className="warehouse-container__name">
               <h4 className="warehouse-container__name__title warehouse-container__title">
                 WAREHOUSE
@@ -32,8 +30,6 @@ const WarehouseListItems = ({ warehouses, handleDeleteButton }) => {
                 </Link>
               </div>
             </div>
-
-            {/* address */}
             <div className="warehouse-container__address">
               <h4 className="warehouse-container__address__title warehouse-container__title">
                 ADDRESS
@@ -45,8 +41,6 @@ const WarehouseListItems = ({ warehouses, handleDeleteButton }) => {
               </div>
             </div>
           </div>
-
-          {/* contact name */}
           <div className="warehouse-container__right">
             <div className="warehouse-container__contact">
               <h4 className="warehouse-container__contact__title warehouse-container__title">
@@ -56,8 +50,6 @@ const WarehouseListItems = ({ warehouses, handleDeleteButton }) => {
                 {element.contact_name}
               </p>
             </div>
-
-            {/* contact information */}
             <div className="warehouse-container__info">
               <h4 className="warehouse-container__info__title warehouse-container__title">
                 CONTACT INFORMATION
@@ -92,44 +84,31 @@ const WarehouseListItems = ({ warehouses, handleDeleteButton }) => {
 
   return (
     <>
-      <div className="warehouse__tabletView-container">
-
-        <div className="warehouse__tabletView-container__indiv warehouse__tabletView-container__indiv--left">
-          <div className="warehouse__tabletView-container__wrapper">
-            <h4 className="warehouse__tabletView-container__subtitle warehouse-container__title ">
-              WAREHOUSE
-            </h4>
-            <img src={sort} alt="sort"></img>
-          </div>
-          <div className="warehouse__tabletView-container__wrapper">
-            <h4 className="warehouse__tabletView-container__subtitle warehouse-container__title">
-              ADDRESS
-            </h4>
-            <img src={sort} alt="sort"></img>
-          </div>
+      <div className="warehouse-tablet">
+        <div className="warehouse-tablet__block warehouse-tablet__block--warehouse">
+          <h4 className="warehouse-container__title ">WAREHOUSE</h4>
+          <img src={sort} className="warehouse-tablet__img" alt="sort"></img>
         </div>
 
-        <div className="warehouse__tabletView-container__indiv warehouse__tabletView-container__indiv--right">
-          <div className="warehouse__tabletView-container__wrapper">
-            <h4 className="warehouse__tabletView-container__subtitle warehouse-container__title ">
-              CONTACT NAME
-            </h4>
-            <img src={sort} alt="sort"></img>
-          </div>
-          <div className="warehouse__tabletView-container__wrapper warehouse__tabletView-container__wrapper--contactinfo">
-            <h4 className="warehouse__tabletView-container__subtitle warehouse-container__title">
-              CONTACT INFORMATION
-            </h4>
-            <img src={sort} alt="sort"></img>
-          </div>
+        <div className="warehouse-tablet__block warehouse-tablet__block--address">
+          <h4 className="warehouse-container__title">ADDRESS</h4>
+          <img src={sort} className="warehouse-tablet__img" alt="sort"></img>
         </div>
 
-        <div className="warehouse__tabletView-container__indiv warehouse__tabletView-container__indiv--action">
-            <h4 className="warehouse__tabletView-container__subtitle warehouse-container__title">
-              ACTION
-            </h4>
-            <img src={sort} alt="sort"></img>
-          </div>
+        <div className="warehouse-tablet__block warehouse-tablet__block--contact">
+          <h4 className="warehouse-container__title ">CONTACT NAME</h4>
+          <img src={sort} className="warehouse-tablet__img" alt="sort"></img>
+        </div>
+
+        <div className="warehouse-tablet__block warehouse-tablet__block--info">
+          <h4 className="warehouse-container__title">CONTACT INFORMATION</h4>
+          <img src={sort} className="warehouse-tablet__img" alt="sort"></img>
+        </div>
+
+        <div className="warehouse-tablet__block warehouse-tablet__block--action">
+          <h4 className="warehouse-container__title">ACTION</h4>
+          <img src={sort} className="warehouse-tablet__img" alt="sort"></img>
+        </div>
       </div>
       {mappedList}
     </>
