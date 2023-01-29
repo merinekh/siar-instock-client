@@ -77,7 +77,7 @@ export default function EditInventory() {
 
   return (
     <>
-      <form className="AddInventory-form" onSubmit={handleSubmit}>
+      <form className="AddInventory-form" /*onSubmit={handleSubmit}*/>
         <div className="AddInventory-form__header-div">
           <h1 className="AddInventory-form__header">
             <img
