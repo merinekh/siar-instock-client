@@ -15,7 +15,7 @@ export default function InventoryItemDetails() {
         const { data } = await axios.get(
           `http://localhost:8080/api/inventories/${inventoryId}`
         );
-        // console.log(data);
+
         setInventoryItem(data);
       } catch (e) {
         console.log("Error:", e);

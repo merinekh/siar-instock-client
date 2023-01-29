@@ -6,25 +6,10 @@
 }
 
 .inv {
-  // position: relative;
-  // bottom: 5.5rem;
-  // left: 0;
-  // width: 100%;
-  // height: 100%;
-  // z-index: 1;
   border: 0.1rem solid $lightGrey;
   border-radius: 5px;
   background-color: white;
   box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
-
-  // @include tablet {
-  //   bottom: 9.5rem;
-  // }
-
-  // @include desktop {
-  //   width: 102rem;
-  //   margin: 0 auto;
-  // }
 
   &__container {
     padding: 3rem 2.4rem 1.6rem;
@@ -114,10 +99,6 @@
     &--title {
       font-size: $fontTablet-h4;
     }
-
-    @include desktop {
-      // width: 102rem;
-    }
   }
 
   &__subheading {
@@ -157,7 +138,6 @@
       justify-content: space-between;
       gap: 1.6rem;
       @include tablet {
-        // gap: 2.4rem;
         align-items: center;
       }
     }
@@ -167,7 +147,6 @@
       @include flex(column);
       @include tablet {
         @include flex(row);
-        // width: fit-content;
       }
     }
 
@@ -181,6 +160,13 @@
     &--options {
       height: 2.4rem;
       cursor: pointer;
+    }
+  }
+
+  &__quantity-container {
+    @include tablet {
+      @include flex(row);
+      align-items: center;
     }
   }
 
@@ -200,6 +186,7 @@
   &__item-text {
     font-size: $fontMobile-bodyM;
     margin-top: 0.4rem;
+    min-width: 6.5rem;
     @include tablet {
       font-size: $fontTablet-bodyM;
       margin-top: 0;
@@ -245,18 +232,18 @@
 
 .invtab1 {
   @include tablet {
-    width: 85%;
+    width: 83%;
   }
 }
 .invtab2 {
   @include tablet {
-    width: 35%;
+    width: 37%;
     justify-content: space-between;
   }
 }
-.invtab2 {
+.invtab3 {
   @include tablet {
-    width: 50%;
+    width: 51%;
     justify-content: space-between;
   }
 }

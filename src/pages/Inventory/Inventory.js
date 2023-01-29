@@ -19,7 +19,6 @@ export default function Inventory() {
           "http://localhost:8080/api/inventories"
         );
         setAllInventory(data);
-        // console.log(data);
       } catch (e) {
         console.log("Error:", e);
       }
@@ -123,14 +122,14 @@ export default function Inventory() {
                     <p className="inv__item-text">{item.category}</p>
                   </div>
                 </div>
-                <div className="inv__inventory--details invtab2">
+                <div className="inv__inventory--details invtab3">
                   <div>
                     <h4 className="inv__subheading">STATUS</h4>
                     <h4 className={applyTag(item.status)}>
                       {item.status.toUpperCase()}
                     </h4>
                   </div>
-                  <div>
+                  <div className="inv__quantity-container">
                     <h4 className="inv__subheading">QTY</h4>
                     <p className="inv__item-text">{item.quantity}</p>
                   </div>

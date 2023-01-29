@@ -7,7 +7,6 @@ import editicon from "../../assets/icons/edit-24px.svg";
 import chevron from "../../assets/icons/chevron_right-24px.svg";
 import DeleteModalInventoryItem from "../../components/DeleteModalInventoryItem/DeleteModalInventoryItem";
 import WarehouseDetails from "../WarehouseDetails/WarehouseDetails";
-import arrowback from "../../assets/icons/arrow_back-24px.svg";
 
 export default function WarehouseInventoryList() {
   const [warehouseInventory, setWarehouseInventory] = useState([]);
@@ -24,7 +23,6 @@ export default function WarehouseInventoryList() {
       const { data } = await axios.get(
         `http://localhost:8080/api/warehouses/${warehouseId}/inventories`
       );
-      // console.log(data);
 
       if (!data.length) {
         alert(
@@ -32,7 +30,6 @@ export default function WarehouseInventoryList() {
         );
         navigate("/warehouse");
       }
-      // console.log(data);
 
       setWarehouseInventory(data);
     } catch (e) {
@@ -77,33 +74,6 @@ export default function WarehouseInventoryList() {
 
   return (
     <section className="wil-overlay container">
-      {/* <div className="wil-header__container">
-        <div>
-          <Link to={"/warehouse"}>
-            <img src={arrowback} alt="back" />
-          </Link>
-          <h1 className="wil-header__container-header">11</h1>
-        </div>
-        <Link to={`/warehouse/edit/${warehouseId}`}>
-          <div className="wil-header__container-form">
-            <div className="wil-header__container-back--mobile">
-              <img
-                className="wil-header__container-back--mobilepic"
-                src={editicon}
-                alt="back"
-              />
-            </div>
-            <div className="wil-header__container-back--tablet">
-              <img
-                className="wil-header__container-back--tabletpic"
-                src={editicon}
-                alt="back"
-              />{" "}
-              Edit
-            </div>
-          </div>
-        </Link>
-      </div> */}
       <WarehouseDetails />
       <section className="wil">
         <div className="wil__header">

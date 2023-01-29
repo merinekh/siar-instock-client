@@ -7,95 +7,7 @@
   border-radius: 5px;
 }
 
-// .wil-header {
-//   &__container {
-//     padding: 1.6rem;
-//     background-color: white;
-//     @include flex(row);
-//     justify-content: space-between;
-//     align-items: center;
-//     @include tablet {
-//       padding: 1.6rem 3.2rem;
-//     }
-//   }
-
-//   &__container-header {
-//     font-size: $fontMobile-h1;
-//     display: inline-block;
-//     padding-left: 0.8rem;
-//     @include tablet {
-//       font-size: $fontTablet-h1;
-//     }
-//   }
-
-//   &__container-form {
-//     @include flex(row);
-//     align-items: center;
-//   }
-
-//   &__container-search {
-//     margin-top: 1.6rem;
-//     @include tablet {
-//       margin-top: 0;
-//     }
-//   }
-
-//   &__container-back {
-//     &--mobile {
-//       width: 3.6rem;
-//       height: 3.6rem;
-//       display: flex;
-//       align-items: center;
-//       justify-content: center;
-//       border-radius: 2rem;
-//       background-color: $instock-Indigo;
-//       @include tablet {
-//         display: none;
-//       }
-//       &:hover {
-//         background-color: $graphite;
-//       }
-//     }
-
-//     &--mobilepic {
-//       filter: invert(1) brightness(10);
-//     }
-
-//     &--tablet {
-//       display: none;
-//       @include tablet {
-//         display: flex;
-//         align-items: center;
-//         border-radius: 2rem;
-//         background-color: $instock-Indigo;
-//         padding: 0.4rem 1.6rem;
-//         color: white;
-//         font-size: 1.4rem;
-//         height: 3.8rem;
-//         &:hover {
-//           background-color: $graphite;
-//         }
-//       }
-//     }
-
-//     &--tabletpic {
-//       filter: invert(1) brightness(10);
-//       width: 1.8rem;
-//       height: 1.8rem;
-//       margin-right: 0.8rem;
-//     }
-//   }
-// }
-
 .wil {
-  // position: relative;
-  // bottom: 5.5rem;
-  // left: 0;
-  // width: 100%;
-  // height: 100%;
-  // z-index: 1;
-  // border: 0.1rem solid $lightGrey;
-  // border-radius: 5px;
   background-color: white;
   box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
 
@@ -175,8 +87,6 @@
       width: 50%;
       @include tablet {
         @include flex(row);
-        // width: 50%;
-        // justify-content: space-between;
       }
     }
 

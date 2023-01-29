@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
-// import "../WarehouseDetails/WarehouseDetails.scss";
 import editicon from "../../assets/icons/edit-24px.svg";
 import arrowback from "../../assets/icons/arrow_back-24px.svg";
 
