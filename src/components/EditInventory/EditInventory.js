@@ -9,71 +9,71 @@ export default function EditInventory() {
   const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1280);
   const params = useParams();
   const baseURL = "localhost:8080/";
-  useEffect(() => {
-    function handleResize() {
-      setIsDesktop(window.innerWidth >= 1280);
-    }
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
+  // useEffect(() => {
+  //   function handleResize() {
+  //     setIsDesktop(window.innerWidth >= 1280);
+  //   }
+  //   window.addEventListener("resize", handleResize);
+  //   return () => {
+  //     window.removeEventListener("resize", handleResize);
+  //   };
 
-    //==========================Get Request For PlaceHolder=================================
-    const [placeholder, setPlaceholder] = useState(null);
+  //   //==========================Get Request For PlaceHolder=================================
+  //   const [placeholder, setPlaceholder] = useState(null);
 
-    axios.get(baseURL + `${params.id}`).then((response) => {
-      setPlaceholder(response.data);
-      console.log(response.data);
-    });
-  }, []);
+  //   axios.get(baseURL + `${params.id}`).then((response) => {
+  //     setPlaceholder(response.data);
+  //     console.log(response.data);
+  //   });
+  // }, []);
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const form = event.target;
-    const item = form.item.value;
-    const description = form.description.value;
-    const category = form.category.value;
-    const InStock = form.InStock.value;
-    const OutOfStock = form.OutOfStock.value;
-    const quantity = form.quantity.value;
-    const warehouse = form.warehouse.value;
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   const form = event.target;
+  //   const item = form.item.value;
+  //   const description = form.description.value;
+  //   const category = form.category.value;
+  //   const InStock = form.InStock.value;
+  //   const OutOfStock = form.OutOfStock.value;
+  //   const quantity = form.quantity.value;
+  //   const warehouse = form.warehouse.value;
 
-    if (
-      !item ||
-      !description ||
-      !category ||
-      !InStock ||
-      !OutOfStock ||
-      !quantity ||
-      !warehouse
-    ) {
-      alert("Please fill out all fields");
-      return;
-    }
-  };
-  //==================Update Inventory PUT request========================
-  const [post, setPost] = useState(null);
+  //   if (
+  //     !item ||
+  //     !description ||
+  //     !category ||
+  //     !InStock ||
+  //     !OutOfStock ||
+  //     !quantity ||
+  //     !warehouse
+  //   ) {
+  //     alert("Please fill out all fields");
+  //     return;
+  //   }
+  // };
+  // //==================Update Inventory PUT request========================
+  // const [post, setPost] = useState(null);
 
-  useEffect(() => {
-    axios.get(`${baseURL}/1`).then((response) => {
-      setPost(response.data);
-    });
-  }, []);
+  // useEffect(() => {
+  //   axios.get(`${baseURL}/1`).then((response) => {
+  //     setPost(response.data);
+  //   });
+  // }, []);
 
-  axios
-    .put(`${baseURL}/1`, {
-      form,
-      item,
-      description,
-      category,
-      InStock,
-      OutOfStock,
-      quantity,
-      warhouse,
-    })
-    .then((response) => {
-      setPost(response.data);
-    });
+  // axios
+  //   .put(`${baseURL}/1`, {
+  //     form,
+  //     item,
+  //     description,
+  //     category,
+  //     InStock,
+  //     OutOfStock,
+  //     quantity,
+  //     warhouse,
+  //   })
+  //   .then((response) => {
+  //     setPost(response.data);
+  //   });
 
   return (
     <>
