@@ -1,0 +1,47 @@
+.warehouse-show {
+  margin: 0 16px;
+  margin-top: -64px;
+  background-color: #fff;
+  box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+  border-radius: 3px;
+
+  @include tablet {
+    margin: 0 32px;
+    margin-top: -94px;
+  }
+
+  @include desktop {
+    margin: 0 auto;
+    margin-top: -94px;
+    max-width: 1020px;
+  }
+}
+
+.warehouse-show__title {
+  display: flex;
+  align-content: center;
+  padding: 24px;
+  padding-top: 24px;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 36px;
+  color: #13182C;
+
+  @include tablet {
+    padding: 32px;
+    padding-bottom: 21px;
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  @include desktop {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+
+.warehouse-show__link {
+  display: flex;
+  align-items: center;
+  margin-right: 8px;
+}

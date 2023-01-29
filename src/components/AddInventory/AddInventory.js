@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import "../AddInventory/AddInventory.scss";
+
 import { AppRoute, ENDPOINT_INVENTORY, ENDPOINT_WAREHOUSES } from "../../const";
 import BackArrow from "../../assets/icons/arrow_back-24px.svg";
 
@@ -79,8 +79,8 @@ function AddInventory() {
   };
   return (
     <>
-      <div className="AddInventory-box">
-        <form className="AddInventory-form" onSubmit={handleSubmit}>
+      <form className="AddInventory-form" onSubmit={handleSubmit}>
+        <div className="AddInventory-form__header-div">
           <h1 className="AddInventory-form__header">
             <img
               className="AddInventory-form__backarrow"
@@ -89,7 +89,8 @@ function AddInventory() {
             />
             Add New Inventory Item
           </h1>
-          <hr />
+        </div>
+        <div className="AddInventory-box">
           <div className="AddInventory-form__top-box">
             <h2 className="AddInventory-form__sub-titles">Item Details</h2>
             <label className="AddInventory-form__label-titles">Item Name</label>
@@ -128,7 +129,7 @@ function AddInventory() {
             </select>
             <br />
           </div>
-          <hr />
+
           <div className="AddInventory-form__bottom-box">
             <h2 className="AddInventory-form__sub-titles">Item Availability</h2>
             <label className="AddInventory-form__label-titles">Status</label>
@@ -197,8 +198,8 @@ function AddInventory() {
               Add Item
             </button>
           </div>
-        </form>
-      </div>
+        </div>
+      </form>
     </>
   );
 }

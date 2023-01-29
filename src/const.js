@@ -4,11 +4,13 @@ export const ENDPOINT_INVENTORY = `${BASE_URL}/api/inventories`;
 export const AppRoute = {
   HOME: "/",
   WAREHOUSE: "/warehouse",
+  WAREHOUSE_INVENTORY: "/warehouse/:id",
   INVENTORY: "/inventory",
-  ADDINVENTORY: "/inventory/addinventory",
-  ADDWAREHOUSEFORM: "/warehouse/add",
-  EDIT_WAREHOUSEFORM: "/warehouse/edit",
-  WAREHOUSEDETAILS: "warehouse/:id/warehouseDetails",
+  ADD_INVENTORY: "/inventory/addinventory",
+  WAREHOUSE_ADD: "/warehouse/add",
+  WAREHOUSE_EDIT: "/warehouse/edit/:id",
+  INVENTORY_ITEM: "/inventory/:id",
+  EDIT_INVENTORY: "/inventory/editinventory/:id",
 };
 
 export const NavigationItems = [
