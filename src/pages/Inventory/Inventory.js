@@ -6,9 +6,11 @@ import sorticon from "../../assets/icons/sort-24px.svg";
 import deleteicon from "../../assets/icons/delete_outline-24px.svg";
 import editicon from "../../assets/icons/edit-24px.svg";
 import chevron from "../../assets/icons/chevron_right-24px.svg";
+import DeleteModalInventoryItem from "../../components/DeleteModalInventoryItem/DeleteModalInventoryItem";
 
 export default function Inventory() {
   const [allInventory, setAllInventory] = useState([]);
+  const [selectedItem, setSelectedItem] = useState([]);
 
   useEffect(() => {
     async function getAllInventory() {
@@ -24,6 +26,25 @@ export default function Inventory() {
     }
     getAllInventory();
   }, []);
+
+  const handleDeleteButton = (inventory) => () => setSelectedItem(inventory);
+
+  const handleModalCloseClick = () => setSelectedItem({});
+  const handleModalCancelClick = () => setSelectedItem({});
+  const handleModalDeleteClick = () => {
+    axios
+      .delete(`http://localhost:8080/api/inventories/${selectedItem.id}`)
+      .then((response) => {
+        const itemId = allInventory.filter(
+          (item) => item.id !== selectedItem.id
+        );
+        setSelectedItem({});
+        setAllInventory(itemId);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   const applyTag = (status) => {
     if (status === "Out of Stock") {
@@ -119,13 +140,13 @@ export default function Inventory() {
               </div>
             </div>
             <div className="inv__inventory--flex ">
-              <Link to="">
-                <img
-                  className="inv__inventory--options"
-                  src={deleteicon}
-                  alt="delete"
-                />
-              </Link>
+              <img
+                className="inv__inventory--options"
+                src={deleteicon}
+                alt="delete"
+                onClick={handleDeleteButton(item)}
+              />
+
               <Link to={`/inventory/editinventory/${item.id}`}>
                 <img
                   className="inv__inventory--options"
@@ -136,6 +157,14 @@ export default function Inventory() {
             </div>
           </div>
         ))}
+        {selectedItem.id && (
+          <DeleteModalInventoryItem
+            inventory={selectedItem}
+            handleModalCloseClick={handleModalCloseClick}
+            handleModalCancelClick={handleModalCancelClick}
+            handleModalDeleteClick={handleModalDeleteClick}
+          />
+        )}
       </section>
     </section>
   );

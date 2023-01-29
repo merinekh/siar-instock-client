@@ -1,30 +1,64 @@
 import { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import sorticon from "../../assets/icons/sort-24px.svg";
 import deleteicon from "../../assets/icons/delete_outline-24px.svg";
 import editicon from "../../assets/icons/edit-24px.svg";
 import chevron from "../../assets/icons/chevron_right-24px.svg";
+import DeleteModalInventoryItem from "../../components/DeleteModalInventoryItem/DeleteModalInventoryItem";
 
 export default function WarehouseInventoryList() {
   const [warehouseInventory, setWarehouseInventory] = useState([]);
+  const [selectedItem, setSelectedItem] = useState([]);
+  const [allInventory, setAllInventory] = useState([]);
+
   const params = useParams();
   let warehouseId = params.id;
 
-  useEffect(() => {
-    async function getWarehouseInventory() {
-      try {
-        const { data } = await axios.get(
-          `http://localhost:8080/api/warehouses/${warehouseId}/inventories`
+  const navigate = useNavigate();
+
+  async function getWarehouseInventory() {
+    try {
+      const { data } = await axios.get(
+        `http://localhost:8080/api/warehouses/${warehouseId}/inventories`
+      );
+      // console.log(data);
+
+      if (!data.length) {
+        alert(
+          "This warehouse does not have any inventory items. Returning to homepage"
         );
-        // console.log(data);
-        setWarehouseInventory(data);
-      } catch (e) {
-        console.log("Error:", e);
+        navigate("/warehouse");
       }
+
+      setWarehouseInventory(data);
+    } catch (e) {
+      console.log("Error:", e);
     }
+  }
+  useEffect(() => {
     getWarehouseInventory();
-  }, [warehouseId]);
+  }, [warehouseId, navigate]);
+
+  const handleDeleteButton = (inventory) => () => setSelectedItem(inventory);
+
+  const handleModalCloseClick = () => setSelectedItem({});
+  const handleModalCancelClick = () => setSelectedItem({});
+  const handleModalDeleteClick = () => {
+    axios
+      .delete(`http://localhost:8080/api/inventories/${selectedItem.id}`)
+      .then((response) => {
+        const itemId = allInventory.filter(
+          (item) => item.id !== selectedItem.id
+        );
+        setSelectedItem({});
+        setAllInventory(itemId);
+        getWarehouseInventory();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   const applyTag = (status) => {
     if (status === "Out of Stock") {
@@ -98,6 +132,7 @@ export default function WarehouseInventoryList() {
                   className="wil__inventory--options"
                   src={deleteicon}
                   alt="delete"
+                  onClick={handleDeleteButton(item)}
                 />
               </Link>
               <Link to={`/inventory/editinventory/${item.id}`}>
@@ -110,6 +145,14 @@ export default function WarehouseInventoryList() {
             </div>
           </div>
         ))}
+        {selectedItem.id && (
+          <DeleteModalInventoryItem
+            inventory={selectedItem}
+            handleModalCloseClick={handleModalCloseClick}
+            handleModalCancelClick={handleModalCancelClick}
+            handleModalDeleteClick={handleModalDeleteClick}
+          />
+        )}
       </section>
     </section>
   );

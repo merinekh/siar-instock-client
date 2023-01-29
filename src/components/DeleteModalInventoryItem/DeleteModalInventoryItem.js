@@ -1,7 +1,5 @@
-import Button from "../Button/Button";
-
-function DeleteModal({ 
-    warehouse,
+function DeleteModalInventoryItem({ 
+    inventory,
     handleModalCloseClick,
     handleModalCancelClick,
     handleModalDeleteClick,
@@ -20,20 +18,32 @@ function DeleteModal({
           </svg>
         </button>
 
-        <h2 className="delete-modal__title">Delete {warehouse?.warehouse_name} warehouse?</h2>
+        <h2 className="delete-modal__title">Delete {inventory?.item_name} inventory item?</h2>
 
         <p className="delete-modal__message">
-          Please confirm that you’d like to delete the {warehouse?.warehouse_name} from the 
-          list of warehouses. You won’t be able to undo this action.
+          Please confirm that you’d like to delete the {inventory?.item_name} from the 
+          list of inventory items. You won’t be able to undo this action.
         </p>
 
         <div className="delete-modal__buttons">
-          <Button onClick={handleModalCancelClick} secondary>Cancel</Button>
-          <Button onClick={handleModalDeleteClick} red>Delete</Button>
+          <button 
+            className="delete-modal__button"
+            type="button"
+            onClick={handleModalCancelClick}
+          >
+            Cancel
+          </button>
+          <button 
+            className="delete-modal__button delete-modal__button--error" 
+            type="button"
+            onClick={handleModalDeleteClick}
+          >
+            Delete
+          </button>
         </div>
       </div>
     </dialog>
   )
 }
 
-export default DeleteModal;
+export default DeleteModalInventoryItem;
