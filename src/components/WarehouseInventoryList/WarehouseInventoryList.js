@@ -38,7 +38,7 @@ export default function WarehouseInventoryList() {
   }
   useEffect(() => {
     getWarehouseInventory();
-  }, [warehouseId, navigate]);
+  });
 
   const handleDeleteButton = (inventory) => () => setSelectedItem(inventory);
 
