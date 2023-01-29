@@ -37,62 +37,75 @@ export default function InventoryItemDetails() {
   }
 
   return (
-    <section className="invitem">
-      <div className="invitem__container">
-        <div>
-          <Link to={"/inventory"}>
-            <img src={arrowback} alt="back" />
+    <section className="invitem-overlay">
+      <section className="invitem">
+        <div className="invitem__container">
+          <div>
+            <Link to={"/inventory"}>
+              <img src={arrowback} alt="back" />
+            </Link>
+            <h1 className="invitem__container-header">
+              {inventoryItem.item_name}
+            </h1>
+          </div>
+          <Link to={`/inventory/editinventory/${inventoryItem.id}`}>
+            <div className="invitem__container-form">
+              <div className="invitem__container-back--mobile">
+                <img
+                  className="invitem__container-back--mobilepic"
+                  src={editicon}
+                  alt="back"
+                />
+              </div>
+              <div className="invitem__container-back--tablet">
+                <img
+                  className="invitem__container-back--tabletpic"
+                  src={editicon}
+                  alt="back"
+                />{" "}
+                Edit
+              </div>
+            </div>
           </Link>
-          <h1 className="invitem__container-header">
-            {inventoryItem.item_name}
-          </h1>
         </div>
-        <form className="invitem__container-form">
-          <button className="invitem__container-back--mobile">
-            <img src={editicon} alt="back" />
-          </button>
-          <button className="invitem__container-back--tablet">
-            <img src={editicon} alt="back" /> Edit
-          </button>
-        </form>
-      </div>
 
-      <div className="invitem__inventory">
-        <div className="invitem__inventory--flex">
-          <div className="invitem__inventory--details">
-            <div>
-              <h4 className="invitem__subheading">ITEM DESCRIPTION</h4>
-              <div className="invitem__item">
-                <p className="invitem__item-name">
-                  {inventoryItem.description}
+        <div className="invitem__inventory">
+          <div className="invitem__inventory--flex">
+            <div className="invitem__inventory--details">
+              <div>
+                <h4 className="invitem__subheading">ITEM DESCRIPTION:</h4>
+                <div className="invitem__item">
+                  <p className="invitem__item-name">
+                    {inventoryItem.description}
+                  </p>
+                </div>
+              </div>
+              <div>
+                <h4 className="invitem__subheading">CATEGORY:</h4>
+                <p className="invitem__item-text">{inventoryItem.category}</p>
+              </div>
+            </div>
+            <div className="invitem__inventory--details2">
+              <div className="invitem__inventory--mobile">
+                <h4 className="invitem__subheading">STATUS:</h4>
+                <h4 className={applyTag(inventoryItem.status)}>
+                  {inventoryItem.status}
+                </h4>
+              </div>
+              <div className="invitem__inventory--mobile">
+                <h4 className="invitem__subheading">QTY:</h4>
+                <p className="invitem__item-text">{inventoryItem.quantity}</p>
+              </div>
+              <div>
+                <h4 className="invitem__subheading">WAREHOUSE:</h4>
+                <p className="invitem__item-text">
+                  {inventoryItem.warehouse_name}
                 </p>
               </div>
             </div>
-            <div>
-              <h4 className="invitem__subheading">CATEGORY</h4>
-              <p className="invitem__item-text">{inventoryItem.category}</p>
-            </div>
-          </div>
-          <div className="invitem__inventory--details2">
-            <div className="invitem__inventory--mobile">
-              <h4 className="invitem__subheading">STATUS</h4>
-              <h4 className={applyTag(inventoryItem.status)}>
-                {inventoryItem.status}
-              </h4>
-            </div>
-            <div className="invitem__inventory--mobile">
-              <h4 className="invitem__subheading">QTY</h4>
-              <p className="invitem__item-text">{inventoryItem.quantity}</p>
-            </div>
-            <div>
-              <h4 className="invitem__subheading">WAREHOUSE</h4>
-              <p className="invitem__item-text">
-                {inventoryItem.warehouse_name}
-              </p>
-            </div>
           </div>
         </div>
-      </div>
+      </section>
     </section>
   );
 }

@@ -1,12 +1,14 @@
 
-.AddInventory-box{
-    @include tablet{
+.AddInventory-box {
+    @include tablet {
         display: flex;
         justify-content: space-evenly;
     }
-    @include desktop{
+
+    @include desktop {
         padding: 3.4rem;
     }
+
     // padding: 0rem 1.6rem;
     // position: absolute;
     // top: 20.3%;
@@ -15,7 +17,6 @@
     // left: 4.27%;
     // background-color: #FFFFFF;
     // @include tablet{
-        
     //     top: 10%;
     //     bottom: 31.84%;
     //     right: 4.17%;
@@ -23,7 +24,8 @@
     // }
 
 }
-.AddInventory-form{
+
+.AddInventory-form {
     box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
     border-radius: 3px;
 
@@ -34,6 +36,7 @@
     right: 4.27%;
     left: 4.27%;
     background-color: #FFFFFF;
+
     @include tablet {
         height: fit-content;
         top: 11%;
@@ -41,33 +44,42 @@
         right: 4.17%;
         left: 4.17%;
     }
-    @include desktop{
+
+    @include desktop {
         margin: 0rem 3.4rem
     }
-    &__header-div{
+
+    &__header-div {
         border-bottom: 1px solid $cloud;
-        @include desktop{
+
+        @include desktop {
             padding: 1.4rem 3.4rem;
         }
     }
-    &__top-box{
+
+    &__top-box {
         padding-bottom: 1rem;
         padding: 0rem 1.6rem;
-        @include tablet{
-            width: 50%;
-        }
-    }
-    &__bottom-box{
-        padding-bottom: 1rem;
-        padding: 0rem 1.6rem;
+
         @include tablet {
             width: 50%;
         }
-        @include desktop{
+    }
+
+    &__bottom-box {
+        padding-bottom: 1rem;
+        padding: 0rem 1.6rem;
+
+        @include tablet {
+            width: 50%;
+        }
+
+        @include desktop {
             padding: 0rem 4rem;
         }
     }
-    &__button-box{
+
+    &__button-box {
         display: flex;
         align-items: center;
         justify-content: space-evenly;
@@ -80,7 +92,8 @@
             justify-content: right;
         }
     }
-    &__backarrow{
+
+    &__backarrow {
         // width: 1.6rem;
         // height: 1.6rem;
         // position: absolute;
@@ -89,7 +102,8 @@
         // top: 16.67%;
         // bottom: 16.67%;
     }
-    &__header{
+
+    &__header {
         font-size: 2.8rem;
         font-weight: 600;
         color: $instockBlack;
@@ -98,54 +112,64 @@
             padding: 1.6rem 0rem;
         }
     }
-    &__sub-titles{
+
+    &__sub-titles {
         font-size: 2rem;
         font-weight: 600;
         color: $instockBlack;
     }
-    &__label-titles{
+
+    &__label-titles {
         font-size: 1.3rem;
         font-weight: 600;
         color: $instockBlack;
         padding-bottom: 1rem;
-       
+
     }
-    &__instock{
+
+    &__instock {
         position: absolute;
         margin-top: 1rem;
         padding-right: 1rem;
         margin-bottom: 1rem;
         font-size: 1rem;
-        @include tablet{
+
+        @include tablet {
             right: 25%;
         }
     }
-    &__instock-button{
-        @include tablet{
+
+    &__instock-button {
+        @include tablet {
 
             margin-right: .5rem;
         }
     }
-    &__stock{
+
+    &__stock {
         position: absolute;
         left: 50%;
         margin-top: 1rem;
         margin-bottom: 1rem;
         font-size: 1rem;
-        @include tablet{
+
+        @include tablet {
             left: 52%;
         }
-        @include desktop{
+
+        @include desktop {
             left: 54%
         }
     }
-    &__stock-button{
-        @include tablet{
+
+    &__stock-button {
+        @include tablet {
             margin-right: .5rem;
 
         }
     }
-    &__item-name-input{
+
+    &__item-name-input {
         height: 36px;
         border: 1px solid #BDC5D5;
         margin-bottom: 1rem;
@@ -154,7 +178,8 @@
         border-radius: 20px;
         font-size: 1.3rem;
     }
-    &__description-input{
+
+    &__description-input {
         margin-bottom: 1rem;
         border-radius: 20px;
         border: 1px solid #BDC5D5;
@@ -164,17 +189,20 @@
         padding-bottom: 7rem;
         font-size: 1.3rem;
     }
-    &__quantity-input{
+
+    &__quantity-input {
         height: 36px;
         width: 100%;
         border-radius: 20px;
         border: 1px solid #BDC5D5;
         margin-bottom: 1rem;
-        @include desktop{
+
+        @include desktop {
             width: 30%;
         }
     }
-    &__category-dropdown{
+
+    &__category-dropdown {
         height: 36px;
         width: 100%;
         border-radius: 20px;
@@ -183,9 +211,10 @@
         color: $slate;
         font-size: 1.3rem;
         padding-left: 1rem;
-        
+
     }
-    &__warehouse-dropdown{
+
+    &__warehouse-dropdown {
         height: 36px;
         width: 100%;
         border-radius: 20px;
@@ -195,7 +224,8 @@
         font-size: 1.3rem;
         padding-left: 1rem;
     }
-    &__cancel-button{
+
+    &__cancel-button {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -203,7 +233,8 @@
         border-radius: 20px;
         color: $slate;
     }
-    &__submit-button{
+
+    &__submit-button {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -211,11 +242,13 @@
         border-radius: 20px;
         background-color: $instock-Indigo;
         color: #FFFFFF;
-        @include tablet{
+
+        @include tablet {
             margin-left: 4rem;
         }
     }
 }
+
 // input:required{
 //     border-color: red;
 // }
