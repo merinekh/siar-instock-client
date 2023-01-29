@@ -1,6 +1,10 @@
 .warehouse {
   border-bottom: 0.1rem solid $cloud;
   padding: 0 1.6rem;
+  max-width: 100%;
+  &:hover {
+    background-color: rgba(46, 102, 230, 0.07);
+  }
 
   &__delete,
   &__icons__tablet--delete {
@@ -10,15 +14,18 @@
     padding: 1rem 3.2rem;
     display: flex;
     align-items: center;
+    justify-content: space-between;
   }
+  // @include desktop{
+  //   width: 102rem;
+  // }
 
   &-container {
     display: flex;
     justify-content: space-between;
     border-radius: 0.5rem solid $cloud;
     @include tablet {
-      flex-grow: 1;
-      justify-content: initial;
+      // flex-grow: 1;
     }
     &__para {
       margin: 0;
@@ -42,21 +49,30 @@
     &__left {
       @include tablet {
         display: flex;
-        min-width: 28.5vw;
+        justify-content: space-between;
+        width: 26.9rem;
       }
     }
     &__right {
       @include tablet {
         display: flex;
-        flex-grow: 1;
+        justify-content: space-between;
+        width: 25.8rem;
+      }
+      @include desktop {
+        // justify-content: flex-end;
       }
     }
 
     &__name {
+      @include tablet {
+        // width: 12.9rem;
+      }
       &__chevron a {
         display: -webkit-inline-box;
         align-items: center;
-        min-width: 16vw;
+        // width: 17vw;
+        // width: 13rem;
       }
       &__chevron__img {
         width: 2rem;
@@ -86,30 +102,48 @@
       }
       &__box {
         @include tablet {
-          min-width: 15vw;
+          width: 14rem;
+        }
+
+        @include desktop {
+          // min-width: 24.5vw;
         }
       }
       &__details {
         @include tablet {
-          width: 12vw;
+          width: 11rem;
           margin: 0;
+        }
+
+        @include desktop {
+          width: none;
         }
       }
     }
 
     &__contact {
       @include tablet {
-        width: 20vw;
+        // width: 15.5rem;
+      }
+
+      @include desktop {
+        // width: 20.5vw;
+        // min-width: 14.5vw;
       }
 
       &__details {
         margin-left: 1rem;
+
+        @include tablet {
+          margin-left: 0;
+          width: 8.3rem;
+        }
       }
     }
 
     &__info {
       @include tablet {
-        min-width: 20vw;
+        // min-width: 20vw;
       }
     }
 
@@ -135,47 +169,35 @@
   }
 
   &__tabletView {
-    display: flex;
+    // display: flex;
+    // justify-content: space-between;
+
     &-container {
+      max-width: 100%;
       display: flex;
       padding-left: 3.2rem;
-      flex-grow: 1;
       margin: 0;
       background-color: $lightGrey;
+      // justify-content: space-between;
+
       &__indiv {
         display: none;
         @include tablet {
           display: flex;
           align-items: center;
         }
-
-        &--warehouse {
-          @include tablet {
-            min-width: 16vw;
-          }
-        }
-        &--address {
-          @include tablet {
-            min-width: 16vw;
-          }
-        }
-        &--contactName {
-          @include tablet {
-            min-width: 19vw;
-          }
+        &--left {
+          width: 26.9rem;
+          justify-content: space-between;
         }
 
-        &--contactInfo {
-          @include tablet {
-            min-width: 22vw;
-          }
+        &--right {
+          // width: 19.9rem;
         }
-        &--action {
-          @include tablet {
-            background-color: $lightGrey;
-            padding-right: 3.2rem;
-          }
-        }
+      }
+      &__wrapper {
+        display: flex;
+        width: 15.9rem;
       }
     }
   }
