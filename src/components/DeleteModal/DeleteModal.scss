@@ -8,40 +8,40 @@
     font-size: 15px;
     line-height: 26px;
     background-color: transparent;
-    padding: 0;
+    padding: 0rem;
     display: flex;
     z-index: 1;
 
     @include tablet {
         justify-content: center;
-        background-color: rgba(#13182C, 70%);
+        background-color: rgba($instockBlack, 70%);
     }
 
     &__inner {
-        padding: 16px 16px 24px 16px;
+        padding: 1.6rem 1.6rem 2.4rem 1.6rem;
         display: flex;
         flex-direction: column;
-        background-color: #fff;
+        background-color: $white;
         flex-grow: 1;
         
         @include tablet {
-            max-width: 670px;
+            max-width: 67rem;
             height: max-content;
-            margin-top: 185px;
+            margin-top: 18.5rem;
             border-radius: 3px;
-            padding: 40px;
+            padding: 4rem;
         }
     }
 
     &__title {
         font-weight: 600;
         font-size: 28px;
-        margin-top: 0;
-        margin-bottom: 16px;
+        margin-top: 0rem;
+        margin-bottom: 1.6rem;
     }
 
     &__message {
-        max-width: 490px;
+        max-width: 49rem;
         margin: 0;
         font-size: 16px;
     }
@@ -52,54 +52,28 @@
         margin-top: auto;
 
         @include tablet {
-            margin-top: 32px;
+            margin-top: 3.2rem;
             justify-content: flex-end;
         }
-    }
 
-    &__button {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 36px;
-        border: 1px solid #BDC5D5;
-        border-radius: 20px;
-        min-width: 160px;
-        font-weight: 600;
-        font-size: 13px;
-        line-height: 20px;
-        color: #5C667E;
-        padding: 0;
-        background-color: transparent;
-
-        &--error {
-            color: #fff;
-            border-color: #C94515;
-            background-color: #C94515;
-        }
-
-        &:not(:last-child) {
-            margin-right: 16px;
-        }
-
-        @include tablet {
-            min-width: auto;
-            padding: 8px 16px;
+        &>*:not(:last-child) {
+            margin-right: 1.6rem;
         }
     }
+
 
     &__close {
         border: none;
         background-color: transparent;
-        padding: 0;
+        padding: 0rem;
         display: flex;
         margin-left: auto;
-        margin-bottom: 20px;
+        margin-bottom: 2rem;
         
         @include tablet {
-            margin-top: -24px;
-            margin-right: -24px;
-            margin-bottom: 0;
+            margin-top: -2.4rem;
+            margin-right: -2.4rem;
+            margin-bottom: 0rem;
         }
     }
 }

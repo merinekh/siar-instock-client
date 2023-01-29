@@ -1,3 +1,9 @@
+body {
+  background: #F7F8F9;
+  font-family: "Titillium";
+  font-size: 1.6rem;
+}
+
 img {
   max-width: 100%;
 }
@@ -42,7 +48,14 @@ li {
   }
 
   @include desktop {
+    width: 100%;
     max-width: 1020px;
     margin: 0 auto;
   }
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }

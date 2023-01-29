@@ -8,6 +8,8 @@ function PageNav(){
       ? 'page-navigation__item page-navigation__item--current'
       : 'page-navigation__item';
 
+   
+
 
   return (
     <ul className="page-navigation">

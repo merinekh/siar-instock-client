@@ -1,20 +1,23 @@
 .page-header {
   background-color: $graphite;
-  margin: 0px;
-  padding: 0px 16px;
+  margin: 0rem;
+  padding: 0rem 1.6rem;
   padding-top: 1.6rem;
-  height: 200px;
+  height: 20rem;
 
   @include tablet {
-    padding: 0px 32px;
+    padding: 0rem 3.2rem;
     padding-top: 1.6rem;
-    height: 186px;
+    height: 18.6rem;
     display: flex;
-    @include desktop {
-      max-width: 100%;
-      padding: 0px 80px;
-    }
+
   }
+
+  @include desktop {
+    max-width: 100%;
+    padding: 0rem 8rem;
+  }
+  
   &__logo {
     display: flex;
     justify-content: center;
@@ -23,7 +26,7 @@
 
     @include tablet {
       width: max-content;
-      margin: 0;
+      margin: 0rem;
       margin-right: auto;
       
     }

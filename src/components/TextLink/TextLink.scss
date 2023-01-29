@@ -1,0 +1,24 @@
+.text-link {
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 20px;
+  color: $instock-Indigo;
+  display: flex;
+  align-content: center;
+  max-width: max-content;
+  
+  svg {
+    display: block;
+    margin-left: 0.4rem;
+  }
+
+  @include tablet {
+    font-size: 14px;
+    line-height: 22px;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration-line: underline;
+    }
+  }
+}

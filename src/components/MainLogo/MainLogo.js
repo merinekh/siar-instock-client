@@ -6,8 +6,8 @@ function MainLogo() {
   return (
     <Link className='main-logo' to={AppRoute.HOME}>
         <img className='main-logo__image'
-        src={mainLogo}
-        alt='logo go to home page'
+          src={mainLogo}
+          alt='logo go to home page'
         />
     </Link>
   )

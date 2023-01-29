@@ -1,0 +1,156 @@
+.warehouse-form {
+  border-top: 1px solid $cloud;
+  display: flex;
+  flex-direction: column;
+
+  @include tablet {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.warehouse-form__fieldset {
+  padding: 1.6rem 2.4rem 2.4rem 2.4rem;
+  border: none;
+  display: block;
+
+  &:first-of-type {
+    border-bottom: 1px solid #BDC5D5;
+  }
+
+  @include tablet {
+    padding: 0rem 3.2rem 1.6rem 3.2rem;
+    margin-top: 2.4rem;
+    margin-bottom: 2.4rem;
+    width: 50%;
+
+    &:first-of-type {
+      border-bottom: none;
+      border-right: 1px solid #BDC5D5;
+    }
+  }
+
+  @include desktop {
+    padding-right:4rem;
+    padding-left: 4rem;  
+  }
+}
+
+.warehouse-form__legend {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+  color: $instockBlack;
+  margin-bottom: 2.4rem;
+
+  @include tablet {
+    margin-bottom: 3.2rem;
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+
+.warehouse-form__element {
+  &:not(:last-child) {
+    margin-bottom: 16px;
+  }
+
+  @include tablet {
+    &:not(:last-child) {
+      margin-bottom: 2.4rem;
+    }
+  }
+}
+
+.warehouse-form__label {
+  display: block;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 22px;
+  color: $instockBlack;
+  margin-bottom: 0.4rem;
+}
+
+.warehouse-form__field {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  display: block;
+  width: 100%;
+  min-height: 3.8rem;
+  background: $white;
+  border: 1px solid $cloud;
+  border-radius: 20px;
+  padding: 0.8rem 1.6rem;
+
+  &:focus {
+    outline: none;
+    border: 1px solid $instock-Indigo;
+  }
+
+  @include tablet {
+    min-height: 3.8rem;
+  }
+}
+
+.warehouse-form__buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.6rem 2.4rem;
+  background: rgba(247, 248, 249, 0.7);
+  width: 100%;
+
+  @include tablet {
+    padding: 1.6rem 3.2rem;
+    justify-content: flex-end;
+  }
+
+  @include tablet {
+    padding: 1.6rem 4rem;
+  }
+}
+
+.warehouse-form__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 3.6rem;
+  border-radius: 40px;
+  padding: 0rem 1.6rem;
+  min-width: 14rem;
+  border: 1px solid $cloud;
+  color: $slate;
+  background-color: $white;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 20px;
+  cursor: pointer;
+
+  &--cancel:hover {
+    border-color: $instock-Indigo;
+      color: $instock-Indigo;
+      background-color: $white;
+    
+  }
+  &--submit:hover {
+    background-color: $graphite;
+  }
+
+  &:first-child {
+    margin-right: 1.6rem;
+  }
+
+  &[type="submit"] {
+    border: none;
+    color: $white;
+    background-color: $instock-Indigo;
+  }
+
+  @include tablet {
+    min-width: 0rem;
+    min-height: 3.8rem;
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
