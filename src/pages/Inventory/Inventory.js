@@ -63,7 +63,7 @@ export default function Inventory() {
   };
 
   return (
-    <section className="inv-overlay">
+    <section className="inv-overlay container">
       <section className="inv">
         <div className="inv__container">
           <h1 className="inv__container-header">Inventory</h1>
@@ -104,67 +104,69 @@ export default function Inventory() {
           </div>
         </div>
 
-        {allInventory.map((item) => (
-          <div key={item.id} className="inv__inventory">
-            <div className="inv__inventory--flex invtab1">
-              <div className="inv__inventory--details invtab2">
-                <Link to={`/inventory/${item.id}`}>
-                  <div className="inv__inventory--details-link">
-                    <h4 className="inv__subheading">INVENTORY ITEM</h4>
-                    <div className="inv__item">
-                      <h3 className="inv__item-name">{item.item_name}</h3>
-                      <img src={chevron} alt="chevron" />
+        <div>
+          {allInventory.map((item) => (
+            <div key={item.id} className="inv__inventory">
+              <div className="inv__inventory--flex invtab1">
+                <div className="inv__inventory--details invtab2">
+                  <Link to={`/inventory/${item.id}`}>
+                    <div className="inv__inventory--details-link">
+                      <h4 className="inv__subheading">INVENTORY ITEM</h4>
+                      <div className="inv__item">
+                        <h3 className="inv__item-name">{item.item_name}</h3>
+                        <img src={chevron} alt="chevron" />
+                      </div>
                     </div>
+                  </Link>
+                  <div>
+                    <h4 className="inv__subheading">CATEGORY</h4>
+                    <p className="inv__item-text">{item.category}</p>
                   </div>
-                </Link>
-                <div>
-                  <h4 className="inv__subheading">CATEGORY</h4>
-                  <p className="inv__item-text">{item.category}</p>
+                </div>
+                <div className="inv__inventory--details invtab2">
+                  <div>
+                    <h4 className="inv__subheading">STATUS</h4>
+                    <h4 className={applyTag(item.status)}>
+                      {item.status.toUpperCase()}
+                    </h4>
+                  </div>
+                  <div>
+                    <h4 className="inv__subheading">QTY</h4>
+                    <p className="inv__item-text">{item.quantity}</p>
+                  </div>
+                  <div>
+                    <h4 className="inv__subheading">WAREHOUSE</h4>
+                    <p className="inv__item-text">{item.warehouse_name}</p>
+                  </div>
                 </div>
               </div>
-              <div className="inv__inventory--details invtab2">
-                <div>
-                  <h4 className="inv__subheading">STATUS</h4>
-                  <h4 className={applyTag(item.status)}>
-                    {item.status.toUpperCase()}
-                  </h4>
-                </div>
-                <div>
-                  <h4 className="inv__subheading">QTY</h4>
-                  <p className="inv__item-text">{item.quantity}</p>
-                </div>
-                <div>
-                  <h4 className="inv__subheading">WAREHOUSE</h4>
-                  <p className="inv__item-text">{item.warehouse_name}</p>
-                </div>
-              </div>
-            </div>
-            <div className="inv__inventory--flex ">
-              <img
-                className="inv__inventory--options"
-                src={deleteicon}
-                alt="delete"
-                onClick={handleDeleteButton(item)}
-              />
-
-              <Link to={`/inventory/editinventory/${item.id}`}>
+              <div className="inv__inventory--flex ">
                 <img
                   className="inv__inventory--options"
-                  src={editicon}
-                  alt="edit"
+                  src={deleteicon}
+                  alt="delete"
+                  onClick={handleDeleteButton(item)}
                 />
-              </Link>
+
+                <Link to={`/inventory/editinventory/${item.id}`}>
+                  <img
+                    className="inv__inventory--options"
+                    src={editicon}
+                    alt="edit"
+                  />
+                </Link>
+              </div>
             </div>
-          </div>
-        ))}
-        {selectedItem.id && (
-          <DeleteModalInventoryItem
-            inventory={selectedItem}
-            handleModalCloseClick={handleModalCloseClick}
-            handleModalCancelClick={handleModalCancelClick}
-            handleModalDeleteClick={handleModalDeleteClick}
-          />
-        )}
+          ))}
+          {selectedItem.id && (
+            <DeleteModalInventoryItem
+              inventory={selectedItem}
+              handleModalCloseClick={handleModalCloseClick}
+              handleModalCancelClick={handleModalCancelClick}
+              handleModalDeleteClick={handleModalDeleteClick}
+            />
+          )}
+        </div>
       </section>
     </section>
   );
