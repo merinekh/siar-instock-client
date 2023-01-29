@@ -5,7 +5,7 @@ import { AppRoute } from "./const";
 import "./styles/style.scss";
 import Warehouse from "./pages/Warehouse/Warehouse";
 import EditAddWarehouseForm from "./components/EditAddWarehouseForm/EditAddWarehouseForm";
-
+import AddInventory from "./components/AddInventory/AddInventory";
 import WarehouseDetails from "./components/WarehouseDetails/WarehouseDetails";
 
 function App() {
@@ -18,6 +18,7 @@ function App() {
             path={AppRoute.EDIT_WAREHOUSE}
             element={<EditAddWarehouseForm />}
           />
+          <Route path={AppRoute.ADDINVENTORY} element={<AddInventory />} />
           <Route path={AppRoute.INVENTORY} element={<Inventory />} />
           <Route
             path={AppRoute.ADDWAREHOUSEFORM}
