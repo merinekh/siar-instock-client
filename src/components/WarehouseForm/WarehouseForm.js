@@ -26,9 +26,7 @@ function WarehouseForm({ warehouseID }) {
 
     if (warehouseID) {
       // Update warehouse
-      axios.update(ENDPOINT_WAREHOUSES, {
-       
-        id: evt.target.id.value,
+      axios.put(`${ENDPOINT_WAREHOUSES}/${warehouseID}`, {
         warehouse_name: evt.target.warehouse_name.value,
         address: evt.target.address.value,
         city: evt.target.city.value,
@@ -39,7 +37,7 @@ function WarehouseForm({ warehouseID }) {
         contact_email: evt.target.contact_email.value,
       
     })
-      .then((response) => console.log(response))
+      .then(() => navigate(generatePath(AppRoute.WAREHOUSE_INVENTORY, {id: warehouseID})))
       .catch((error) => console.log(error));    
 
       return;
@@ -59,7 +57,7 @@ function WarehouseForm({ warehouseID }) {
       
     })
       .then(() => {
-        navigate(AppRoute.WAREHOUSE);
+        navigate(AppRoute.WAREHOUSE)
       })
       .catch((error) => console.log(error));
   };

@@ -22,7 +22,7 @@ function PageNav(){
                 {text}
               </span>
               :
-              <Link className="page-navigation__link page-navigation__link--current" to={url}>
+              <Link className="page-navigation__link" to={url}>
                 {text}
               </Link>}
           </li>)

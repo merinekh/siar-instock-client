@@ -1,0 +1,48 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 20px;
+  padding: 0.8rem 1.6rem;
+  min-height: 3.6rem;
+  width: max-content;
+  min-width: 14rem;
+  color: $white;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 20px;
+  background-color: $instock-Indigo;
+  cursor: pointer;
+  transition-property: background-color, color, border-color;
+  transition-duration: 0.3s;
+
+  &--secondary {
+    background-color: $white;
+    border: 1px solid $cloud;
+    min-width: 16rem;
+    color: $slate;
+  }
+
+  &--red {
+    background: $red;
+    min-width: 16rem;
+  }
+
+  @include tablet {
+    min-height: 3.8rem;
+    min-width: auto;
+    font-size: 14px;
+    line-height: 22px;
+
+    &:hover {
+      background-color: $graphite;
+    }
+
+    &--secondary:hover {
+      border-color: $instock-Indigo;
+      color: $instock-Indigo;
+      background-color: $white;
+    }
+  }
+}

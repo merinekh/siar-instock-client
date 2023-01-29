@@ -1,5 +1,5 @@
 .warehouse-form {
-  border-top: 1px solid #BDC5D5;
+  border-top: 1px solid $cloud;
   display: flex;
   flex-direction: column;
 
@@ -10,7 +10,7 @@
 }
 
 .warehouse-form__fieldset {
-  padding: 16px 24px 24px 24px;
+  padding: 1.6rem 2.4rem 2.4rem 2.4rem;
   border: none;
   display: block;
 
@@ -19,9 +19,9 @@
   }
 
   @include tablet {
-    padding: 0 32px 16px 32px;
-    margin-top: 24px;
-    margin-bottom: 24px;
+    padding: 0rem 3.2rem 1.6rem 3.2rem;
+    margin-top: 2.4rem;
+    margin-bottom: 2.4rem;
     width: 50%;
 
     &:first-of-type {
@@ -31,8 +31,8 @@
   }
 
   @include desktop {
-    padding-right: 40px;
-    padding-left: 40px;
+    padding-right:4rem;
+    padding-left: 4rem;  
   }
 }
 
@@ -40,11 +40,11 @@
   font-weight: 600;
   font-size: 20px;
   line-height: 28px;
-  color: #13182C;
-  margin-bottom: 24px;
+  color: $instockBlack;
+  margin-bottom: 2.4rem;
 
   @include tablet {
-    margin-bottom: 32px;
+    margin-bottom: 3.2rem;
     font-size: 24px;
     line-height: 32px;
   }
@@ -57,7 +57,7 @@
 
   @include tablet {
     &:not(:last-child) {
-      margin-bottom: 24px;
+      margin-bottom: 2.4rem;
     }
   }
 }
@@ -67,8 +67,8 @@
   font-weight: 600;
   font-size: 14px;
   line-height: 22px;
-  color: #13182C;
-  margin-bottom: 4px;
+  color: $instockBlack;
+  margin-bottom: 0.4rem;
 }
 
 .warehouse-form__field {
@@ -77,19 +77,19 @@
   line-height: 22px;
   display: block;
   width: 100%;
-  min-height: 38px;
-  background: #FFFFFF;
-  border: 1px solid #BDC5D5;
+  min-height: 3.8rem;
+  background: $white;
+  border: 1px solid $cloud;
   border-radius: 20px;
-  padding: 8px 16px;
+  padding: 0.8rem 1.6rem;
 
   &:focus {
     outline: none;
-    border: 1px solid #2E66E5;
+    border: 1px solid $instock-Indigo;
   }
 
   @include tablet {
-    min-height: 38px;
+    min-height: 3.8rem;
   }
 }
 
@@ -97,17 +97,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 16px 24px;
+  padding: 1.6rem 2.4rem;
   background: rgba(247, 248, 249, 0.7);
   width: 100%;
 
   @include tablet {
-    padding: 16px 32px;
+    padding: 1.6rem 3.2rem;
     justify-content: flex-end;
   }
 
   @include tablet {
-    padding: 16px 40px;
+    padding: 1.6rem 4rem;
   }
 }
 
@@ -115,30 +115,41 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 36px;
+  min-height: 3.6rem;
   border-radius: 40px;
-  padding: 0 16px;
-  min-width: 140px;
-  border: 1px solid #BDC5D5;
-  color: #5C667E;
-  background-color: #fff;
+  padding: 0rem 1.6rem;
+  min-width: 14rem;
+  border: 1px solid $cloud;
+  color: $slate;
+  background-color: $white;
   font-weight: 600;
   font-size: 13px;
   line-height: 20px;
+  cursor: pointer;
+
+  &--cancel:hover {
+    border-color: $instock-Indigo;
+      color: $instock-Indigo;
+      background-color: $white;
+    
+  }
+  &--submit:hover {
+    background-color: $graphite;
+  }
 
   &:first-child {
-    margin-right: 16px;
+    margin-right: 1.6rem;
   }
 
   &[type="submit"] {
     border: none;
-    color: #fff;
-    background-color: #2E66E6;
+    color: $white;
+    background-color: $instock-Indigo;
   }
 
   @include tablet {
-    min-width: 0;
-    min-height: 38px;
+    min-width: 0rem;
+    min-height: 3.8rem;
     font-size: 14px;
     line-height: 22px;
   }

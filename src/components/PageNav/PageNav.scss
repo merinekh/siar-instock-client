@@ -5,6 +5,7 @@
     border-radius: 20px;
     padding: 1rem 3rem;
     width: 100%;
+    color: $slate;
     @include tablet {
         align-self: flex-start;
         margin: 10px 0;  
@@ -20,11 +21,9 @@
     justify-content: center;
     text-align: center;
     font-weight: 600;
-    color: $white;
+    color: inherit;
     
-    &--current {
-      color: $cloud;
-    }
+
     
     &:hover {
       text-decoration-line: underline;
