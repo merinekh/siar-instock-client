@@ -63,8 +63,6 @@ const WarehouseListItems = ({ warehouses, handleDeleteButton }) => {
             </div>
           </div>
         </div>
-
-        {/* icons */}
         <div className="warehouse__icons">
           <img
             className="warehouse__icons__delete"
