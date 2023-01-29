@@ -11,6 +11,9 @@
     @include tablet{
         padding: 2.4rem 2.4rem;
     }
+    @include desktop{
+        justify-content: space-between;
+    }
 
     &__contact-address{
         width: 100%;
@@ -21,7 +24,7 @@
             height: 6rem
         }
         @include desktop{
-
+            width: 15%;
         }
     }
     &__contact-address-title{
@@ -30,10 +33,13 @@
         @include tablet{
             font-size:$fontTablet-h4;
         }
-        @include desktop {}
+        
     }
     &__contact-address-address{
         font-size: $fontMobile-bodyM;
+        @include tablet{
+            font-size: $fontTablet-bodyM;
+        }
     }
     &__contact-name{
         width: 50%;
@@ -43,7 +49,9 @@
             width: 25%;
             height: 6rem;
         }
-        @include desktop {}
+        @include desktop {
+            width: 15%;
+        }
     }
     &__contact-name-title{
         color: $slate;
@@ -51,21 +59,21 @@
         @include tablet {
             font-size: $fontTablet-h4;
         }
-        @include desktop {}
+        
     }
     &__contact-name-name{
         font-size: $fontMobile-bodyM;
         @include tablet{
             font-size:$fontTablet-bodyM;
         }
-        @include desktop {}
+      
     }
     &__contact-name-position{
         font-size: $fontMobile-bodyM;
         @include tablet{
             font-size: $fontTablet-bodyM;
         }
-        @include desktop {}
+       
     }
     &__contact-information{
         width: 50%;
@@ -75,7 +83,9 @@
             width: 30%;
             height: 6rem
         } 
-        @include desktop {}
+        @include desktop {
+            width: 35%;
+        }
     }
     &__contact-information-title{
         color: $slate;
@@ -83,14 +93,14 @@
         @include tablet {
             font-size: $fontTablet-h4;
         } 
-        @include desktop {}
+       
     }
     &__contact-information-phone{
         font-size: $fontMobile-bodyM;
         @include tablet{
             font-size: $fontTablet-bodyM;
         } 
-        @include desktop {}
+        
 
     }
     &__contact-information-email{
@@ -98,6 +108,6 @@
         @include tablet{
             font-size: $fontTablet-bodyM;
         }
-         @include desktop {}
+      
     }
 }
