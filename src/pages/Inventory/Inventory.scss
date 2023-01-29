@@ -1,11 +1,38 @@
+.inv-overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 0 1.6rem;
+
+  @include tablet {
+    padding: 0 3.2rem;
+  }
+}
+
 .inv {
+  position: relative;
+  bottom: 5.5rem;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  border: 0.1rem solid $lightGrey;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+
+  @include tablet {
+    bottom: 9.5rem;
+  }
+
   @include desktop {
     width: 102rem;
     margin: 0 auto;
   }
 
   &__container {
-    padding: 1.6rem;
+    padding: 1.6rem 2.4rem 1.6rem;
     @include flex(column);
     @include tablet {
       @include flex(row);
@@ -47,16 +74,22 @@
 
   &__container-add {
     margin-top: 1.6rem;
+    cursor: pointer;
     border: none;
     color: white;
     background-color: $instock-Indigo;
     border-radius: 2rem;
     font-family: "Titillium";
+    width: 100%;
     padding: 0 1.6rem;
     height: 3.6rem;
     @include tablet {
       margin-top: 0;
       margin-left: 1.6rem;
+    }
+
+    &:hover {
+      background-color: $graphite;
     }
   }
 
@@ -87,6 +120,7 @@
   &__subheading {
     font-size: $fontMobile-h4;
     color: $slate;
+    margin-top: 1.6rem;
     @include tablet {
       display: none;
     }
@@ -99,10 +133,11 @@
   &__inventory {
     @include flex(column);
     border-top: 0.1rem solid $cloud;
-    padding: 1.6rem;
+    padding: 0 2.4rem 1.6rem;
     @include tablet {
       padding: 1.6rem 3.2rem;
       @include flex(row);
+      justify-content: space-between;
     }
 
     &:hover {
@@ -111,26 +146,34 @@
 
     &--flex {
       @include flex(row);
-      align-items: center;
+      align-items: flex-start;
       justify-content: space-between;
       gap: 1.6rem;
       @include tablet {
-        gap: 2.4rem;
+        // gap: 2.4rem;
+        align-items: center;
       }
     }
 
     &--details {
+      width: 50%;
+      @include flex(column);
       @include tablet {
         @include flex(row);
+        // width: fit-content;
       }
     }
 
     &--details-link {
       cursor: pointer;
+      @include tablet {
+        width: 15rem;
+      }
     }
 
     &--options {
       height: 2.4rem;
+      cursor: pointer;
     }
   }
 
@@ -149,8 +192,10 @@
 
   &__item-text {
     font-size: $fontMobile-bodyM;
+    margin-top: 0.4rem;
     @include tablet {
       font-size: $fontTablet-bodyM;
+      margin-top: 0;
     }
   }
 
@@ -164,6 +209,9 @@
       border-radius: 2rem;
       background-color: rgba(201, 69, 21, 0.07);
       color: $red;
+      margin-top: 0.4rem;
+      width: fit-content;
+
       @include tablet {
         font-size: $fontTablet-h4;
         height: 2.6rem;
@@ -178,10 +226,30 @@
       border-radius: 2rem;
       background-color: rgba(21, 132, 99, 0.07);
       color: $green;
+      width: fit-content;
+      margin-top: 0.4rem;
       @include tablet {
         font-size: $fontTablet-h4;
         height: 2.6rem;
       }
     }
+  }
+}
+
+.invtab1 {
+  @include tablet {
+    width: 85%;
+  }
+}
+.invtab2 {
+  @include tablet {
+    width: 35%;
+    justify-content: space-between;
+  }
+}
+.invtab2 {
+  @include tablet {
+    width: 50%;
+    justify-content: space-between;
   }
 }

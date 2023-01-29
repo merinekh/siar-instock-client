@@ -11,7 +11,6 @@ export const AppRoute = {
   WAREHOUSE_EDIT: "/warehouse/edit/:id",
   INVENTORY_ITEM: "/inventory/:id",
   EDIT_INVENTORY: "/inventory/editinventory/:id",
-  
 };
 
 export const NavigationItems = [

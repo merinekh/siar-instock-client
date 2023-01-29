@@ -1,6 +1,31 @@
+.invitem-overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 0 1.6rem;
 
+  @include tablet {
+    padding: 0 3.2rem;
+  }
+}
 
 .invitem {
+  position: relative;
+  bottom: 5.5rem;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  border: 0.1rem solid $lightGrey;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+
+  @include tablet {
+    bottom: 8.1rem;
+  }
+
   @include desktop {
     width: 102rem;
     margin: 0 auto;
@@ -20,6 +45,7 @@
   &__container-header {
     font-size: $fontMobile-h1;
     display: inline-block;
+    padding-left: 0.8rem;
     @include tablet {
       font-size: $fontTablet-h1;
     }
@@ -28,9 +54,6 @@
   &__container-form {
     @include flex(row);
     align-items: center;
-    // @include tablet {
-    //   @include flex(row);
-    // }
   }
 
   &__container-search {
@@ -42,10 +65,23 @@
 
   &__container-back {
     &--mobile {
-      margin-top: 1.6rem;
+      width: 3.6rem;
+      height: 3.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 2rem;
+      background-color: $instock-Indigo;
       @include tablet {
         display: none;
       }
+      &:hover {
+        background-color: $graphite;
+      }
+    }
+
+    &--mobilepic {
+      filter: invert(1) brightness(10);
     }
 
     &--tablet {
@@ -53,13 +89,30 @@
       @include tablet {
         display: flex;
         align-items: center;
+        border-radius: 2rem;
+        background-color: $instock-Indigo;
+        padding: 0.4rem 1.6rem;
+        color: white;
+        font-size: 1.4rem;
+        height: 3.8rem;
+        &:hover {
+          background-color: $graphite;
+        }
       }
+    }
+
+    &--tabletpic {
+      filter: invert(1) brightness(10);
+      width: 1.8rem;
+      height: 1.8rem;
+      margin-right: 0.8rem;
     }
   }
 
   &__subheading {
     font-size: $fontMobile-h4;
     color: $slate;
+    margin-top: 1.6rem;
     @include tablet {
       // display: none;
     }
@@ -72,7 +125,7 @@
   &__inventory {
     // @include flex(column);
     border-top: 0.1rem solid $cloud;
-    padding: 1.6rem;
+    padding: 0 2.4rem 2.4rem;
     @include tablet {
       padding: 1.6rem 3.2rem;
     }
@@ -81,15 +134,20 @@
       @include flex(column);
       // align-items: center;
       justify-content: space-between;
-      gap: 1.6rem;
+      // gap: 1.6rem;
       @include tablet {
-        gap: 2.4rem;
+        gap: 0.1rem;
         @include flex(row);
       }
     }
 
     &--details {
       @include flex(column);
+      @include tablet {
+        width: 50%;
+        border-right: 0.1rem solid $cloud;
+        padding-right: 3.2rem;
+      }
     }
 
     &--details2 {
@@ -98,6 +156,10 @@
       // }
       @include flex(row);
       flex-wrap: wrap;
+      @include tablet {
+        width: 50%;
+        padding-left: 3.2rem;
+      }
     }
 
     &--mobile {
@@ -124,6 +186,7 @@
 
   &__item-text {
     font-size: $fontMobile-bodyM;
+    margin-top: 0.4rem;
     @include tablet {
       font-size: $fontTablet-bodyM;
     }
@@ -140,6 +203,9 @@
       border-radius: 2rem;
       background-color: rgba(201, 69, 21, 0.07);
       color: $red;
+      width: fit-content;
+      margin-top: 0.4rem;
+
       @include tablet {
         font-size: $fontTablet-h4;
         height: 2.6rem;
@@ -155,6 +221,8 @@
       border-radius: 2rem;
       background-color: rgba(21, 132, 99, 0.07);
       color: $green;
+      width: fit-content;
+      margin-top: 0.4rem;
       @include tablet {
         font-size: $fontTablet-h4;
         height: 2.6rem;
