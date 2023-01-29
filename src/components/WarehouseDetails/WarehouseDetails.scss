@@ -1,0 +1,103 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/resets" as *;
+
+.warehouse-details{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0rem 1.6rem;
+    border-top: 1px solid $cloud;
+    border-bottom: 1px solid $cloud;
+    @include tablet{
+        padding: 2.4rem 2.4rem;
+    }
+
+    &__contact-address{
+        width: 100%;
+        padding-bottom: 3rem;
+        @include tablet{
+            width: 24%;
+            margin-right: 15rem;
+            height: 6rem
+        }
+        @include desktop{
+
+        }
+    }
+    &__contact-address-title{
+        color: $slate;
+        font-size: $fontMobile-h4;
+        @include tablet{
+            font-size:$fontTablet-h4;
+        }
+        @include desktop {}
+    }
+    &__contact-address-address{
+        font-size: $fontMobile-bodyM;
+    }
+    &__contact-name{
+        width: 50%;
+        @include tablet {
+            border-left: 1px solid $cloud;
+            padding-left: 4rem;
+            width: 25%;
+            height: 6rem;
+        }
+        @include desktop {}
+    }
+    &__contact-name-title{
+        color: $slate;
+        font-size: $fontMobile-h4;
+        @include tablet {
+            font-size: $fontTablet-h4;
+        }
+        @include desktop {}
+    }
+    &__contact-name-name{
+        font-size: $fontMobile-bodyM;
+        @include tablet{
+            font-size:$fontTablet-bodyM;
+        }
+        @include desktop {}
+    }
+    &__contact-name-position{
+        font-size: $fontMobile-bodyM;
+        @include tablet{
+            font-size: $fontTablet-bodyM;
+        }
+        @include desktop {}
+    }
+    &__contact-information{
+        width: 50%;
+        padding-bottom: 2rem;
+        padding-left: 1rem;
+        @include tablet {
+            width: 30%;
+            height: 6rem
+        } 
+        @include desktop {}
+    }
+    &__contact-information-title{
+        color: $slate;
+        font-size: $fontMobile-h4;
+        @include tablet {
+            font-size: $fontTablet-h4;
+        } 
+        @include desktop {}
+    }
+    &__contact-information-phone{
+        font-size: $fontMobile-bodyM;
+        @include tablet{
+            font-size: $fontTablet-bodyM;
+        } 
+        @include desktop {}
+
+    }
+    &__contact-information-email{
+        font-size: $fontMobile-bodyM;
+        @include tablet{
+            font-size: $fontTablet-bodyM;
+        }
+         @include desktop {}
+    }
+}
