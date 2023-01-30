@@ -7,6 +7,7 @@ import deleteicon from "../../assets/icons/delete_outline-24px.svg";
 import editicon from "../../assets/icons/edit-24px.svg";
 import chevron from "../../assets/icons/chevron_right-24px.svg";
 import DeleteModalInventoryItem from "../../components/DeleteModalInventoryItem/DeleteModalInventoryItem";
+import { ENDPOINT_INVENTORY } from "../../const";
 
 export default function Inventory() {
   const [allInventory, setAllInventory] = useState([]);
@@ -15,9 +16,7 @@ export default function Inventory() {
   useEffect(() => {
     async function getAllInventory() {
       try {
-        const { data } = await axios.get(
-          "http://localhost:8080/api/inventories"
-        );
+        const { data } = await axios.get(ENDPOINT_INVENTORY);
         setAllInventory(data);
       } catch (e) {
         console.log("Error:", e);

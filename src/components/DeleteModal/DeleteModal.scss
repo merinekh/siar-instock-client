@@ -69,6 +69,7 @@
         display: flex;
         margin-left: auto;
         margin-bottom: 2rem;
+        cursor: pointer;
         
         @include tablet {
             margin-top: -2.4rem;
