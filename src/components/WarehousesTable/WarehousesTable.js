@@ -23,7 +23,7 @@ function WarehousesTable({ warehouses, handleDeleteButton }) {
           <th>Warehouse <SortIcon /></th>
           <th>Address <SortIcon /></th>
           <th>Contact name <SortIcon /></th>
-          <th>Contact information <SortIcon /></th>
+          <th>Contact information <SortIcon/></th>
           <th>Actions</th>
         </tr>
       </thead>
