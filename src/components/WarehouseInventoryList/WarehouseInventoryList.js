@@ -36,6 +36,7 @@ export default function WarehouseInventoryList() {
       console.log("Error:", e);
     }
   }
+
   useEffect(() => {
     getWarehouseInventory();
   });
@@ -68,8 +69,8 @@ export default function WarehouseInventoryList() {
     }
   };
 
-  if (!warehouseInventory) {
-    return <div>Loading items...</div>;
+  if (!warehouseInventory.length) {
+    return <div>Returning to home page...</div>;
   }
 
   return (
