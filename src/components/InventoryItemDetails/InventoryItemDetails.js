@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import editicon from "../../assets/icons/edit-24px.svg";
 import arrowback from "../../assets/icons/arrow_back-24px.svg";
+import { ENDPOINT_INVENTORY } from "../../const";
 
 export default function InventoryItemDetails() {
   const [inventoryItem, setInventoryItem] = useState({});
@@ -13,7 +14,7 @@ export default function InventoryItemDetails() {
     async function getInventoryItem() {
       try {
         const { data } = await axios.get(
-          `http://localhost:8080/api/inventories/${inventoryId}`
+          `${ENDPOINT_INVENTORY}/${inventoryId}`
         );
         // console.log(data);
         setInventoryItem(data);
