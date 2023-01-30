@@ -1,35 +1,15 @@
 .invitem-overlay {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(0, 0, 0, 0.1);
-  padding: 0 1.6rem;
-
+  margin-top: -64px;
   @include tablet {
-    padding: 0 3.2rem;
+    margin-top: -94px;
   }
 }
 
 .invitem {
-  position: relative;
-  bottom: 5.5rem;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
   border: 0.1rem solid $lightGrey;
   border-radius: 5px;
   background-color: white;
   box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
-
-  @include tablet {
-    bottom: 8.1rem;
-  }
-
-  @include desktop {
-    width: 102rem;
-    margin: 0 auto;
-  }
 
   &__container {
     padding: 1.6rem;
@@ -38,7 +18,7 @@
     justify-content: space-between;
     align-items: center;
     @include tablet {
-      padding: 1.6rem 3.2rem;
+      padding: 3.2rem 3.2rem 1.2rem;
     }
   }
 
@@ -113,9 +93,6 @@
     font-size: $fontMobile-h4;
     color: $slate;
     margin-top: 1.6rem;
-    @include tablet {
-      // display: none;
-    }
   }
 
   &__sort {
@@ -123,18 +100,15 @@
   }
 
   &__inventory {
-    // @include flex(column);
     border-top: 0.1rem solid $cloud;
     padding: 0 2.4rem 2.4rem;
     @include tablet {
-      padding: 1.6rem 3.2rem;
+      padding: 1.6rem 3.2rem 3.2rem;
     }
 
     &--flex {
       @include flex(column);
-      // align-items: center;
       justify-content: space-between;
-      // gap: 1.6rem;
       @include tablet {
         gap: 0.1rem;
         @include flex(row);
@@ -151,9 +125,6 @@
     }
 
     &--details2 {
-      // @include tablet {
-      //   @include flex(row);
-      // }
       @include flex(row);
       flex-wrap: wrap;
       @include tablet {
@@ -178,6 +149,7 @@
 
   &__item-name {
     font-size: $fontMobile-bodyM;
+    padding-top: 0.4rem;
     color: $instockBlack;
     @include tablet {
       font-size: $fontTablet-bodyM;

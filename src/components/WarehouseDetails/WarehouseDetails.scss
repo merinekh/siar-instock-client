@@ -1,113 +1,185 @@
-@use "../../styles/partials/variables" as *;
-@use "../../styles/partials/mixins" as *;
-@use "../../styles/partials/resets" as *;
+.wil-header {
+  &__container {
+    padding: 1.6rem;
+    background-color: white;
+    @include flex(row);
+    justify-content: space-between;
+    align-items: center;
+    @include tablet {
+      padding: 3.2rem 3.2rem 1.2rem;
+    }
+  }
 
-.warehouse-details{
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0rem 1.6rem;
-    border-top: 1px solid $cloud;
-    border-bottom: 1px solid $cloud;
-    @include tablet{
-        padding: 2.4rem 2.4rem;
+  &__container-header {
+    font-size: $fontMobile-h1;
+    display: inline-block;
+    padding-left: 0.8rem;
+    @include tablet {
+      font-size: $fontTablet-h1;
     }
-    @include desktop{
-        justify-content: space-between;
+  }
+
+  &__container-form {
+    @include flex(row);
+    align-items: center;
+  }
+
+  &__container-search {
+    margin-top: 1.6rem;
+    @include tablet {
+      margin-top: 0;
+    }
+  }
+
+  &__container-back {
+    &--mobile {
+      width: 3.6rem;
+      height: 3.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 2rem;
+      background-color: $instock-Indigo;
+      @include tablet {
+        display: none;
+      }
+      &:hover {
+        background-color: $graphite;
+      }
     }
 
-    &__contact-address{
-        width: 100%;
-        padding-bottom: 3rem;
-        @include tablet{
-            width: 24%;
-            margin-right: 15rem;
-            height: 6rem
-        }
-        @include desktop{
-            width: 15%;
-        }
+    &--mobilepic {
+      filter: invert(1) brightness(10);
     }
-    &__contact-address-title{
-        color: $slate;
-        font-size: $fontMobile-h4;
-        @include tablet{
-            font-size:$fontTablet-h4;
-        }
-        
-    }
-    &__contact-address-address{
-        font-size: $fontMobile-bodyM;
-        @include tablet{
-            font-size: $fontTablet-bodyM;
-        }
-    }
-    &__contact-name{
-        width: 50%;
-        @include tablet {
-            border-left: 1px solid $cloud;
-            padding-left: 4rem;
-            width: 25%;
-            height: 6rem;
-        }
-        @include desktop {
-            width: 15%;
-        }
-    }
-    &__contact-name-title{
-        color: $slate;
-        font-size: $fontMobile-h4;
-        @include tablet {
-            font-size: $fontTablet-h4;
-        }
-        
-    }
-    &__contact-name-name{
-        font-size: $fontMobile-bodyM;
-        @include tablet{
-            font-size:$fontTablet-bodyM;
-        }
-      
-    }
-    &__contact-name-position{
-        font-size: $fontMobile-bodyM;
-        @include tablet{
-            font-size: $fontTablet-bodyM;
-        }
-       
-    }
-    &__contact-information{
-        width: 50%;
-        padding-bottom: 2rem;
-        padding-left: 1rem;
-        @include tablet {
-            width: 30%;
-            height: 6rem
-        } 
-        @include desktop {
-            width: 35%;
-        }
-    }
-    &__contact-information-title{
-        color: $slate;
-        font-size: $fontMobile-h4;
-        @include tablet {
-            font-size: $fontTablet-h4;
-        } 
-       
-    }
-    &__contact-information-phone{
-        font-size: $fontMobile-bodyM;
-        @include tablet{
-            font-size: $fontTablet-bodyM;
-        } 
-        
 
-    }
-    &__contact-information-email{
-        font-size: $fontMobile-bodyM;
-        @include tablet{
-            font-size: $fontTablet-bodyM;
+    &--tablet {
+      display: none;
+      @include tablet {
+        display: flex;
+        align-items: center;
+        border-radius: 2rem;
+        background-color: $instock-Indigo;
+        padding: 0.4rem 1.6rem;
+        color: white;
+        font-size: 1.4rem;
+        height: 3.8rem;
+        &:hover {
+          background-color: $graphite;
         }
-      
+      }
     }
+
+    &--tabletpic {
+      filter: invert(1) brightness(10);
+      width: 1.8rem;
+      height: 1.8rem;
+      margin-right: 0.8rem;
+    }
+  }
+}
+
+.warehouse-details {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1.6rem 1.6rem 0;
+  border-top: 1px solid $cloud;
+  border-bottom: 1px solid $cloud;
+  background-color: white;
+  //   border-radius: 5px;
+  @include tablet {
+    padding: 2.4rem 3.2rem;
+    border-bottom: none;
+  }
+  @include desktop {
+    justify-content: space-between;
+  }
+
+  &__contact-address {
+    width: 100%;
+    padding-bottom: 3rem;
+    @include tablet {
+      width: 24%;
+      margin-right: 8rem;
+      height: 6rem;
+    }
+    @include desktop {
+      width: 15%;
+      margin-right: 12rem;
+    }
+  }
+  &__contact-address-title {
+    color: $slate;
+    font-size: $fontMobile-h4;
+    @include tablet {
+      font-size: $fontTablet-h4;
+    }
+  }
+  &__contact-address-address {
+    font-size: $fontMobile-bodyM;
+    @include tablet {
+      font-size: $fontTablet-bodyM;
+    }
+  }
+  &__contact-name {
+    width: 50%;
+    @include tablet {
+      border-left: 1px solid $cloud;
+      padding-left: 4rem;
+      width: 27%;
+      height: 6rem;
+    }
+    @include desktop {
+      width: 20%;
+    }
+  }
+  &__contact-name-title {
+    color: $slate;
+    font-size: $fontMobile-h4;
+    @include tablet {
+      font-size: $fontTablet-h4;
+    }
+  }
+  &__contact-name-name {
+    font-size: $fontMobile-bodyM;
+    @include tablet {
+      font-size: $fontTablet-bodyM;
+    }
+  }
+  &__contact-name-position {
+    font-size: $fontMobile-bodyM;
+    @include tablet {
+      font-size: $fontTablet-bodyM;
+    }
+  }
+  &__contact-information {
+    width: 50%;
+    padding-bottom: 2rem;
+    padding-left: 2rem;
+    @include tablet {
+      width: 30%;
+      height: 6rem;
+    }
+    @include desktop {
+      width: 35%;
+    }
+  }
+  &__contact-information-title {
+    color: $slate;
+    font-size: $fontMobile-h4;
+    @include tablet {
+      font-size: $fontTablet-h4;
+    }
+  }
+  &__contact-information-phone {
+    font-size: $fontMobile-bodyM;
+    @include tablet {
+      font-size: $fontTablet-bodyM;
+    }
+  }
+  &__contact-information-email {
+    font-size: $fontMobile-bodyM;
+    @include tablet {
+      font-size: $fontTablet-bodyM;
+    }
+  }
 }

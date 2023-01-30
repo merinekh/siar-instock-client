@@ -1,43 +1,25 @@
 .inv-overlay {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(0, 0, 0, 0.1);
-  padding: 0 1.6rem;
-
+  margin-top: -64px;
   @include tablet {
-    padding: 0 3.2rem;
+    margin-top: -94px;
   }
 }
 
 .inv {
-  position: relative;
-  bottom: 5.5rem;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
   border: 0.1rem solid $lightGrey;
   border-radius: 5px;
   background-color: white;
   box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
 
-  @include tablet {
-    bottom: 9.5rem;
-  }
-
-  @include desktop {
-    width: 102rem;
-    margin: 0 auto;
-  }
-
   &__container {
-    padding: 1.6rem 2.4rem 1.6rem;
+    padding: 3rem 2.4rem 1.6rem;
+    border-bottom: 1px solid $cloud;
     @include flex(column);
     @include tablet {
       @include flex(row);
       justify-content: space-between;
-      padding: 1.6rem 3.2rem;
+      padding: 3.2rem 3.2rem 1.4rem;
+      border-bottom: none;
     }
   }
 
@@ -52,6 +34,7 @@
     @include flex(column);
     @include tablet {
       @include flex(row);
+      margin-right: 1rem;
     }
   }
 
@@ -69,6 +52,11 @@
 
     @include tablet {
       margin-top: 0;
+    }
+
+    &:focus {
+      outline: none;
+      border: 1px solid $instock-Indigo;
     }
   }
 
@@ -96,7 +84,7 @@
   &__header {
     display: none;
     @include tablet {
-      padding: 0 3.2rem;
+      padding: 1.1rem 3.2rem;
       color: $slate;
       background-color: $lightGrey;
       @include flex(row);
@@ -110,10 +98,6 @@
 
     &--title {
       font-size: $fontTablet-h4;
-    }
-
-    @include desktop {
-      // width: 102rem;
     }
   }
 
@@ -140,6 +124,10 @@
       justify-content: space-between;
     }
 
+    &:first-child {
+      border-top: none;
+    }
+
     &:hover {
       background-color: rgba(46, 102, 230, 0.07);
     }
@@ -150,7 +138,6 @@
       justify-content: space-between;
       gap: 1.6rem;
       @include tablet {
-        // gap: 2.4rem;
         align-items: center;
       }
     }
@@ -160,7 +147,6 @@
       @include flex(column);
       @include tablet {
         @include flex(row);
-        // width: fit-content;
       }
     }
 
@@ -174,6 +160,13 @@
     &--options {
       height: 2.4rem;
       cursor: pointer;
+    }
+  }
+
+  &__quantity-container {
+    @include tablet {
+      @include flex(row);
+      align-items: center;
     }
   }
 
@@ -193,6 +186,7 @@
   &__item-text {
     font-size: $fontMobile-bodyM;
     margin-top: 0.4rem;
+    min-width: 6.5rem;
     @include tablet {
       font-size: $fontTablet-bodyM;
       margin-top: 0;
@@ -238,18 +232,18 @@
 
 .invtab1 {
   @include tablet {
-    width: 85%;
+    width: 83%;
   }
 }
 .invtab2 {
   @include tablet {
-    width: 35%;
+    width: 37%;
     justify-content: space-between;
   }
 }
-.invtab2 {
+.invtab3 {
   @include tablet {
-    width: 50%;
+    width: 51%;
     justify-content: space-between;
   }
 }
