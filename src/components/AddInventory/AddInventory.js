@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
@@ -7,10 +7,11 @@ import BackArrow from "../../assets/icons/arrow_back-24px.svg";
 
 function AddInventory() {
   const navigate = useNavigate();
-  const [stockStatus, setStockStatus] = useState("inStock");
-  const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1280);
+  const [stockStatus, setStockStatus] = useState("");
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth > 1279);
   const [warehouses, setWarehouses] = useState([]);
-  const [inventories, setInventories] = useState([]);
+  //const [inventories, setInventories] = useState([]);
+  const [categories, setCategories] = useState([]);
 
   useEffect(() => {
     axios
@@ -22,13 +23,18 @@ function AddInventory() {
   useEffect(() => {
     axios
       .get(ENDPOINT_INVENTORY)
-      .then((response) => setInventories(response.data))
+      .then((response) => {
+        //setInventories(response.data);
+        const list = response.data.map((item) => item.category);
+        const category_list = new Set(list);
+        setCategories(Array.from(category_list));
+      })
       .catch((error) => console.error(error));
   }, []);
 
   useEffect(() => {
     function handleResize() {
-      setIsDesktop(window.innerWidth >= 1280);
+      setIsDesktop(window.innerWidth > 1279);
     }
     window.addEventListener("resize", handleResize);
     return () => {
@@ -71,14 +77,17 @@ function AddInventory() {
       <form className="AddInventory-form" onSubmit={handleSubmit}>
         <div className="AddInventory-form__header-div">
           <h1 className="AddInventory-form__header">
-            <img
-              className="AddInventory-form__backarrow"
-              src={BackArrow}
-              alt="back arrow icon"
-            />
+            <Link to="/">
+              <img
+                className="AddInventory-form__backarrow"
+                src={BackArrow}
+                alt="back arrow icon"
+              />
+            </Link>
             Add New Inventory Item
           </h1>
         </div>
+
         <div className="AddInventory-box">
           <div className="AddInventory-form__top-box">
             <h2 className="AddInventory-form__sub-titles">Item Details</h2>
@@ -96,13 +105,15 @@ function AddInventory() {
               Description
             </label>
             <br />
-            <input
+            <textarea
               className="AddInventory-form__description-input"
               type="textarea"
               name="description"
               placeholder="Please enter a brief description"
+              cols="40"
+              rows="5"
               required
-            ></input>
+            ></textarea>
             <br />
             <label className="AddInventory-form__label-titles">Category</label>
             <br />
@@ -117,9 +128,9 @@ function AddInventory() {
               >
                 Please Select
               </option>
-              {inventories.map((inventory) => (
-                <option key={inventory.id} value={inventory.category}>
-                  {inventory.category}
+              {categories.map((category, idx) => (
+                <option key={idx} value={category}>
+                  {category}
                 </option>
               ))}
             </select>
@@ -153,8 +164,9 @@ function AddInventory() {
               Out Of Stock
             </label>
             <br />
-            {((stockStatus === "in stock" && !isDesktop) ||
-              (stockStatus === "out of stock" && !isDesktop)) && (
+            {((stockStatus === "out of stock" && !isDesktop) ||
+              (stockStatus === "" && !isDesktop) ||
+              (stockStatus === "in stock" && isDesktop)) && (
               <>
                 <label className="AddInventory-form__label-titles">
                   Quantity
@@ -185,6 +197,7 @@ function AddInventory() {
               ))}
             </select>
           </div>
+
           <div className="AddInventory-form__button-box">
             <button
               className="AddInventory-form__cancel-button"

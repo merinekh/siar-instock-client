@@ -5,25 +5,9 @@
         justify-content: space-evenly;
         flex-wrap: wrap;
     }
-
-    @include desktop {
-        padding: 3.4rem;
+    @include desktop{
+        padding: 0rem;
     }
-
-    // padding: 0rem 1.6rem;
-    // position: absolute;
-    // top: 20.3%;
-    // bottom: 8.68%;
-    // right: 4.27%;
-    // left: 4.27%;
-    // background-color: #FFFFFF;
-    // @include tablet{
-    //     top: 10%;
-    //     bottom: 31.84%;
-    //     right: 4.17%;
-    //     left: 4.17%;
-    // }
-
 }
 
 .AddInventory-form {
@@ -52,6 +36,8 @@
 
     &__header-div {
         border-bottom: 1px solid $cloud;
+        display: flex;
+        padding-bottom: 1.6rem;
 
         @include desktop {
             padding: 1.4rem 3.4rem;
@@ -64,6 +50,9 @@
 
         @include tablet {
             width: 50%;
+        }
+        @include desktop {
+            padding: 0rem 4rem;
         }
     }
 
@@ -96,13 +85,13 @@
     }
 
     &__backarrow {
-        // width: 1.6rem;
-        // height: 1.6rem;
-        // position: absolute;
-        // left: 16.67%;
-        // right: 16.67%;
-        // top: 16.67%;
-        // bottom: 16.67%;
+        padding-right: 1rem;
+        @include tablet{
+
+            padding-left: 1.6rem;
+            padding-right: 1rem;
+
+        }
     }
 
     &__header {
@@ -110,6 +99,7 @@
         font-weight: 600;
         color: $instockBlack;
         padding: 0rem 1.6rem;
+        display: flex;
         @include tablet {
             padding: 1.6rem 0rem;
         }
@@ -234,6 +224,13 @@
         padding: 8px 30px;
         border-radius: 20px;
         color: $slate;
+        border-style: none;
+        &:hover {
+            
+            color: $instock-Indigo;
+            background-color: #FFFFFF;
+            border: 1px solid $instock-Indigo;
+            }
     }
 
     &__submit-button {
@@ -241,9 +238,14 @@
         flex-direction: row;
         align-items: center;
         padding: 8px 30px;
+        border-style: none;
         border-radius: 20px;
         background-color: $instock-Indigo;
         color: #FFFFFF;
+        &:hover {
+            color: #FFFFFF;
+            background-color: $graphite;
+            }
 
         @include tablet {
             margin-left: 4rem;
