@@ -1,0 +1,212 @@
+.warehouses-table {
+  border-collapse: collapse;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #FFFFFF;
+  box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+  border-radius: 3px;
+
+  &__caption {
+    display: flex;
+    flex-direction: column;
+    padding: 3.2rem 2.4rem 2.4rem 2.4rem;
+
+    &>*:not(:last-child) {
+      margin-bottom: 1.6rem;
+    }
+
+    .button {
+      width: 100%;
+    }
+
+    @include tablet {
+      padding: 3.2rem 3.2rem 2.2rem 3.2rem;
+      flex-direction: row;
+      
+      &>*:not(:last-child) {
+        margin-bottom: 0rem;
+        margin-right: 1.6rem;
+      }
+
+      .button {
+        width: auto;
+      }
+    }
+
+    @include desktop {
+      padding: 3.2rem 4rem 2.2rem 4rem;
+    }
+  }
+
+  &__title {
+    margin-top: 0rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 36px;
+    color: $instockBlack;
+
+    @include tablet {
+      flex-grow: 1;
+      font-size: 32px;
+      line-height: 40px;
+    }
+  }
+
+  &__head {
+    display: none;
+    visibility: hidden;
+
+    @include tablet {
+      display: flex;
+      visibility: visible;
+      width: 100%;
+
+      tr {
+        display: grid;
+        grid-template-columns: 3fr 2fr 3fr 4fr 2fr;
+        gap: 16px;
+        width: 100%;
+        padding: 1.1rem 3.2rem;
+        background: rgba(247, 248, 249, 0.7);
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 18px;
+        text-transform: uppercase;
+        color: $slate;
+
+        @include desktop {
+          padding: 1.1rem 4rem;
+        }
+        
+        th {
+          display: flex;
+          padding: 0rem;
+          align-items: center;
+          justify-content: flex-start;
+          
+          svg {
+            display: block;
+            margin-left: 0.4rem;
+          }
+
+          &:not(:last-child) {
+            margin-right: 1.6rem;
+          }
+
+          &:last-child {
+            justify-content: flex-end;
+          }
+        }
+      }
+    }
+  }
+
+  &__body {
+    tr {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.6rem;
+      border-top: 1px solid $cloud;
+      padding: 1.6rem 2.4rem 2.4rem 2.4rem;
+
+      @include tablet {
+        padding: 1.6rem 3.2rem;
+        grid-template-columns: 3fr 2fr 3fr 4fr 2fr;
+        align-items: center;
+
+        &:hover {
+          background: rgba(46, 102, 230, 0.07);
+        }
+
+        &:first-child {
+          border-top: none;
+        }
+      }
+
+      @include desktop {
+        padding: 1.6rem 4rem;
+      }
+
+      td {
+        display: flex;
+        flex-direction: column;
+        font-size: 13px;
+        line-height: 20px;
+        color: #13182C;
+
+        &:first-child {
+          order: 1;
+        }
+
+        &:nth-child(2) {
+          order: 3;
+        }
+
+        &:nth-child(3) {
+          order: 2;
+        }
+
+        &:nth-child(4) {
+          order: 4;
+        }
+
+        &:not(:last-child)::before {
+          content: attr(title);
+          display: block;
+          font-weight: 600;
+          font-size: 11px;
+          line-height: 16px;
+          color: #5C667E;
+          margin-bottom: 0.4rem;
+          text-transform: uppercase;
+        }
+
+        &:last-child {
+          grid-column: span 2;
+          flex-direction: row;
+          justify-content: space-between;
+          order: 5;
+        }
+
+        @include tablet {
+          font-size: 14px;
+          line-height: 22px;
+
+          &:nth-child(2) {
+            order: 2;
+          }
+        
+          &:nth-child(3) {
+            order: 3;
+          }
+
+          &:not(:last-child)::before {
+            display: none;
+          }
+
+          &:last-child {
+            grid-column: span 1;
+            flex-direction: row;
+            justify-content: flex-end;
+            order: 5;
+
+            *:not(:last-child) {
+              margin-right: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__button {
+    display: flex;
+    width: max-content;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    cursor: pointer;
+  }
+}
