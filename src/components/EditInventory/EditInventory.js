@@ -34,7 +34,6 @@ export default function EditInventory() {
         .catch((error) => console.log(error));
     }
   }, [inventoryID]);
-  // console.log(inventories, quantity, stockStatus, warehouse, category);
   useEffect(() => {
     axios
       .get(ENDPOINT_WAREHOUSES)
@@ -46,9 +45,7 @@ export default function EditInventory() {
     axios
       .get(ENDPOINT_INVENTORY)
       .then((response) => {
-        //setInventories(response.data);
         const list = response.data.map((item) => item.category);
-        // console.log(list);
         const category_list = new Set(list);
         setCategories(Array.from(category_list));
       })
@@ -60,7 +57,6 @@ export default function EditInventory() {
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-    // console.log(event.target.category.value);
 
     if (
       !event.target.item_name.value ||
@@ -80,7 +76,6 @@ export default function EditInventory() {
         description: event.target.description.value,
         category: event.target.category.value,
         status: event.target.status.value,
-        // OutOfStock: event.target.OutOfStock.value,
         quantity: event.target.quantity.value,
         warehouse_id: inventories.warehouse_id,
       })
@@ -89,7 +84,6 @@ export default function EditInventory() {
       })
       .catch((error) => console.log(error));
   };
-  // console.log(stockStatus);
 
   return (
     <>
