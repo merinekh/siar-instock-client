@@ -13,7 +13,6 @@ export default function EditInventory() {
   const navigate = useNavigate();
   const [stockStatus, setStockStatus] = useState([]);
   const [categories, setCategories] = useState([]);
-  const [category, setCategorie] = useState([]);
   const [quantity, setQuantity] = useState([]);
   const [warehouses, setWarehouses] = useState([]);
   const [warehouse, setWarehouse] = useState([]);
@@ -29,7 +28,6 @@ export default function EditInventory() {
           setQuantity(data.quantity);
           setStockStatus(data.status);
           setWarehouse(data.warehouse_name);
-          setCategorie(data.category);
         })
         .catch((error) => console.log(error));
     }
