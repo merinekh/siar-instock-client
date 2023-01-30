@@ -37,10 +37,10 @@
     &__header-div {
         border-bottom: 1px solid $cloud;
         display: flex;
-        padding-bottom: 1.6rem;
+        padding-bottom: 1rem;
 
         @include desktop {
-            padding: 1.4rem 3.4rem;
+            padding: 0.1rem 3.4rem;
         }
     }
 
