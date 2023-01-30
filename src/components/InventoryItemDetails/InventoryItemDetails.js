@@ -16,7 +16,7 @@ export default function InventoryItemDetails() {
         const { data } = await axios.get(
           `${ENDPOINT_INVENTORY}/${inventoryId}`
         );
-        // console.log(data);
+
         setInventoryItem(data);
       } catch (e) {
         console.log("Error:", e);
@@ -38,7 +38,7 @@ export default function InventoryItemDetails() {
   }
 
   return (
-    <section className="invitem-overlay">
+    <section className="invitem-overlay container">
       <section className="invitem">
         <div className="invitem__container">
           <div>

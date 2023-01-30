@@ -14,16 +14,24 @@ function WarehousesTable({ warehouses, handleDeleteButton }) {
         <h1 className="warehouses-table__title">Warehouses</h1>
 
         <SearchForm />
-        
+
         <Button to={AppRoute.WAREHOUSE_ADD}>+ Add New Warehouse</Button>
       </caption>
 
       <thead className="warehouses-table__head">
         <tr>
-          <th>Warehouse <SortIcon /></th>
-          <th>Address <SortIcon /></th>
-          <th>Contact name <SortIcon /></th>
-          <th>Contact information <SortIcon /></th>
+          <th>
+            Warehouse <SortIcon />
+          </th>
+          <th>
+            Address <SortIcon />
+          </th>
+          <th>
+            Contact name <SortIcon />
+          </th>
+          <th>
+            Contact information <SortIcon />
+          </th>
           <th>Actions</th>
         </tr>
       </thead>
@@ -32,7 +40,11 @@ function WarehousesTable({ warehouses, handleDeleteButton }) {
         {warehouses.map((warehouse) => (
           <tr key={warehouse.id}>
             <td title="Warehouse">
-              <TextLink to={generatePath(AppRoute.WAREHOUSE_INVENTORY, { id: warehouse.id })}>
+              <TextLink
+                to={generatePath(AppRoute.WAREHOUSE_INVENTORY, {
+                  id: warehouse.id,
+                })}
+              >
                 {warehouse.warehouse_name}
               </TextLink>
             </td>
@@ -43,24 +55,24 @@ function WarehousesTable({ warehouses, handleDeleteButton }) {
               <div>{warehouse.contact_email}</div>
             </td>
             <td>
-              <button className="warehouses-table__button"
+              <button
+                className="warehouses-table__button"
                 type="button"
                 aria-label="Delete item"
                 onClick={handleDeleteButton(warehouse)}
               >
                 <DeleteIcon />
               </button>
-              <Link 
-                className="warehouses-table__button" 
+              <Link
+                className="warehouses-table__button"
                 aria-label="Edit item"
-                to={generatePath(AppRoute.WAREHOUSE_EDIT, {id: warehouse.id})}
+                to={generatePath(AppRoute.WAREHOUSE_EDIT, { id: warehouse.id })}
               >
                 <EditIcon />
               </Link>
             </td>
           </tr>
         ))}
-
       </tbody>
     </table>
   );
